@@ -337,3 +337,17 @@ html {
   transform: translateY(-5px);
 }
 
+/* navbar */
+.nav-item {
+  @apply relative font-semibold hover:text-amber-600 cursor-pointer ;
+}
+
+.nav-item::after {
+  content: "";
+  @apply absolute left-1/2 bottom-0 w-0 h-0.5 bg-amber-600 transition-all duration-300 ease-in-out delay-100;
+  transform: translateX(-50%);
+}
+
+.nav-item:hover::after {
+  @apply w-full;
+}

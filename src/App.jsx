@@ -1,13 +1,21 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Header from "./components/Header2"
+import Header from "./components/Header3"
 import Footer from "./components/Footer"
-import HomePage from "./pages/HomePage"
+import HomePage from "./pages/MediniTech/HomePage"
 // import ServicesPage from "./pages/ServicesPage"
 // import BlogPage from "./pages/BlogPage"
-import ContactPage from "./pages/ContactPage"
+import ContactPage from "./pages/MediniTech/ContactPage"
 import { ThemeProvider } from "./components/ThemeProvider"
 import "./index.css"
-import AboutPage from "./pages/AboutPage"
+import AboutPage from "./pages/MediniTech/AboutPage"
+import BlogPage from "./pages/MediniTech/BlogPage"
+import AwardsPage from "./pages/MediniTech/AwardsPage"
+import Home from "./pages/MediniSchool/Home"
+import ChatBot from "./components/Chatbot"
+import BIMHome from "./pages/BIM/Home"
+import TechvrittiHome from "./pages/TechVritti/Home"
+import CourseDetailsPage from "./components/MediniSchool/CourseDetailsPage"
+import TeamechHome from "./pages/TeaMech/Home"
 
 function App() {
   return (
@@ -15,16 +23,29 @@ function App() {
       <Router>
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 mt-10">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               {/* <Route path="/services" element={<ServicesPage />} /> */}
-              {/* <Route path="/blog" element={<BlogPage />} /> */}
+              <Route path="/awards" element={<AwardsPage />} />
+              <Route path="/blog" element={<BlogPage />} />
               <Route path="/contact" element={<ContactPage />} />
+
+              <Route path="/medinischoolofdesign" element={<Home />} />
+              <Route path="/medinischoolofdesign/about" element={<AboutPage />} />
+              <Route path="/medinischoolofdesign/contact" element={<ContactPage />} />
+              <Route path="/medinischoolofdesign/courses/:courseName" element={<CourseDetailsPage />} />
+              <Route path="/bim_construct" element={<BIMHome />} />
+              <Route path="/bim_construct/about" element={<AboutPage/>} />
+              <Route path="/bim_construct/contact" element={<ContactPage/>} />
+              <Route path="/techvritti" element={<TechvrittiHome />} />
+              <Route path="/teamech" element={<TeamechHome />} />
             </Routes>
           </main>
           <Footer />
+
+          <ChatBot />
         </div>
       </Router>
     </ThemeProvider>

@@ -1,0 +1,294 @@
+{
+  "courseProviders": [
+    {
+      "id": "AUTODESK",
+      "logo": "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png",
+      "categories": [
+        {
+          "name": "AEC",
+          "courses": [
+            {
+              "id": "autocad",
+              "title": "AutoCAD Fundamentals",
+              "name": "AutoCAD",
+              "icon": "🏗️",
+              "description": "Comprehensive AutoCAD training covering 2D and 3D computer-aided design techniques.",
+              "duration": "8 weeks",
+              "difficulty": "Beginner",
+              "price": 799,
+              "instructor": "Michael Chen",
+              "curriculum": [
+                "2D Drawing Basics",
+                "3D Modeling",
+                "Annotation and Dimensioning",
+                "Layer Management",
+                "Plotting and Printing"
+              ],
+              "learningOutcomes": [
+                "Create precise 2D and 3D designs",
+                "Understand CAD workflow",
+                "Develop professional drafting skills"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "No prior CAD experience required"
+              ],
+              "coverImage": "AutoCAD.jpg"
+            },
+            {
+              "id": "revit-architecture",
+              "title": "Revit Architecture Advanced",
+              "name": "Revit Architecture",
+              "icon": "🏢",
+              "description": "Advanced BIM architectural design course using Autodesk Revit.",
+              "duration": "10 weeks",
+              "difficulty": "Intermediate",
+              "price": 1299,
+              "instructor": "Emily Rodriguez",
+              "curriculum": [
+                "BIM Fundamentals",
+                "Architectural Modeling",
+                "Parametric Components",
+                "Family Creation",
+                "Rendering Techniques"
+              ],
+              "learningOutcomes": [
+                "Create complex architectural models",
+                "Understand BIM methodology",
+                "Develop professional-level Revit skills"
+              ],
+              "prerequisites": [
+                "Basic AutoCAD knowledge",
+                "Understanding of architectural principles"
+              ],
+              "coverImage": "revit-architecture.jpg"
+            },
+            {
+              "id": "revit-mep",
+              "title": "Revit MEP Essentials",
+              "name": "Revit MEP",
+              "icon": "🏗️",
+              "description": "Mechanical, Electrical, and Plumbing (MEP) design with Revit.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 1199,
+              "instructor": "Sarah Johnson",
+              "curriculum": [
+                "MEP System Basics",
+                "Duct and Pipe Routing",
+                "Electrical Circuiting",
+                "Family Creation",
+                "Clash Detection"
+              ],
+              "learningOutcomes": [
+                "Develop MEP systems using Revit",
+                "Analyze building services efficiency",
+                "Integrate BIM workflows"
+              ],
+              "prerequisites": [
+                "Basic AutoCAD knowledge",
+                "Understanding of mechanical or electrical principles"
+              ],
+              "coverImage": "revit-mep.jpg"
+            },
+            {
+              "id": "navisworks",
+              "title": "Navisworks Coordination",
+              "name": "Navisworks",
+              "icon": "🏗️",
+              "description": "Project coordination and clash detection using Navisworks.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "James Lee",
+              "curriculum": [
+                "Model Aggregation",
+                "Clash Detection",
+                "4D Simulation",
+                "Rendering and Walkthroughs",
+                "Project Collaboration"
+              ],
+              "learningOutcomes": [
+                "Coordinate BIM models effectively",
+                "Identify and resolve clashes",
+                "Improve construction planning"
+              ],
+              "prerequisites": [
+                "Basic BIM knowledge",
+                "Experience with CAD or Revit preferred"
+              ],
+              "coverImage": "navisworks.jpg"
+            },
+            {
+              "id": "revit-mep",
+              "title": "Revit MEP Essentials",
+              "name": "Revit MEP",
+              "icon": "🏗️",
+              "description": "Mechanical, Electrical, and Plumbing (MEP) design with Revit.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 1199,
+              "instructor": "Sarah Johnson",
+              "curriculum": [
+                "MEP System Basics",
+                "Duct and Pipe Routing",
+                "Electrical Circuiting",
+                "Family Creation",
+                "Clash Detection"
+              ],
+              "learningOutcomes": [
+                "Develop MEP systems using Revit",
+                "Analyze building services efficiency",
+                "Integrate BIM workflows"
+              ],
+              "prerequisites": [
+                "Basic AutoCAD knowledge",
+                "Understanding of mechanical or electrical principles"
+              ],
+              "coverImage": "revit-mep.jpg"
+            },
+            {
+              "id": "navisworks",
+              "title": "Navisworks Coordination",
+              "name": "Navisworks",
+              "icon": "🏗️",
+              "description": "Project coordination and clash detection using Navisworks.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "James Lee",
+              "curriculum": [
+                "Model Aggregation",
+                "Clash Detection",
+                "4D Simulation",
+                "Rendering and Walkthroughs",
+                "Project Collaboration"
+              ],
+              "learningOutcomes": [
+                "Coordinate BIM models effectively",
+                "Identify and resolve clashes",
+                "Improve construction planning"
+              ],
+              "prerequisites": [
+                "Basic BIM knowledge",
+                "Experience with CAD or Revit preferred"
+              ],
+              "coverImage": "navisworks.jpg"
+            }
+          ]
+        },
+        {
+          "name": "MANUFACTURING",
+          "courses": [
+            {
+              "id": "autocad-mechanical",
+              "title": "AutoCAD Mechanical Design",
+              "name": "AutoCAD Mechanical",
+              "icon": "⚙️",
+              "description": "Specialized course focusing on mechanical design using AutoCAD.",
+              "duration": "7 weeks",
+              "difficulty": "Intermediate",
+              "price": 1099,
+              "instructor": "Maria Santos",
+              "curriculum": [
+                "Mechanical Design Principles",
+                "Precision Drafting",
+                "Machine Component Design",
+                "Manufacturing Drawings",
+                "GD&T Fundamentals"
+              ],
+              "learningOutcomes": [
+                "Create detailed mechanical designs",
+                "Understand manufacturing drawing standards",
+                "Apply geometric dimensioning techniques"
+              ],
+              "prerequisites": [
+                "Basic AutoCAD knowledge",
+                "Understanding of mechanical principles"
+              ],
+              "coverImage": "autocad-mechanical.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BENTLEY",
+      "logo": "@/assets/Logos/Bentley-Training-Partner-Logo.jpg",
+      "categories": [
+        {
+          "name": "Engineering Software",
+          "courses": [
+            {
+              "id": "microstation",
+              "title": "Microstation Fundamentals",
+              "name": "Microstation",
+              "icon": "📐",
+              "description": "Comprehensive training in Bentley's MicroStation CAD software.",
+              "duration": "6 weeks",
+              "difficulty": "Beginner",
+              "price": 699,
+              "instructor": "Jennifer Lopez",
+              "curriculum": [
+                "2D Drafting Basics",
+                "3D Modeling Techniques",
+                "Design Visualization",
+                "File Management",
+                "Rendering Principles"
+              ],
+              "learningOutcomes": [
+                "Master CAD design fundamentals",
+                "Create professional-grade technical drawings",
+                "Understand Bentley software ecosystem"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "No prior CAD experience required"
+              ],
+              "coverImage": "microstation.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DASSAULT",
+      "name": "DASSAULT",
+      "categories": [
+        {
+          "name": "3D Design",
+          "courses": [
+            {
+              "id": "solidworks",
+              "title": "SolidWorks 3D Design",
+              "name": "SOLIDWORKS",
+              "icon": "🔧",
+              "description": "Comprehensive course in 3D computer-aided design and mechanical engineering.",
+              "duration": "10 weeks",
+              "difficulty": "Intermediate",
+              "price": 1399,
+              "instructor": "Alex Wong",
+              "curriculum": [
+                "Part Modeling",
+                "Assembly Design",
+                "Geometric Dimensioning",
+                "Sheet Metal Design",
+                "Simulation and Analysis"
+              ],
+              "learningOutcomes": [
+                "Create complex 3D mechanical designs",
+                "Perform design simulations",
+                "Develop professional CAD skills"
+              ],
+              "prerequisites": [
+                "Basic engineering or design background",
+                "Familiarity with 3D concepts"
+              ],
+              "coverImage": "solidworks.jpg"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

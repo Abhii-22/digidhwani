@@ -76,7 +76,7 @@ function Header() {
       }`}
     >
       <div className="flex flex-col gap-4 pt-2">
-        {/* {!isScrolled && (
+         {!isScrolled && (
           <div
           className={`container mx-auto flex h-20 items-center justify-between px-4 py-2 transition-all duration-700 ease-in-out `}
         >
@@ -132,7 +132,7 @@ function Header() {
             </button>
           </div>
         </div>
-        )}  */}
+        )} 
         <div className="container mx-auto flex justify-between items-center px-4 py-4">
           <nav className="hidden md:flex gap-6">
             <Link

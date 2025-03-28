@@ -73,7 +73,6 @@ const HeroSection = () => {
                   <motion.h1 
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
-                    // transition={{ delay: 0.2, duration: 0.6 }}
                     className="text-4xl md:text-5xl font-bold mb-4"
                   >
                     {slide.title}

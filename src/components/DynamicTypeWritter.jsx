@@ -19,16 +19,16 @@ const DynamicTypingHeadline = () => {
       subtitle: "For centre of Excellence"
     },
     {
-      title: "BUILDDSPACE",
+      title: "BUILD SPACE",
       subtitle: "For STRT Support"
-    },
-    {
-      title: "TEAMECH",
-      subtitle: "From Design to Manufacturing"
     },
     {
         title: "TECHVRITTI",
         subtitle: "Right Product to Right Customer"
+    },
+    {
+      title: "TEAMECH",
+      subtitle: "From Design to Manufacturing"
     }
   ];
 

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react"
+import { Star, ChevronLeft, ChevronRight, Quote, User } from "lucide-react"
 
 const FeedbackSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -73,7 +73,7 @@ const FeedbackSection = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
           {/* Large quote icon */}
           <div className="absolute -top-10 -left-10 text-blue-200 dark:text-blue-900 opacity-50">
             <Quote size={80} />
@@ -95,11 +95,12 @@ const FeedbackSection = () => {
                     className="min-w-full px-4"
                   >
                     <div className="flex flex-col items-center text-center">
-                      <img
+                      {/* <img
                         src={testimonial.image || "/placeholder.svg"}
                         alt={testimonial.name}
                         className="w-20 h-20 rounded-full object-cover border-4 border-blue-100 dark:border-blue-900 mb-4"
-                      />
+                      /> */}
+                      <User />
                       <div className="flex mb-4">
                         {[...Array(5)].map((_, i) => (
                           <Star

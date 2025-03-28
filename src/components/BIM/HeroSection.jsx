@@ -98,27 +98,27 @@ const BimHeroSection = () => {
                   </span>
                 </Link>
               </div>
+
+              {/* Slider controls - Added more margin to create space */}
+              <div className="flex space-x-3 mt-12 mb-16">
+                {slides.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleDotClick(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      currentIndex === index ? "bg-amber-500 w-8" : "bg-gray-400/50 hover:bg-gray-500/80"
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
             </motion.div>
           ))}
-
-          {/* Slider controls */}
-          <div className="flex space-x-3 mt-12">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentIndex === index ? "bg-amber-500 w-8" : "bg-gray-400/50 hover:bg-gray-500/80"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
-      {/* Services quick access */}
-      <div className="absolute mt-10 bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent py-8 z-20">
+      {/* Services quick access - Adjusted top margin to create more separation */}
+      <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white to-transparent py-6 z-20 mt-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
@@ -132,7 +132,7 @@ const BimHeroSection = () => {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
-                className="flex flex-col items-center text-center p-4 rounded-xl bg-white backdrop-blur-sm border border-gray-200 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
+                className="flex flex-col items-center text-center p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-gray-100 transition-all duration-300 cursor-pointer"
               >
                 <div className="p-3 rounded-full bg-amber-500/20 text-amber-700 mb-3">{service.icon}</div>
                 <h3 className="font-medium text-gray-900">{service.title}</h3>

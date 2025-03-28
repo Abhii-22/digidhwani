@@ -41,9 +41,15 @@ export function TimelineSection() {
 
     return (
       <section 
-        className="relative py-24 overflow-hidden"
+        className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-900"
         style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(${BackgroundImage})`,
+          backgroundImage: `
+            linear-gradient(
+              rgba(0,0,0,0.8), 
+              rgba(0,0,0,0.8)
+            ), 
+            url(${BackgroundImage})
+          `,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -51,12 +57,14 @@ export function TimelineSection() {
       >
         <div className="container relative z-10 mt-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-white mb-6 leading-tight">
-              Celebrating <span className="text-gray-200 ">Excellence</span>
+            <h2 className="text-4xl font-extrabold text-gray-300 dark:text-white mb-6 leading-tight">
+              Celebrating <span className="text-customBlue">Excellence</span>
               <br />
-              Our Prestigious <span className="text-amber-400 text-6xl font-cursive font-bold">Awards & Achievements</span>
+              Our Prestigious <span className="text-amber-600 dark:text-amber-400 font-serif font-bold">
+                Awards & Achievements
+              </span>
             </h2>
-            <p className="text-xl text-white max-w-2xl mx-auto bg-black/30 p-4 rounded-xl">
+            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto bg-white/50 dark:bg-gray-800/50 p-4 rounded-xl shadow-sm">
               A journey of innovation, dedication, and recognition. From our founding to becoming an industry leader, 
               these milestones reflect our commitment to excellence and continuous growth.
             </p>
@@ -64,7 +72,10 @@ export function TimelineSection() {
 
           <div className="relative">
             {/* Vertical line with subtle gradient */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-white/30 via-white/50 to-white/30 opacity-50"></div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 
+              bg-gradient-to-b from-gray-200/30 via-gray-300/50 to-gray-200/30 
+              dark:from-gray-700/30 dark:via-gray-600/50 dark:to-gray-700/30 opacity-50">
+            </div>
 
             <div className="space-y-12 relative">
               {milestones.map((milestone, index) => (
@@ -72,14 +83,21 @@ export function TimelineSection() {
                   key={index}
                   className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center 
                     ${index % 2 === 0 ? "md:text-right" : "md:flex-row-reverse"}
-                    bg-white/70 backdrop-blur-sm rounded-xl shadow-xl p-6 border border-white/20`}
+                    bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm 
+                    rounded-xl shadow-lg hover:shadow-xl transition-shadow 
+                    border border-gray-200 dark:border-gray-700 p-6`}
                 >
                   <div className={`${index % 2 === 0 ? "md:text-right" : "md:order-2"}`}>
                     <div className="space-y-3">
-                      <div className="inline-block rounded-full bg-customBlue/20 px-4 py-1 text-sm font-semibold text-white">
+                      <div className="inline-block rounded-full 
+                        bg-customBlue/10 dark:bg-customBlue/20 
+                        px-4 py-1 text-sm font-semibold 
+                        text-customBlue dark:text-white">
                         {milestone.year}
                       </div>
-                      <p className="text-lg text-white font-medium bg-black/40 p-3 rounded-lg">
+                      <p className="text-lg text-gray-900 dark:text-white 
+                        font-medium bg-gray-100/50 dark:bg-gray-900/30 
+                        p-3 rounded-lg">
                         {milestone.description}
                       </p>
                     </div>
@@ -87,8 +105,11 @@ export function TimelineSection() {
 
                   <div className={`hidden md:block ${index % 2 === 0 ? "md:order-2" : ""}`}>
                     <div className="relative flex items-center justify-center">
-                      <div className="absolute left-0 right-0 h-px bg-white/30"></div>
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-customBlue flex items-center justify-center text-white font-bold shadow-md">
+                      <div className="absolute left-0 right-0 h-px 
+                        bg-gray-200 dark:bg-gray-700"></div>
+                      <div className="relative z-10 w-12 h-12 rounded-full 
+                        bg-customBlue text-white flex items-center 
+                        justify-center font-bold shadow-md">
                         {index + 1}
                       </div>
                     </div>

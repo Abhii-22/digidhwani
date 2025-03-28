@@ -21,19 +21,19 @@ const Header = () => {
   const courseCategories = [
     {
       name: "AutoDesk",
-      categories: coursesData.courseProviders.find(p => p.id === "autodesk")?.categories || []
+      categories: coursesData.courseProviders.find(p => p.id === "AUTODESK")?.categories || []
     },
     {
       name: "Bentley Systems",
-      categories: coursesData.courseProviders.find(p => p.id === "bentley")?.categories || []
+      categories: coursesData.courseProviders.find(p => p.id === "BENTLEY")?.categories || []
     },
     {
       name: "Dassault",
-      categories: coursesData.courseProviders.find(p => p.id === "dassault")?.categories || []
+      categories: coursesData.courseProviders.find(p => p.id === "DASSAULT")?.categories || []
     },
     {
       name: "Manufacturing",
-      categories: coursesData.courseProviders.find(p => p.id === "specialisation")?.categories || []
+      categories: coursesData.courseProviders.find(p => p.id === "MANUFACTURING")?.categories || []
     }
   ];
 

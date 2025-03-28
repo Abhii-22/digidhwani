@@ -112,20 +112,7 @@ const TeamechFeedbackSection = () => {
                     transition={{ duration: 0.5 }}
                     className="min-w-full px-4"
                   >
-                    <div className="flex flex-col items-center text-center">
-                      <img
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover border-4 border-purple-100 dark:border-purple-900 mb-4"
-                      />
-                      <div className="flex mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-5 h-5 ${i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300 dark:text-gray-600"}`}
-                          />
-                        ))}
-                      </div>
+                    <div className="max-w-6xl text-center">
                       <p className="text-gray-700 dark:text-gray-300 text-lg mb-6 italic">"{testimonial.text}"</p>
                       <h4 className="font-bold text-lg dark:text-white">{testimonial.name}</h4>
                       <p className="text-gray-500 dark:text-gray-400">{testimonial.position}</p>

@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
@@ -21,7 +19,7 @@ const HeroSection = () => {
   }, [])
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-gray-100 via-white to-blue-50 text-gray-900">
+    <section className="relative overflow-hidden bg-gradient-to-br from-gray-100 via-white to-blue-50 dark:from-gray-900 dark:to-blue-950 dark:text-white text-gray-900">
       <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -62,7 +60,7 @@ const HeroSection = () => {
               </Link>
               <Link
                 to="/techvritti#services"
-                className="inline-flex h-12 items-center justify-center rounded-full border-2 border-gray-300 bg-transparent px-8 py-3 text-base font-medium text-gray-800 transition-all duration-300 hover:bg-gray-100"
+                className="inline-flex h-12 items-center justify-center rounded-full border-2 border-gray-300 dark:text-white  bg-transparent px-8 py-3 text-base font-medium text-gray-800 transition-all duration-300 "
               >
                 Explore Services
               </Link>

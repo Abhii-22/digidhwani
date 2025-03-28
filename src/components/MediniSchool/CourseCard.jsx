@@ -1,76 +1,81 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { BookOpen, Clock, TrendingUp } from "lucide-react";
 const images = import.meta.glob("/src/assets/IMAGES/*.jpg", { eager: true });
+
 
 const CourseCard = ({ course }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  // Use only specified attributes with defaults
+  // Destructure with fallback values
   const {
-    title = "Course Title",
-    instructor = "Instructor Name",
-    duration = "6 weeks",
-    difficulty = "Intermediate",
+    title = "Advanced Design Masterclass",
+    instructor = "Elena Rodriguez",
+    duration = "8 Weeks",
+    difficulty = "Advanced",
     coverImage = "/placeholder.svg?height=200&width=300",
+    id = ""
   } = course || {};
 
   const courseImage = images[`/src/assets/IMAGES/${coverImage}`]?.default || "/placeholder.svg";
 
   return (
-    <div
-      className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 max-w-sm"
+    <div 
+      className="group relative overflow-hidden rounded-2xl bg-white dark:bg-gray-900 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Diagonal Gradient Overlay */}
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-customBlue cursor-pointer transition-all duration-500 group-hover:h-full z-10"></div>
+
       {/* Course Image */}
-      <div className="relative h-48">
+      <div className="relative h-56 overflow-hidden">
         <img
           src={courseImage}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+          className="w-full h-full object-cover transition-all duration-500"
         />
-        {/* Subtle overlay for visual appeal */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent transition-opacity duration-300 ${
-            isHovered ? "opacity-100" : "opacity-70"
-          }`}
-        ></div>
       </div>
 
       {/* Course Content */}
-      <div className="p-5">
-        {/* Title */}
-        <h3
-          className={`text-xl font-semibold line-clamp-1 mb-2 transition-colors duration-300 ${
-            isHovered ? "text-blue-600 dark:text-blue-400" : "text-gray-800 dark:text-white"
-          }`}
-        >
+      <div className="p-6 space-y-4 relative z-20">
+        {/* Title with Dynamic Color */}
+        <h3 className={`text-2xl font-bold tracking-tight transition-colors duration-300 
+          ${isHovered 
+            ? 'text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600' 
+            : 'text-gray-800 dark:text-gray-100'
+          }`}>
           {title}
         </h3>
 
-        {/* Instructor */}
-        <p className="text-sm text-gray-600 dark:text-gray-300 mb-3">
-          by <span className="font-medium">{instructor}</span>
-        </p>
-
-        {/* Duration and Difficulty */}
-        <div className="flex justify-between text-sm text-gray-500 dark:text-gray-400">
-          <span>{duration}</span>
-          <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full text-xs">
-            {difficulty}
-          </span>
+        {/* Course Details */}
+        <div className="space-y-3">
+          <div className="flex items-center text-gray-600 dark:text-gray-300">
+            <BookOpen className="w-5 h-5 mr-3 text-blue-500" />
+            <span className="text-sm">Instructor: {instructor}</span>
+          </div>
+          
+          <div className="flex items-center text-gray-600 dark:text-gray-300">
+            <Clock className="w-5 h-5 mr-3 text-green-500" />
+            <span className="text-sm">{duration}</span>
+          </div>
+          
+          <div className="flex items-center text-gray-600 dark:text-gray-300">
+            <TrendingUp className="w-5 h-5 mr-3 text-purple-500" />
+            <span className="text-sm">Difficulty: {difficulty}</span>
+          </div>
         </div>
 
-        {/* Call to Action */}
-        <Link to={`/medinischoolofdesign/courses/${course.id}`}>
-          <button
-          className={`mt-4 w-full py-2 rounded-md font-medium text-white transition-all duration-300 ${
-            isHovered
-              ? "bg-amber-600 dark:bg-amber-500 scale-105"
-              : "bg-amber-500 dark:bg-amber-600"
-          }`}
-        >
-          Learn More
+        {/* CTA Button */}
+        <Link to={`/medinischoolofdesign/courses/${id}`} className="block mt-6">
+          <button 
+            className={`w-full py-3 rounded-lg font-semibold tracking-wide uppercase text-sm transition-all duration-500 
+              ${isHovered 
+                ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-105' 
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300'
+              }`}
+          >
+            Explore Course
           </button>
         </Link>
       </div>

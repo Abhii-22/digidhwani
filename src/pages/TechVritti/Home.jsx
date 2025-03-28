@@ -1,5 +1,3 @@
-
-// import { FaqSection } from "@/components/MediniSchool/FaqSection";
 import HeroSection from "@/components/TechVritti/HeroSection";
 import Feedback from "@/components/TechVritti/Feedback";
 import ServicesPage from "@/components/TechVritti/Services";

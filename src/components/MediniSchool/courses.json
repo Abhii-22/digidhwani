@@ -176,7 +176,13 @@
               "coverImage": "navisworks.jpg"
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "MANUFACTURING",
+      "logo": "",
+      "categories": [
         {
           "name": "MANUFACTURING",
           "courses": [

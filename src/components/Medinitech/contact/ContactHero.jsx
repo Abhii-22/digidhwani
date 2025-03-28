@@ -10,7 +10,7 @@ export function ContactHero() {
               <span className="text-muted-foreground">Our Story</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-relaxed max-w-4xl mx-auto text-center">
-  Leading the way in <span className="text-customBlue font-cursive font-bold">Technological Innovation</span> Solutions Since 2010
+  Leading the way in <span className="text-customBlue font-serif font-bold">Technological Innovation</span> Solutions Since 2010
 </h1>
 
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

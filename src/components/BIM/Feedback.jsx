@@ -60,7 +60,7 @@ const BimFeedbackSection = () => {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-amber-950">
+    <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-3 py-1 text-sm font-medium text-amber-600 bg-amber-100 rounded-full dark:bg-amber-900/30 dark:text-amber-400 mb-4">
@@ -95,19 +95,6 @@ const BimFeedbackSection = () => {
                     className="min-w-full px-4"
                   >
                     <div className="flex flex-col items-center text-center">
-                      <img
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={testimonial.name}
-                        className="w-20 h-20 rounded-full object-cover border-4 border-amber-100 dark:border-amber-900 mb-4"
-                      />
-                      <div className="flex mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-5 h-5 ${i < testimonial.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300 dark:text-gray-600"}`}
-                          />
-                        ))}
-                      </div>
                       <p className="text-gray-700 dark:text-gray-300 text-lg mb-6 italic">"{testimonial.text}"</p>
                       <h4 className="font-bold text-lg dark:text-white">{testimonial.name}</h4>
                       <p className="text-gray-500 dark:text-gray-400">{testimonial.position}</p>

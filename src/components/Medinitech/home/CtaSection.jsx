@@ -40,7 +40,7 @@ export function CtaSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6 fade-in">
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100">
-                  Ready to Transform Your Business with Cutting-Edge Technology?
+                  Ready to Transform Your Business with us?
                 </h2>
                 <p className="text-slate-600 dark:text-slate-300 text-lg max-w-md">
                   Partner with Medini Technologies to unlock innovation, drive growth, and stay ahead of the competition
@@ -68,12 +68,6 @@ export function CtaSection() {
                       <path d="M5 12h14" />
                       <path d="m12 5 7 7-7 7" />
                     </svg>
-                  </Link>
-                  <Link
-                    to="/services"
-                    className="inline-flex h-12 items-center justify-center rounded-full border-2 border-slate-300 dark:border-slate-600 bg-transparent px-8 py-3 text-base font-medium text-slate-700 dark:text-slate-200 shadow-sm transition-all duration-300 hover:bg-slate-100 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-300 focus:ring-offset-2 focus:ring-offset-slate-50"
-                  >
-                    Explore Solutions
                   </Link>
                 </div>
               </div>

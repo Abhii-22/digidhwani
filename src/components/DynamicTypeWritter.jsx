@@ -15,8 +15,12 @@ const DynamicTypingHeadline = () => {
       subtitle: "From Planning to Handover"
     },
     {
-      title: "EDUPHYGITAL | BUILDDSPACE",
-      subtitle: "BRIDGING ACADEMIA & INDUSTRY"
+      title: "EDUPHYGITAL",
+      subtitle: "For centre of Excellence"
+    },
+    {
+      title: "BUILDDSPACE",
+      subtitle: "For STRT Support"
     },
     {
       title: "TEAMECH",
@@ -67,7 +71,7 @@ const DynamicTypingHeadline = () => {
   const currentSubtitle = headlines[currentIndex].subtitle;
 
   return (
-    <div className="text-center p-4">
+    <div className="">
       <h1 className="text-4xl text-white font-inter md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
         {displayText}
         <span className="animate-blink">|</span>

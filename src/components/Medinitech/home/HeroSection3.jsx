@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import bg_image from "@/assets/IMAGES/getty-images-OB7KJ7WtHOs-unsplash.jpg"
-import image1 from "@/assets/IMAGES/AutoCAD.jpg"
+// import image1 from "@/assets/IMAGES/AutoCAD.jpg"
 import { Link } from "react-router-dom"
 
 function HeroSection() {
@@ -9,6 +9,7 @@ function HeroSection() {
     const [headerHeight, setHeaderHeight] = useState(0)
     const sliderRef = useRef(null)
     const heroRef = useRef(null)
+    const image1 = "/images/AutoCAD.jpg"
 
     const cards = [
       {

@@ -10,7 +10,7 @@ function ServicessSection() {
 
   const tabs = [
     { id: "autodesk", label: "AutoDesk" },
-    { id: "bently", label: "Bently" },
+    { id: "bentley", label: "Bentley" },
     { id: "dassault", label: "Dassault" },
     { id: "manufacturing", label: "Manufacturing" },
   ]
@@ -29,8 +29,8 @@ function ServicessSection() {
         "Civil 3D, 3DS Max , Vehicle Tracking"
       ],
     },
-    bently: {
-      title: "Bently Systems",
+    bentley: {
+      title: "Bentley Systems",
       description:
       "Our Bentley Systems courses equip professionals with the expertise to design, analyze, and manage infrastructure projects using industry-leading software like MicroStation, OpenRoads, and STAAD.Pro. Gain hands-on experience in civil engineering, structural analysis, and BIM workflows to drive efficiency in large-scale projects.",
       image: `${image2}?height=500&width=700`,
@@ -76,9 +76,9 @@ function ServicessSection() {
     <section className="py-20 bg-gray-100 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight mb-4">Master Industry-Leading Software with Expert-Led Courses</h2>
+          <h2 className="text-3xl font-bold tracking-tight mb-4">Official Training Partner for Industry-Leading Software</h2>
           <p className="text-muted-foreground">
-          Gain hands-on expertise in Autodesk and Bentley Systems tools, empowering you to excel in design, engineering, and infrastructure projects with cutting-edge skills
+              Gain expertise with Autodesk and Bentley Systems through our popular courses, designed to elevate your skills in design, engineering and infrastructure.
           </p>
         </div>
 

@@ -1,19 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import image1 from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png"
-import image2 from "@/assets/Logos/Bentley-Training-Partner-Logo.png"
-import image3 from "@/assets/Logos/Sketchup_Colour.png"
+import autodesk from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png"
+import bentley from "@/assets/Logos/Bentley-Training-Partner-Logo.png"
+import sketchUp from "@/assets/Logos/Sketchup_Colour.png"
+import chaos from "@/assets/Logos/Chaos_idHNVPKG7k_0.svg"
+import ptc from "@/assets/Logos/ptc_master_logo_CMYK_color.png"
 
 export function PartnersSection() {
     const partners = [
-        { image: image1, name: "Autodesk" },
-        { image: image2, name: "Bentley" },
-        { image: image3, name: "SketchUp" },
-        // Duplicate logos to create seamless infinite slide
-        { image: image1, name: "Autodesk" },
-        { image: image2, name: "Bentley" },
-        { image: image3, name: "SketchUp" }
+        { image: autodesk, name: "Autodesk" },
+        { image: bentley, name: "Bentley" },
+        { image: sketchUp, name: "SketchUp" },
+        { image: chaos, name: "Chaos" },
+        { image: ptc, name: "PTC" },
     ];
 
     return (

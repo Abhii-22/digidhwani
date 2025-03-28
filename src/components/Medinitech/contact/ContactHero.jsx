@@ -9,9 +9,10 @@ export function ContactHero() {
               <div className="mx-2 h-1 w-1 rounded-full bg-primary"></div>
               <span className="text-muted-foreground">Our Story</span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Pioneering <span className="text-customBlue font-serif">Technology</span> Solutions Since 2010
-            </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-relaxed max-w-4xl mx-auto text-center">
+  Leading the way in <span className="text-customBlue font-cursive font-bold">Technological Innovation</span> Solutions Since 2010
+</h1>
+
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Medini Technologies was founded with a vision to transform how businesses leverage technology. Our journey
               has been defined by innovation, excellence, and a relentless commitment to our clients' success.

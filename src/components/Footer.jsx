@@ -9,7 +9,7 @@ function Footer() {
           {/* Brand Section */}
           <div className="space-y-6">
             <Link to="/" className="inline-block">
-              <span className="text-3xl font-bold bg-clip-text text-transparent bg-customBlue  ">
+              <span className="text-3xl font-bold bg-clip-text text-transparent bg-black dark:bg-white  ">
                 Medini Technologies
               </span>
             </Link>
@@ -38,11 +38,11 @@ function Footer() {
             <nav className="grid grid-cols-2 gap-4">
               {[
                 { label: 'About Us', path: '/about' },
-                { label: 'Careers', path: '/careers' },
+                { label: 'Services', path: '/services' },
                 { label: 'Blog', path: '/blog' },
                 { label: 'Contact', path: '/contact' },
-                { label: 'Privacy', path: '/privacy' },
-                { label: 'Terms', path: '/terms' }
+                // { label: 'Privacy', path: '/privacy' },
+                // { label: 'Terms', path: '/terms' }
               ].map(({ label, path }) => (
                 <Link 
                   key={label} 

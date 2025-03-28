@@ -67,6 +67,7 @@ module.exports = {
 				roboto: ["Roboto","sans-serif"],
 				playfair: ["Playfair Display", "serif"],
 				firacode: ["Fira Code", "monospace"],
+				cursive: ["Dancing Script", "cursive"],
 				'open-sans': ['"Open Sans"', 'sans-serif']
 			},
     		borderRadius: {

@@ -20,7 +20,7 @@ export function MapSection() {
       {/* Address Section */}
       <div className="py-6 bg-background">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-lg font-semibold text-white bg-blue-600 px-6 py-3 rounded-lg inline-block shadow-md">
+          <p className="text-lg font-semibold text-white bg-customBlue px-6 py-3 rounded-lg inline-block shadow-md">
             No. 2943/E, 3rd Floor, 40, Service Rd, 
             opposite Shri Maruthi Mandira, Hosahalli Extension, 
             Vijayanagar, Bengaluru, Karnataka 560040

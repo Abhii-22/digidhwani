@@ -29,16 +29,16 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
       bg_image: `${image2}?height=600&width=800`,
     },
     {
-      title: "TEAMECH",
-      description: "From design to manufacturing, any need of the market to the market",
-      link: "/teamech",
-      bg_image: `${image3}?height=600&width=800`,
-    },
-    {
       title: "TECHVRITTI",
       description: "Looking into the need and supporting for the right product/software.",
       link: "/techvritti",
       bg_image: `${image4}?height=600&width=800`,
+    },
+    {
+      title: "TEAMECH",
+      description: "From design to manufacturing, any need of the market to the market",
+      link: "/teamech",
+      bg_image: `${image3}?height=600&width=800`,
     },
   ]
 
@@ -136,11 +136,10 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700 dark:from-blue-400 dark:to-purple-400">
-            Enterprise-Grade Services
+            Our Service
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Transformative solutions designed to accelerate innovation, enhance operational efficiency, and drive
-            strategic growth.
+            We deliver Transformative solutions to foster innovation, optimize efficiency , and fuel strategic growth.
           </p>
         </div>
 

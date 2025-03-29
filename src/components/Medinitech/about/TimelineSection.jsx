@@ -42,23 +42,11 @@ export function TimelineSection() {
     return (
       <section 
         className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-900"
-        style={{
-          backgroundImage: `
-            linear-gradient(
-              rgba(0,0,0,0.8), 
-              rgba(0,0,0,0.8)
-            ), 
-            url(${BackgroundImage})
-          `,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
       >
         <div className="container relative z-10 mt-4">
           <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-300 dark:text-white mb-6 leading-tight">
-              Celebrating <span className="text-customBlue">Excellence</span>
+            <h2 className="text-4xl font-extrabold text-black dark:text-white mb-6 leading-tight">
+              Celebrating <span className="">Excellence</span>
               <br />
               Our Prestigious <span className="text-amber-600 dark:text-amber-400 font-serif font-bold">
                 Awards & Achievements

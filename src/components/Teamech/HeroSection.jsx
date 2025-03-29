@@ -79,7 +79,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 bg-white backdrop-blur-xl border border-gray-200 rounded-2xl p-6 shadow-xl">
+            <div className="relative z-10 bg-white dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-500 rounded-2xl p-6 shadow-xl">
               <div className="grid grid-cols-2 gap-4">
                 {[
                   {
@@ -104,7 +104,7 @@ const HeroSection = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
-                    className="flex flex-col items-center text-center p-4 rounded-xl bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all duration-300"
+                    className="flex flex-col items-center text-center p-4 rounded-xl bg-gray-300 dark:bg-gray-700 border border-gray-200 dark:border-black hover:bg-gray-100 transition-all duration-300"
                   >
                     <div className={`p-3 rounded-full bg-gradient-to-r ${service.color} mb-3`}>{service.icon}</div>
                     <h3 className="font-medium text-gray-800">{service.title}</h3>

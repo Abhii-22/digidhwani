@@ -5,7 +5,7 @@ import autodesk from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.pn
 import bentley from "@/assets/Logos/Bentley-Training-Partner-Logo.png"
 import sketchUp from "@/assets/Logos/Sketchup_Colour.png"
 import chaos from "@/assets/Logos/Chaos_idHNVPKG7k_0.svg"
-import ptc from "@/assets/Logos/ptc_master_logo_CMYK_color.png"
+import ptc from "@/assets/Logos/ptc_master_logo_CMYK_KO-gr.png"
 
 export function PartnersSection() {
     const partners = [
@@ -14,10 +14,15 @@ export function PartnersSection() {
         { image: sketchUp, name: "SketchUp" },
         { image: chaos, name: "Chaos" },
         { image: ptc, name: "PTC" },
+        { image: autodesk, name: "Autodesk" },
+        { image: bentley, name: "Bentley" },
+        { image: sketchUp, name: "SketchUp" },
+        { image: chaos, name: "Chaos" },
+        { image: ptc, name: "PTC" },
     ];
 
     return (
-        <section className="py-20 bg-white dark:bg-slate-900 overflow-hidden">
+        <section className="py-20 bg-white dark:bg-slate-600 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">

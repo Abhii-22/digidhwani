@@ -26,7 +26,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-100 via-white to-blue-50 text-gray-900">
-      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${bg_image})`,backgroundSize: 'cover',backgroundPosition: 'center'}}>
+      <div className="container mx-auto py-24 md:py-32 relative z-10" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(${bg_image})`,backgroundSize: 'cover',backgroundPosition: 'center'}}>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

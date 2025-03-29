@@ -9,14 +9,12 @@ function Feedback() {
             author: "Michael Thompson",
             title: "Operations Director",
             company: "NextGen Enterprises",
-            image: "/api/placeholder/150/150"
         },
         {
             quote: "A game-changing partnership that brought unparalleled technological insights to our team.",
             author: "Sarah Chen",
             title: "Chief Technology Officer",
             company: "Quantum Innovations",
-            image: "/api/placeholder/150/150"
         }
     ];
 
@@ -46,11 +44,11 @@ function Feedback() {
                                 "{testimonial.quote}"
                             </p>
                             <div className="flex items-center space-x-4">
-                                <img 
+                                {/* <img 
                                     src={testimonial.image} 
                                     alt={testimonial.author} 
                                     className="w-16 h-16 rounded-full object-cover"
-                                />
+                                /> */}
                                 <div>
                                     <h3 className="font-semibold text-gray-900">
                                         {testimonial.author}

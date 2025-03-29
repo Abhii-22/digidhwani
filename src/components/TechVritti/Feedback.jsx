@@ -12,28 +12,24 @@ const FeedbackSection = () => {
     {
       name: "Sarah Johnson",
       position: "CTO, TechInnovate",
-      image: "/placeholder.svg?height=80&width=80",
       rating: 5,
       text: "TechVritti transformed our outdated systems into a streamlined digital solution. Their team's expertise in web development and ERP integration has significantly improved our operational efficiency. The custom dashboard they built gives us real-time insights that have been game-changing for our business decisions.",
     },
     {
       name: "Michael Chen",
       position: "Founder, GrowthApp",
-      image: "/placeholder.svg?height=80&width=80",
       rating: 5,
       text: "Working with TechVritti on our mobile app was an exceptional experience. Their development team understood our vision perfectly and delivered a product that exceeded our expectations. The app's performance and user experience have received outstanding feedback from our customers.",
     },
     {
       name: "Emily Rodriguez",
       position: "Director of Operations, CloudSolutions",
-      image: "/placeholder.svg?height=80&width=80",
       rating: 5,
       text: "The CRM system developed by TechVritti has revolutionized how we manage customer relationships. The intuitive interface and powerful automation features have increased our team's productivity by 40%. Their ongoing support and maintenance have been equally impressive.",
     },
     {
       name: "David Wilson",
       position: "E-Commerce Manager, RetailPlus",
-      image: "/placeholder.svg?height=80&width=80",
       rating: 4,
       text: "TechVritti delivered an e-commerce platform that perfectly balances functionality and user experience. Their attention to detail during the development process ensured that all our specific requirements were met. The platform has significantly increased our conversion rates and customer satisfaction.",
     },

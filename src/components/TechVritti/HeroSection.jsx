@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { ArrowRight, Code, Database, Layout, Smartphone } from "lucide-react"
+import bg_image from "@/assets/IMAGES/ilya-sonin-IsX2ZkbSk1Y-unsplash.jpg"
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -20,7 +21,7 @@ const HeroSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-100 via-white to-blue-50 dark:from-gray-900 dark:to-blue-950 dark:text-white text-gray-900">
-      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
+      <div className="container mx-auto px-4 py-24 md:py-32 relative z-10" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(${bg_image})`,backgroundSize: 'cover',backgroundPosition: 'center'}}>
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +36,7 @@ const HeroSection = () => {
               {headlines.map((headline, index) => (
                 <span
                   key={index}
-                  className={`block transition-opacity duration-1000 ${
+                  className={`block transition-opacity duration-1000 text-white  ${
                     currentIndex === index ? "opacity-100" : "opacity-0 absolute"
                   }`}
                 >
@@ -43,7 +44,7 @@ const HeroSection = () => {
                 </span>
               ))}
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-xl">
+            <p className="text-lg md:text-xl text-white max-w-xl">
               We build powerful, scalable, and user-friendly software solutions that drive business growth and enhance
               user experience.
             </p>
@@ -73,7 +74,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 bg-white backdrop-blur-xl border border-gray-200 rounded-2xl p-6 shadow-xl">
+            <div className="relative z-10 bg-white dark:bg-gray-800 backdrop-blur-xl border border-gray-200 rounded-2xl p-6 shadow-xl">
               <div className="grid grid-cols-2 gap-4">
                 {[
                   {
@@ -102,10 +103,10 @@ const HeroSection = () => {
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
-                    className="flex flex-col items-center text-center p-4 rounded-xl bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all duration-300"
+                    className="flex flex-col items-center text-center dark:bg-gray-700 p-4 rounded-xl bg-gray-50 border border-gray-200 hover:bg-gray-100 transition-all duration-300"
                   >
                     <div className={`p-3 rounded-full bg-gradient-to-r ${service.color} mb-3`}>{service.icon}</div>
-                    <h3 className="font-medium text-gray-800">{service.title}</h3>
+                    <h3 className="font-medium text-gray-800 dark:text-white">{service.title}</h3>
                   </motion.div>
                 ))}
               </div>

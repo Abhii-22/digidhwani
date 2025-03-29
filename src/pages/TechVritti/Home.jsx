@@ -7,7 +7,6 @@ export default function TechvrittiHome() {
   return (
     <div className="flex flex-col w-full md:my-19">
       <HeroSection />
-      {/* <CoursesHero /> */}
       <ServicesPage />
       <Feedback />
       <ContactSection />

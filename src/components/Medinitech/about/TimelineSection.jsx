@@ -1,5 +1,4 @@
 import React from 'react';
-import BackgroundImage from '@/assets/IMAGES/medini_award.jpeg';
 
 export function TimelineSection() {
     const milestones = [

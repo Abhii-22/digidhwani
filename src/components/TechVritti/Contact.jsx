@@ -70,7 +70,7 @@ const ContactSection = () => {
                   {
                     icon: <Phone className="w-5 h-5" />,
                     title: "Call Us",
-                    content: "+1 (555) 123-4567",
+                    content: "+91 123-456-7890",
                     link: "tel:+15551234567",
                   },
                   {

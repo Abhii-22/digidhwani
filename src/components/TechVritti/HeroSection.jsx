@@ -2,8 +2,10 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Layout, Smartphone, Database, Code } from "lucide-react"
+import backgroundImage from "@/assets/IMAGES/ilya-sonin-IsX2ZkbSk1Y-unsplash.jpg"
 
-const HeroSection = ({ isDarkMode = false, backgroundImage, servicesData }) => {
+
+const HeroSection = ({ isDarkMode = false, servicesData }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const headlines = [
     "Transforming Ideas into Digital Reality",

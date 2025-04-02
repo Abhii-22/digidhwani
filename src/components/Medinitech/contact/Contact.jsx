@@ -77,7 +77,7 @@ export function Contact() {
             </div>
             <div className="flex items-center space-x-4">
               <Mail className="h-6 w-6 text-primary" />
-              <span>connect@medinitechnologies.in</span>
+              <span>connect@medini.in</span>
             </div>
           </div>
           <div className="mt-8 bg-muted/20 p-4 rounded-lg">

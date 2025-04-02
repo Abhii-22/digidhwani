@@ -65,18 +65,18 @@ const ContactSection = () => {
                     icon: <Mail className="w-5 h-5" />,
                     title: "Email Us",
                     content: "info@techvritti.com",
-                    link: "mailto:info@techvritti.com",
+                    link: "mailto:connect@medini.com",
                   },
                   {
                     icon: <Phone className="w-5 h-5" />,
                     title: "Call Us",
                     content: "+91 123-456-7890",
-                    link: "tel:+15551234567",
+                    link: "tel:+911234567890",
                   },
                   {
                     icon: <MapPin className="w-5 h-5" />,
                     title: "Visit Us",
-                    content: "123 Tech Park, Innovation Street, Silicon Valley, CA 94025",
+                    content: "No. 2943/E,3rd Floor, 40, Service Rd, opposite Shri Maruthi Mandira, Hosahalli Extension, Vijayanagar, Bengaluru, Karnataka 560040",
                     link: "https://maps.google.com",
                   },
                 ].map((item, index) => (

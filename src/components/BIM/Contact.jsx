@@ -72,8 +72,8 @@ const BimContactSection = () => {
                   {
                     icon: <Mail className="w-5 h-5" />,
                     title: "Email Us",
-                    content: "connect@medinitechnologies.in",
-                    link: "mailto:connect@medinitechnologies.in",
+                    content: "connect@medini.in",
+                    link: "mailto:connect@medini.in",
                   },
                   {
                     icon: <Phone className="w-5 h-5" />,

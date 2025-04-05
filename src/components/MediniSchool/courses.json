@@ -5,18 +5,19 @@
       "logo": "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png",
       "categories": [
         {
-          "name": "AEC",
+          "name": "Design & Drafting",
           "courses": [
             {
               "id": "autocad",
               "title": "AutoCAD Fundamentals",
               "name": "AutoCAD",
-              "icon": "🏗️",
-              "description": "Comprehensive AutoCAD training covering 2D and 3D computer-aided design techniques.",
+              "icon": "📐",
+              "description": "Foundational CAD software for 2D/3D drafting, used in architecture, engineering, and construction for technical drawings and schematics.",
               "duration": "8 weeks",
               "difficulty": "Beginner",
               "price": 799,
               "instructor": "Michael Chen",
+              "targetAudience": "Mechanical, Architectural, Civil, Electrical (M/A/C/E)",
               "curriculum": [
                 "2D Drawing Basics",
                 "3D Modeling",
@@ -36,15 +37,50 @@
               "coverImage": "AutoCAD.jpg"
             },
             {
+              "id": "autocad-electrical",
+              "title": "AutoCAD Electrical Design",
+              "name": "AutoCAD Electrical",
+              "icon": "⚡",
+              "description": "Tailored for electrical engineers to design control systems, circuit diagrams, and panel layouts with automated error checking.",
+              "duration": "7 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "Jessica Williams",
+              "targetAudience": "Electrical (ELECT)",
+              "curriculum": [
+                "Electrical Schematic Design",
+                "Panel Layout Creation",
+                "Circuit Design",
+                "Automated Error Checking",
+                "Component Libraries"
+              ],
+              "learningOutcomes": [
+                "Design comprehensive electrical systems",
+                "Create professional electrical schematics",
+                "Implement automated design validation"
+              ],
+              "prerequisites": [
+                "Basic AutoCAD knowledge",
+                "Understanding of electrical systems"
+              ],
+              "coverImage": "autocad-electrical.jpg"
+            }
+          ]
+        },
+        {
+          "name": "BIM Architecture",
+          "courses": [
+            {
               "id": "revit-architecture",
               "title": "Revit Architecture Advanced",
               "name": "Revit Architecture",
               "icon": "🏢",
-              "description": "Advanced BIM architectural design course using Autodesk Revit.",
+              "description": "BIM software for architectural design, offering 3D modeling, parametric components, and collaborative project management for modern construction.",
               "duration": "10 weeks",
               "difficulty": "Intermediate",
               "price": 1299,
               "instructor": "Emily Rodriguez",
+              "targetAudience": "Civil (CIV)",
               "curriculum": [
                 "BIM Fundamentals",
                 "Architectural Modeling",
@@ -62,17 +98,23 @@
                 "Understanding of architectural principles"
               ],
               "coverImage": "revit-architecture.jpg"
-            },
+            }
+          ]
+        },
+        {
+          "name": "BIM Engineering",
+          "courses": [
             {
               "id": "revit-mep",
               "title": "Revit MEP Essentials",
               "name": "Revit MEP",
-              "icon": "🏗️",
-              "description": "Mechanical, Electrical, and Plumbing (MEP) design with Revit.",
+              "icon": "🔧",
+              "description": "Focuses on Mechanical, Electrical, and Plumbing (MEP) systems design with clash detection and system optimization in BIM environments.",
               "duration": "8 weeks",
               "difficulty": "Intermediate",
               "price": 1199,
               "instructor": "Sarah Johnson",
+              "targetAudience": "Mechanical/Electrical (MECH/ELEC)",
               "curriculum": [
                 "MEP System Basics",
                 "Duct and Pipe Routing",
@@ -90,73 +132,188 @@
                 "Understanding of mechanical or electrical principles"
               ],
               "coverImage": "revit-mep.jpg"
-            },
+            }
+          ]
+        },
+        {
+          "name": "Structural BIM",
+          "courses": [
             {
-              "id": "navisworks",
-              "title": "Navisworks Coordination",
-              "name": "Navisworks",
+              "id": "revit-structure",
+              "title": "Revit Structure Fundamentals",
+              "name": "Revit Structure",
               "icon": "🏗️",
-              "description": "Project coordination and clash detection using Navisworks.",
-              "duration": "6 weeks",
-              "difficulty": "Intermediate",
-              "price": 999,
-              "instructor": "James Lee",
-              "curriculum": [
-                "Model Aggregation",
-                "Clash Detection",
-                "4D Simulation",
-                "Rendering and Walkthroughs",
-                "Project Collaboration"
-              ],
-              "learningOutcomes": [
-                "Coordinate BIM models effectively",
-                "Identify and resolve clashes",
-                "Improve construction planning"
-              ],
-              "prerequisites": [
-                "Basic BIM knowledge",
-                "Experience with CAD or Revit preferred"
-              ],
-              "coverImage": "navisworks.jpg"
-            },
-            {
-              "id": "revit-mep",
-              "title": "Revit MEP Essentials",
-              "name": "Revit MEP",
-              "icon": "🏗️",
-              "description": "Mechanical, Electrical, and Plumbing (MEP) design with Revit.",
-              "duration": "8 weeks",
+              "description": "Teaches structural modeling, load analysis, and reinforcement detailing for beams, columns, and foundations using BIM workflows.",
+              "duration": "9 weeks",
               "difficulty": "Intermediate",
               "price": 1199,
-              "instructor": "Sarah Johnson",
+              "instructor": "David Thompson",
+              "targetAudience": "Civil (CIV)",
               "curriculum": [
-                "MEP System Basics",
-                "Duct and Pipe Routing",
-                "Electrical Circuiting",
-                "Family Creation",
-                "Clash Detection"
+                "Structural Element Modeling",
+                "Reinforcement Detailing",
+                "Load Analysis",
+                "Connection Design",
+                "Documentation Production"
               ],
               "learningOutcomes": [
-                "Develop MEP systems using Revit",
-                "Analyze building services efficiency",
-                "Integrate BIM workflows"
+                "Create accurate structural models",
+                "Detail reinforcement elements",
+                "Analyze structural performance"
               ],
               "prerequisites": [
-                "Basic AutoCAD knowledge",
-                "Understanding of mechanical or electrical principles"
+                "Basic Revit knowledge",
+                "Understanding of structural engineering principles"
               ],
-              "coverImage": "revit-mep.jpg"
+              "coverImage": "revit-structure.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Civil Infrastructure",
+          "courses": [
+            {
+              "id": "civil-3d",
+              "title": "Civil 3D Essentials",
+              "name": "Civil 3D",
+              "icon": "🛣️",
+              "description": "Specialized in civil engineering projects like road design, land development, and utility systems using BIM for infrastructure.",
+              "duration": "10 weeks",
+              "difficulty": "Advanced",
+              "price": 1399,
+              "instructor": "Carlos Rivera",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "Surface Modeling",
+                "Corridor Design",
+                "Grading and Earthworks",
+                "Pipe Networks",
+                "Plan Production"
+              ],
+              "learningOutcomes": [
+                "Design comprehensive civil projects",
+                "Create dynamic infrastructure models",
+                "Produce professional civil documentation"
+              ],
+              "prerequisites": [
+                "AutoCAD experience",
+                "Civil engineering background"
+              ],
+              "coverImage": "civil-3d.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Project Management",
+          "courses": [
+            {
+              "id": "project-planning",
+              "title": "Construction Project Planning",
+              "name": "Project Planning",
+              "icon": "📋",
+              "description": "Covers scheduling, resource allocation, and critical path analysis with tools like Primavera or MS Project for construction management.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "Patricia Moore",
+              "targetAudience": "Civil/Architectural (CIV/ARCH)",
+              "curriculum": [
+                "Schedule Development",
+                "Resource Management",
+                "Critical Path Analysis",
+                "Progress Tracking",
+                "Risk Management"
+              ],
+              "learningOutcomes": [
+                "Develop comprehensive project schedules",
+                "Optimize resource allocation",
+                "Apply critical path methodologies"
+              ],
+              "prerequisites": [
+                "Basic project management concepts",
+                "Construction industry knowledge"
+              ],
+              "coverImage": "project-planning.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Visualization",
+          "courses": [
+            {
+              "id": "3ds-max",
+              "title": "3DS Max for Architectural Visualization",
+              "name": "3DS Max",
+              "icon": "🎨",
+              "description": "Advanced 3D modeling and rendering tool for photorealistic architectural visualizations, animations, and immersive walkthroughs.",
+              "duration": "12 weeks",
+              "difficulty": "Advanced",
+              "price": 1499,
+              "instructor": "Nathan Park",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "3D Modeling Techniques",
+                "Material Creation",
+                "Lighting Setup",
+                "Camera Animation",
+                "Rendering and Post-Production"
+              ],
+              "learningOutcomes": [
+                "Create photorealistic 3D visualizations",
+                "Develop architectural animations",
+                "Master advanced rendering techniques"
+              ],
+              "prerequisites": [
+                "Basic 3D modeling knowledge",
+                "Understanding of architectural design"
+              ],
+              "coverImage": "3ds-max.jpg"
             },
+            {
+              "id": "lumion",
+              "title": "Real-Time Architectural Rendering with Lumion",
+              "name": "Lumion",
+              "icon": "🖼️",
+              "description": "Transforms 3D models into high-quality visuals and VR walkthroughs for client presentations and marketing.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "Sophia Chen",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "Model Import and Setup",
+                "Material Application",
+                "Environmental Effects",
+                "Animation Creation",
+                "Rendering Techniques"
+              ],
+              "learningOutcomes": [
+                "Create stunning architectural visualizations",
+                "Develop immersive walkthroughs",
+                "Master real-time rendering workflows"
+              ],
+              "prerequisites": [
+                "3D modeling experience",
+                "Architectural design knowledge"
+              ],
+              "coverImage": "lumion.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Project Coordination",
+          "courses": [
             {
               "id": "navisworks",
               "title": "Navisworks Coordination",
               "name": "Navisworks",
-              "icon": "🏗️",
+              "icon": "🔍",
               "description": "Project coordination and clash detection using Navisworks.",
               "duration": "6 weeks",
               "difficulty": "Intermediate",
               "price": 999,
               "instructor": "James Lee",
+              "targetAudience": "Civil (CIV)",
               "curriculum": [
                 "Model Aggregation",
                 "Clash Detection",
@@ -176,43 +333,101 @@
               "coverImage": "navisworks.jpg"
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "MANUFACTURING",
-      "logo": "",
-      "categories": [
+        },
         {
-          "name": "MANUFACTURING",
+          "name": "AI Design",
           "courses": [
             {
-              "id": "autocad-mechanical",
-              "title": "AutoCAD Mechanical Design",
-              "name": "AutoCAD Mechanical",
-              "icon": "⚙️",
-              "description": "Specialized course focusing on mechanical design using AutoCAD.",
-              "duration": "7 weeks",
-              "difficulty": "Intermediate",
-              "price": 1099,
-              "instructor": "Maria Santos",
+              "id": "generative-design",
+              "title": "AI-Driven Generative Design",
+              "name": "Generative Design",
+              "icon": "🧠",
+              "description": "Uses AI algorithms to optimize designs based on constraints like materials and loads for sustainable architecture.",
+              "duration": "8 weeks",
+              "difficulty": "Advanced",
+              "price": 1499,
+              "instructor": "Robert Zhang",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
               "curriculum": [
-                "Mechanical Design Principles",
-                "Precision Drafting",
-                "Machine Component Design",
-                "Manufacturing Drawings",
-                "GD&T Fundamentals"
+                "Design Goal Definition",
+                "Constraint Modeling",
+                "Generative Algorithm Setup",
+                "Solution Evaluation",
+                "Design Refinement"
               ],
               "learningOutcomes": [
-                "Create detailed mechanical designs",
-                "Understand manufacturing drawing standards",
-                "Apply geometric dimensioning techniques"
+                "Apply AI to architectural design",
+                "Create optimized structural solutions",
+                "Implement sustainable design practices"
               ],
               "prerequisites": [
-                "Basic AutoCAD knowledge",
-                "Understanding of mechanical principles"
+                "Advanced CAD experience",
+                "Parametric design knowledge"
               ],
-              "coverImage": "autocad-mechanical.jpg"
+              "coverImage": "generative-design.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Combo Courses",
+          "courses": [
+            {
+              "id": "combo-arch",
+              "title": "Architectural Design Complete Suite",
+              "name": "AutoCAD + Revit + 3DS Max",
+              "icon": "🏆",
+              "description": "End-to-end training covering drafting, BIM modeling, and photorealistic rendering for comprehensive project workflows.",
+              "duration": "16 weeks",
+              "difficulty": "Beginner to Advanced",
+              "price": 2499,
+              "instructor": "Team Teaching",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "CAD Fundamentals",
+                "BIM Modeling Techniques",
+                "Advanced Visualization",
+                "Integrated Workflows",
+                "Project Case Studies"
+              ],
+              "learningOutcomes": [
+                "Master complete architectural design workflow",
+                "Create professional deliverables from concept to rendering",
+                "Develop multi-platform skills"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Interest in architecture and design"
+              ],
+              "coverImage": "combo-arch.jpg"
+            },
+            {
+              "id": "combo-civil",
+              "title": "Civil Engineering Professional Package",
+              "name": "AutoCAD + Revit + STAAD/ETABS",
+              "icon": "🏗️",
+              "description": "Combines civil drafting, structural BIM, and engineering analysis for infrastructure and building projects.",
+              "duration": "20 weeks",
+              "difficulty": "Intermediate to Advanced",
+              "price": 2999,
+              "instructor": "Team Teaching",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "Technical Drawing Standards",
+                "Structural Modeling",
+                "Load Analysis",
+                "Performance Simulation",
+                "Documentation & Reporting"
+              ],
+              "learningOutcomes": [
+                "Design and analyze complete civil projects",
+                "Create professional engineering documentation",
+                "Master industry-standard software suite"
+              ],
+              "prerequisites": [
+                "Engineering background",
+                "Basic CAD knowledge"
+              ],
+              "coverImage": "combo-civil.jpg"
             }
           ]
         }
@@ -235,6 +450,7 @@
               "difficulty": "Beginner",
               "price": 699,
               "instructor": "Jennifer Lopez",
+              "targetAudience": "Civil/Architectural (CIV/ARCH)",
               "curriculum": [
                 "2D Drafting Basics",
                 "3D Modeling Techniques",
@@ -252,6 +468,69 @@
                 "No prior CAD experience required"
               ],
               "coverImage": "microstation.jpg"
+            },
+            {
+              "id": "openroads",
+              "title": "OpenRoads Infrastructure Design",
+              "name": "OpenRoads",
+              "icon": "🛣️",
+              "description": "Specialized in civil infrastructure design for roads, highways and transportation networks.",
+              "duration": "10 weeks",
+              "difficulty": "Advanced",
+              "price": 1299,
+              "instructor": "Marcus Johnson",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "Terrain Modeling",
+                "Alignment Design",
+                "Corridor Modeling",
+                "Cross Section Design",
+                "Drainage Analysis"
+              ],
+              "learningOutcomes": [
+                "Design comprehensive transportation projects",
+                "Model complex terrain and infrastructure",
+                "Produce professional civil plans"
+              ],
+              "prerequisites": [
+                "MicroStation experience",
+                "Civil engineering knowledge"
+              ],
+              "coverImage": "openroads.jpg"
+            }
+          ]
+        },
+        {
+          "name": "Structural Analysis",
+          "courses": [
+            {
+              "id": "staad-pro",
+              "title": "STAAD Pro Advanced Analysis",
+              "name": "STAAD Pro",
+              "icon": "🏗️",
+              "description": "Industry-standard software for structural engineering, covering finite element analysis, dynamic loads, and code-compliant designs.",
+              "duration": "12 weeks",
+              "difficulty": "Advanced",
+              "price": 1599,
+              "instructor": "Dr. Richard Brown",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "Structural Modeling",
+                "Load Case Creation",
+                "Dynamic Analysis",
+                "Code Checking",
+                "Result Interpretation"
+              ],
+              "learningOutcomes": [
+                "Perform comprehensive structural analysis",
+                "Create code-compliant designs",
+                "Develop advanced modeling techniques"
+              ],
+              "prerequisites": [
+                "Structural engineering background",
+                "Understanding of finite element analysis"
+              ],
+              "coverImage": "staad-pro.jpg"
             }
           ]
         }
@@ -259,7 +538,7 @@
     },
     {
       "id": "DASSAULT",
-      "name": "DASSAULT",
+      "logo": "@/assets/Logos/Dassault-Systemes-Logo.png",
       "categories": [
         {
           "name": "3D Design",
@@ -274,6 +553,7 @@
               "difficulty": "Intermediate",
               "price": 1399,
               "instructor": "Alex Wong",
+              "targetAudience": "Mechanical (MECH)",
               "curriculum": [
                 "Part Modeling",
                 "Assembly Design",
@@ -291,6 +571,224 @@
                 "Familiarity with 3D concepts"
               ],
               "coverImage": "solidworks.jpg"
+            },
+            {
+              "id": "catia",
+              "title": "CATIA Advanced Surface Modeling",
+              "name": "CATIA",
+              "icon": "✈️",
+              "description": "High-end CAD/CAM/CAE software for industrial design, surface modeling, and simulations in aerospace and automotive sectors.",
+              "duration": "14 weeks",
+              "difficulty": "Advanced",
+              "price": 1899,
+              "instructor": "Jean-Paul Moreau",
+              "targetAudience": "Mechanical/Electrical (MECH/ELEC)",
+              "curriculum": [
+                "Surface Modeling Fundamentals",
+                "Complex Shape Design",
+                "Assembly Integration",
+                "DMU Kinematics",
+                "Manufacturing Preparation"
+              ],
+              "learningOutcomes": [
+                "Create advanced surface models",
+                "Design complex mechanical systems",
+                "Prepare models for manufacturing"
+              ],
+              "prerequisites": [
+                "Mechanical design experience",
+                "3D modeling background"
+              ],
+              "coverImage": "catia.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TRIMBLE",
+      "logo": "@/assets/Logos/Trimble-Logo.png",
+      "categories": [
+        {
+          "name": "Conceptual Design",
+          "courses": [
+            {
+              "id": "sketchup",
+              "title": "SketchUp for Architectural Design",
+              "name": "SketchUp",
+              "icon": "🏠",
+              "description": "User-friendly 3D modeling software for quick prototyping, terrain modeling, and rendering integrations like V-Ray.",
+              "duration": "6 weeks",
+              "difficulty": "Beginner",
+              "price": 699,
+              "instructor": "Michelle Patel",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "3D Modeling Basics",
+                "Component Creation",
+                "Terrain Modeling",
+                "Material Application",
+                "Rendering Integration"
+              ],
+              "learningOutcomes": [
+                "Create conceptual 3D models quickly",
+                "Develop architectural prototypes",
+                "Produce basic visualizations"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "No prior 3D experience required"
+              ],
+              "coverImage": "sketchup.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ADOBE",
+      "logo": "@/assets/Logos/Adobe-Authorized-Training-Center.png",
+      "categories": [
+        {
+          "name": "Visual Communication",
+          "courses": [
+            {
+              "id": "photoshop",
+              "title": "Photoshop for Architectural Presentations",
+              "name": "Photoshop",
+              "icon": "🖌️",
+              "description": "Teaches photo editing, vector graphics, and presentation layouts for architects and urban planners.",
+              "duration": "5 weeks",
+              "difficulty": "Intermediate",
+              "price": 699,
+              "instructor": "Tina Nguyen",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "Image Enhancement",
+                "Architectural Composition",
+                "Rendering Post-Processing",
+                "Digital Drawing Techniques",
+                "Presentation Layout Design"
+              ],
+              "learningOutcomes": [
+                "Create professional architectural presentations",
+                "Enhance rendered visualizations",
+                "Develop digital drawing skills"
+              ],
+              "prerequisites": [
+                "Basic design concepts",
+                "Familiarity with digital images"
+              ],
+              "coverImage": "photoshop.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "AUTODESK_FUSION",
+      "logo": "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png",
+      "categories": [
+        {
+          "name": "Product Design",
+          "courses": [
+            {
+              "id": "fusion-360",
+              "title": "Fusion 360 Product Design",
+              "name": "Fusion 360",
+              "icon": "📱",
+              "description": "Cloud-based CAD tools integrating parametric modeling, generative design, and CNC programming for product development.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 1099,
+              "instructor": "Thomas Wilson",
+              "targetAudience": "Mechanical (MECH)",
+              "curriculum": [
+                "Parametric Modeling",
+                "Sculpting & Surface Design",
+                "Assembly Creation",
+                "Simulation & Analysis",
+                "CAM Programming"
+              ],
+              "learningOutcomes": [
+                "Design complete products from concept to manufacture",
+                "Perform engineering analysis",
+                "Create manufacturing toolpaths"
+              ],
+              "prerequisites": [
+                "Basic 3D modeling concepts",
+                "Product design interest"
+              ],
+              "coverImage": "fusion-360.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BIM_CONSTRUCTION",
+      "logo": "@/assets/Logos/BIM-Construction-Logo.png",
+      "categories": [
+        {
+          "name": "BIM Management",
+          "courses": [
+            {
+              "id": "bim-infrastructure",
+              "title": "BIM for Infrastructure Projects",
+              "name": "BIM for Infrastructure",
+              "icon": "🌉",
+              "description": "Introduces BIM methodologies for roads, bridges, and utilities, including 4D scheduling and clash detection.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 1199,
+              "instructor": "Howard Chang",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "BIM Standards Implementation",
+                "Information Exchange Workflows",
+                "4D Scheduling Integration",
+                "Clash Detection Strategies",
+                "BIM Execution Planning"
+              ],
+              "learningOutcomes": [
+                "Implement BIM for infrastructure projects",
+                "Coordinate multidisciplinary designs",
+                "Develop BIM execution plans"
+              ],
+              "prerequisites": [
+                "Civil engineering background",
+                "Basic 3D modeling experience"
+              ],
+              "coverImage": "bim-infrastructure.jpg"
+            },
+            {
+              "id": "bim-construction",
+              "title": "BIM for Construction Management",
+              "name": "BIM for Construction",
+              "icon": "🏗️",
+              "description": "Covers collaborative construction management, BIM standards, and on-site workflow optimization.",
+              "duration": "7 weeks",
+              "difficulty": "Intermediate",
+              "price": 1099,
+              "instructor": "Lisa Martinez",
+              "targetAudience": "Civil (CIV)",
+              "curriculum": [
+                "BIM for Construction Planning",
+                "Model-Based Quantity Takeoff",
+                "Coordination Workflows",
+                "Field BIM Implementation",
+                "As-Built Documentation"
+              ],
+              "learningOutcomes": [
+                "Leverage BIM for construction management",
+                "Optimize on-site workflows",
+                "Implement collaborative BIM processes"
+              ],
+              "prerequisites": [
+                "Construction industry experience",
+                "Basic BIM knowledge"
+              ],
+              "coverImage": "bim-construction.jpg"
             }
           ]
         }

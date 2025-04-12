@@ -144,7 +144,7 @@ export function Contact() {
               type="submit" 
               className="w-full group bg-customBlue"
             >
-              <span className="flex items-center justify-center">
+              <span className="flex text-white items-center justify-center">
                 Send Message
                 <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>

@@ -105,7 +105,7 @@ const BimServicesComponent = () => {
   ]
 
   return (
-    <section className="py-20 bg-white dark:bg-gray-900">
+    <section className="py-20 mt-10 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-block px-3 py-1 text-sm font-medium text-amber-600 bg-amber-100 rounded-full dark:bg-amber-900/30 dark:text-amber-400 mb-4">

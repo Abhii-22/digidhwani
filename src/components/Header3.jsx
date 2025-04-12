@@ -303,7 +303,7 @@ const Header = () => {
                   <Link to="/teamech/about">About</Link>
                 </div>
                 <div className="nav-item">
-                  <Link to="/teamech#contact">Contact</Link>
+                  <Link to="/teamech/contact">Contact</Link>
                 </div>
               </div>
               
@@ -322,7 +322,7 @@ const Header = () => {
                   <Link to="/techvritti/about">About</Link>
                 </div>
                 <div className="nav-item">
-                  <Link to="/techvritti#contact">Contact</Link>
+                  <Link to="/techvritti/contact">Contact</Link>
                 </div>
               </div>
               

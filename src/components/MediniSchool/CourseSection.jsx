@@ -34,7 +34,7 @@ const CoursesSection = () => {
   return (
     <div className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-customBlue font-sans dark:from-blue-400 dark:to-purple-400">
+        <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-customBlue font-sans dark:text-white dark:from-blue-400 dark:to-purple-400">
           Our Professional Courses
         </h2>
 

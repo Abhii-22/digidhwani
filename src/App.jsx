@@ -16,6 +16,9 @@ import BIMHome from "./pages/BIM/Home"
 import TechvrittiHome from "./pages/TechVritti/Home"
 import CourseDetailsPage from "./components/MediniSchool/CourseDetailsPage"
 import TeamechHome from "./pages/TeaMech/Home"
+import BimServicesComponent from "./components/BIM/Services"
+import ServicesComponent from "./components/TechVritti/Services"
+import TeamechServicesComponent from "./components/Teamech/Services"
 
 function App() {
   return (
@@ -39,8 +42,15 @@ function App() {
               <Route path="/bim_construct" element={<BIMHome />} />
               <Route path="/bim_construct/about" element={<AboutPage/>} />
               <Route path="/bim_construct/contact" element={<ContactPage/>} />
+              <Route path="/bim_construct/services" element={<BimServicesComponent/>} />
               <Route path="/techvritti" element={<TechvrittiHome />} />
+              <Route path="/techvritti/services" element={<ServicesComponent />} />
+              <Route path="/techvritti/about" element={<AboutPage />} />
+              <Route path="/techvritti/contact" element={<ContactPage />} />
               <Route path="/teamech" element={<TeamechHome />} />
+              <Route path="/teamech/services" element={<TeamechServicesComponent />} />
+              <Route path="/teamech/about" element={<AboutPage />} />
+              <Route path="/teamech/contact" element={<ContactPage />} />
             </Routes>
           </main>
           <Footer />

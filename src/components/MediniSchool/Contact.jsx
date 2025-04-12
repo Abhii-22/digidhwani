@@ -45,7 +45,7 @@ export function Contact() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-4xl text-white md:text-5xl font-bold mb-4"
           >
             Get In Touch
           </motion.h1>
@@ -53,7 +53,7 @@ export function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg max-w-2xl mx-auto text-primary-foreground/80"
+            className="text-lg text-gray-300 max-w-2xl mx-auto"
           >
             Have a idea in mind or want to discuss how we can help your business grow? 
             Fill out the form below, and our team will get back to you soon.
@@ -144,7 +144,7 @@ export function Contact() {
               type="submit" 
               className="w-full group bg-customBlue"
             >
-              <span className="flex items-center justify-center">
+              <span className="flex text-white items-center justify-center">
                 Send Message
                 <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>

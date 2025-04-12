@@ -120,9 +120,9 @@ const HeroSection = ({ isDarkMode = false, servicesData }) => {
               >
                 <Link
                   to="#contact"
-                  className="group relative overflow-hidden inline-flex h-12 items-center justify-center rounded-full bg-blue-600 px-6 md:px-8 py-3 text-base font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
+                  className="group relative overflow-hidden inline-flex h-12 items-center justify-center rounded-full bg-customBlue px-6 md:px-8 py-3 text-base font-medium text-white shadow-lg transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2"
                 >
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 rounded-full bg-customBlue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   <span className="relative z-10 flex items-center">
                     Get Started
                     <ArrowRight className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />

@@ -20,7 +20,7 @@ const DynamicTypingHeadline = () => {
     },
     {
       title: "BUILD SPACE",
-      subtitle: "For STRT Support"
+      subtitle: "For Startup Support"
     },
     {
         title: "TECHVRITTI",

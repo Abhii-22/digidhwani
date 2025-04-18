@@ -9,7 +9,7 @@ function ServicessSection() {
   const [activeTab, setActiveTab] = useState("autodesk")
 
   const tabs = [
-    { id: "autodesk", label: "AutoDesk" },
+    { id: "autodesk", label: "Autodesk" },
     { id: "bentley", label: "Bentley" },
     { id: "dassault", label: "Dassault" },
     { id: "manufacturing", label: "Manufacturing" },
@@ -17,7 +17,7 @@ function ServicessSection() {
 
   const tabContent = {
     autodesk: {
-      title: "AutoDesk Courses",
+      title: "Autodesk Courses",
       description:
       "Our Autodesk courses provide in-depth training on industry-standard design and engineering software like AutoCAD, Revit, and Fusion 360. Whether you're in architecture, mechanical design, or 3D modeling, our courses help you master cutting-edge tools to streamline workflows and enhance creativity.",
       image: `${image1}?height=500&width=700`,

@@ -19,6 +19,7 @@ import TeamechHome from "./pages/TeaMech/Home"
 import BimServicesComponent from "./components/BIM/Services"
 import ServicesComponent from "./components/TechVritti/Services"
 import TeamechServicesComponent from "./components/Teamech/Services"
+import ScrollToTop from "./components/ScrollToTop"
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-1 mt-10">
+            <ScrollToTop />
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />

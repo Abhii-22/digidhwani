@@ -148,14 +148,6 @@ export function TimelineSection() {
           </div>
         </div>
         
-        <div className="mt-16 text-center">
-          <p className="text-gray-600 dark:text-gray-400 mb-6">
-            Our journey continues as we strive for excellence and innovation
-          </p>
-          <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
-            View All Achievements
-          </button>
-        </div>
       </div>
     </section>
   );

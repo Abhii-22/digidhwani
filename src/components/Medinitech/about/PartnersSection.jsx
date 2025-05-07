@@ -5,7 +5,7 @@ import autodesk from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.pn
 import bentley from "@/assets/Logos/Bentley-Training-Partner-Logo.png"
 import sketchUp from "@/assets/Logos/Sketchup_Colour.png"
 import chaos from "@/assets/Logos/Chaos_idHNVPKG7k_0.svg"
-import ptc from "@/assets/Logos/ptc_master_logo_CMYK_KO-gr.png"
+import ptc from "@/assets/Logos/ptc_logo.jpeg"
 
 export function PartnersSection() {
     const partners = [
@@ -25,10 +25,10 @@ export function PartnersSection() {
         <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
-                    <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                    <h2 className="text-4xl font-bold text-gray-800 mb-4">
                         Our Technology Partners
                     </h2>
-                    <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Collaborating with industry leaders to deliver innovative solutions and transform digital experiences.
                     </p>
                 </div>

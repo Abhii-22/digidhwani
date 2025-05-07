@@ -22,7 +22,7 @@ export function PartnersSection() {
     ];
 
     return (
-        <section className="py-20 bg-white dark:bg-slate-600 overflow-hidden">
+        <section className="py-20 bg-white overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">

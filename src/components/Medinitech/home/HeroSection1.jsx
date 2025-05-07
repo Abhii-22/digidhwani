@@ -81,14 +81,14 @@ function HeroSection() {
             <div className="space-y-6">
               <DynamicTypingHeadline />
               
-              <motion.p 
+              {/* <motion.p 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
                 className="text-gray-300 dark:text-gray-300 max-w-xl"
               >
                 Empowering innovation through cutting-edge technology solutions that transform businesses and drive success.
-              </motion.p>
+              </motion.p> */}
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">

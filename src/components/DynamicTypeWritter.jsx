@@ -16,10 +16,10 @@ const DynamicTypingHeadline = () => {
     },
     {
       title: "EDUPHYGITAL",
-      subtitle: "For centre of Excellence"
+      subtitle: "Restructuring the Dreams"
     },
     {
-      title: "BUILD SPACE",
+      title: "BUILDDSPACE",
       subtitle: "For Startup Support"
     },
     {

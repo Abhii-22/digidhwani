@@ -72,11 +72,6 @@ const CourseCard = ({ course }) => {
             <BookOpen className="w-4 h-4 mr-1" style={{ color: mainColor }} />
             <span>12 Modules</span>
           </div>
-          
-          <div className="flex items-center">
-            <Award className="w-4 h-4 mr-1" style={{ color: mainColor }} />
-            <span>Certificate</span>
-          </div>
         </div>
 
         {/* CTA Button */}

@@ -1,113 +1,164 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ChevronRight, Award, Calendar, Info } from 'lucide-react';
 
 export function TimelineSection() {
-    const milestones = [
-      {
-        year: "FY13",
-        title: "Company Founded",
-        description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC PROGRAM FY 13"
-      },
-      {
-        year: "FY14",
-        title: "Cloud Services Launch",
-        description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC PROGRAM."
-      },
-      {
-        year: "FY15 & FY16",
-        description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC & AUTODESK CERTIFICATION PROGRAM"
-      },
-      {
-        year: "2017-18",
-        description: "AWARDED OUTSTANDING PERFORMANCE & LASTING CONTRIBUTION TO BENTLEY PRODUCT TRAINING PROGRAM YEAR"
-      },
-      {
-        year: "2022-23",
-        description: "AWARDED FOR OUTSTANDING PERFORMANCE - TRAINING PARTNER BENTLEY SYSTEMS"
-      },
-      {
-        year: "FY 24",
-        description: "AWARDED GOLD MEDAL FOR FY 24 FOR PROMOTING DIGITAL TRANSFORMATION TO ACADEMIA BY AUTODESK & D TECH"
-      },
-      {
-        year: "FY 24",
-        description: "AWARDED STAR PERFORMER FOR FY 24 TO TAKE DIGITAL TRANSFORMATION IN MANUFACTURING TO ACADEMIA BY AUTODESK D TECH"
-      },
-      {
-        year: "FY 23 & FY 24",
-        description: "AWARDED FOR OUTSTANDING PERFORMANCE - TRAINING PARTNER BENTLEY SYSTEMS FY 23 & FY 24"
-      }
-    ];
+  const [activeIndex, setActiveIndex] = useState(null);
+  
+  const milestones = [
+    {
+      year: "FY13",
+      title: "Company Founded",
+      description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC PROGRAM FY 13",
+      icon: "award"
+    },
+    {
+      year: "FY14",
+      title: "Cloud Services Launch",
+      description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC PROGRAM.",
+      icon: "cloud"
+    },
+    {
+      year: "FY15 & FY16",
+      title: "Dual Excellence Recognition",
+      description: "AWARDED FOR OUTSTANDING AND EXCEPTIONAL INITIATIVES TOWARDS AUTODESK ATC & AUTODESK CERTIFICATION PROGRAM",
+      icon: "award"
+    },
+    {
+      year: "2017-18",
+      title: "Bentley Systems Honor",
+      description: "AWARDED OUTSTANDING PERFORMANCE & LASTING CONTRIBUTION TO BENTLEY PRODUCT TRAINING PROGRAM YEAR",
+      icon: "star"
+    },
+    {
+      year: "2022-23",
+      title: "Training Excellence",
+      description: "AWARDED FOR OUTSTANDING PERFORMANCE - TRAINING PARTNER BENTLEY SYSTEMS",
+      icon: "award"
+    },
+    {
+      year: "FY 24",
+      title: "Digital Transformation Gold",
+      description: "AWARDED GOLD MEDAL FOR FY 24 FOR PROMOTING DIGITAL TRANSFORMATION TO ACADEMIA BY AUTODESK & D TECH",
+      icon: "medal"
+    },
+    {
+      year: "FY 24",
+      title: "Manufacturing Excellence",
+      description: "AWARDED STAR PERFORMER FOR FY 24 TO TAKE DIGITAL TRANSFORMATION IN MANUFACTURING TO ACADEMIA BY AUTODESK D TECH",
+      icon: "star"
+    },
+    {
+      year: "FY 23 & FY 24",
+      title: "Consecutive Excellence",
+      description: "AWARDED FOR OUTSTANDING PERFORMANCE - TRAINING PARTNER BENTLEY SYSTEMS FY 23 & FY 24",
+      icon: "award"
+    }
+  ];
 
-    return (
-      <section 
-        className="relative py-24 overflow-hidden bg-gray-50 dark:bg-gray-900"
-      >
-        <div className="container relative z-10 mt-4">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-black dark:text-white mb-6 leading-tight">
-              Celebrating <span className="">Excellence</span>
-              <br />
-              Our Prestigious <span className="text-amber-600 dark:text-amber-400 font-serif font-bold">
-                Awards & Achievements
-              </span>
-            </h2>
-            <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto bg-white/50 dark:bg-gray-800/50 p-4 rounded-xl shadow-sm">
-              A journey of innovation, dedication, and recognition. From our founding to becoming an industry leader, 
-              these milestones reflect our commitment to excellence and continuous growth.
-            </p>
+  const renderIcon = (iconName) => {
+    switch(iconName) {
+      case 'award':
+        return <Award className="w-6 h-6" />;
+      case 'star':
+        return <Award className="w-6 h-6" />;
+      case 'medal':
+        return <Award className="w-6 h-6" />;
+      case 'cloud':
+        return <Info className="w-6 h-6" />;
+      default:
+        return <Calendar className="w-6 h-6" />;
+    }
+  };
+
+  return (
+    <section className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+        <div className="absolute -top-16 -left-16 w-64 h-64 rounded-full bg-blue-400 blur-3xl"></div>
+        <div className="absolute top-1/2 -right-16 w-80 h-80 rounded-full bg-amber-400 blur-3xl"></div>
+        <div className="absolute -bottom-16 left-1/3 w-64 h-64 rounded-full bg-purple-400 blur-3xl"></div>
+      </div>
+      
+      <div className="container relative z-10 px-4 mx-auto max-w-6xl">
+        <div className="text-center mb-16">
+          <div className="inline-block mb-3 px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full text-sm font-medium tracking-wider uppercase">
+            Our Journey
           </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+            Celebrating <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">Excellence</span>
+          </h2>
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+            A journey of innovation, dedication, and recognition in the industry. These milestones reflect our commitment to excellence and continuous growth.
+          </p>
+        </div>
 
-          <div className="relative">
-            {/* Vertical line with subtle gradient */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 
-              bg-gradient-to-b from-gray-200/30 via-gray-300/50 to-gray-200/30 
-              dark:from-gray-700/30 dark:via-gray-600/50 dark:to-gray-700/30 opacity-50">
-            </div>
-
-            <div className="space-y-12 relative">
-              {milestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center 
-                    ${index % 2 === 0 ? "md:text-right" : "md:flex-row-reverse"}
-                    bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm 
-                    rounded-xl shadow-lg hover:shadow-xl transition-shadow 
-                    border border-gray-200 dark:border-gray-700 p-6`}
+        <div className="relative mt-20">
+          {/* Vertical line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 via-indigo-500 to-amber-500 rounded-full"></div>
+          
+          <div className="space-y-12 relative">
+            {milestones.map((milestone, index) => (
+              <div 
+                key={index}
+                className={`relative flex flex-col md:flex-row ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              >
+                {/* Timeline node */}
+                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full border-4 border-white dark:border-gray-800 bg-gradient-to-br from-amber-400 to-amber-600 shadow-lg z-20 flex items-center justify-center cursor-pointer transition-all hover:scale-110"
+                  onClick={() => setActiveIndex(activeIndex === index ? null : index)}>
+                  <div className="text-white text-xs font-bold"></div>
+                </div>
+                
+                {/* Content card */}
+                <div 
+                  className={`ml-16 md:ml-0 md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"} transition-all duration-300 ease-in-out ${activeIndex === index ? "scale-105" : "scale-100"}`}
                 >
-                  <div className={`${index % 2 === 0 ? "md:text-right" : "md:order-2"}`}>
-                    <div className="space-y-3">
-                      <div className="inline-block rounded-full 
-                        bg-customBlue/10 dark:bg-customBlue/20 
-                        px-4 py-1 text-sm font-semibold 
-                        text-customBlue dark:text-white">
+                  <div className={`bg-white dark:bg-gray-800 rounded-xl shadow-xl hover:shadow-2xl transition-all p-6 border-l-4 ${activeIndex === index ? "border-amber-500" : "border-blue-500"}`}>
+                    <div className="flex justify-between items-start mb-4">
+                      <div className="flex items-center">
+                        <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 mr-3">
+                          {renderIcon(milestone.icon)}
+                        </div>
+                        <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white">
+                          {milestone.title || `Achievement ${index + 1}`}
+                        </h3>
+                      </div>
+                      <div className="flex items-center px-3 py-1 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-300 rounded-full text-sm font-semibold">
                         {milestone.year}
                       </div>
-                      <p className="text-lg text-gray-900 dark:text-white 
-                        font-medium bg-gray-100/50 dark:bg-gray-900/30 
-                        p-3 rounded-lg">
-                        {milestone.description}
-                      </p>
                     </div>
-                  </div>
-
-                  <div className={`hidden md:block ${index % 2 === 0 ? "md:order-2" : ""}`}>
-                    <div className="relative flex items-center justify-center">
-                      <div className="absolute left-0 right-0 h-px 
-                        bg-gray-200 dark:bg-gray-700"></div>
-                      <div className="relative z-10 w-12 h-12 rounded-full 
-                        bg-customBlue text-white flex items-center 
-                        justify-center font-bold shadow-md">
-                        {index + 1}
+                    
+                    <p className="text-gray-700 dark:text-gray-300">
+                      {milestone.description}
+                    </p>
+                    
+                    {activeIndex === index && (
+                      <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700 flex justify-end">
+                        <button 
+                          className="flex items-center text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                          onClick={() => setActiveIndex(null)}
+                        >
+                          Close <ChevronRight className="ml-1 w-4 h-4" />
+                        </button>
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    );
+        
+        <div className="mt-16 text-center">
+          <p className="text-gray-600 dark:text-gray-400 mb-6">
+            Our journey continues as we strive for excellence and innovation
+          </p>
+          <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            View All Achievements
+          </button>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default TimelineSection;
+export default TimelineSection

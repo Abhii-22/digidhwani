@@ -6,161 +6,284 @@ import civil3d from "@/assets/IMAGES/tool-inc-AkpJnHXu6Hg-unsplash.jpg"
 import solidworks from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"
 import microstation from "@/assets/IMAGES/getty-images-ItieuN1ec0k-unsplash.jpg"
 import revit from "@/assets/IMAGES/getty-images-OYBtn34RPzY-unsplash.jpg"
-import { Link } from "react-router-dom"
 import infraworks from "@/assets/IMAGES/getty-images-KD_fT_T4D24-unsplash.jpg"
-
+import { Link } from "react-router-dom"
+import { motion } from "framer-motion"
 
 function HeroSection() {
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [headerHeight, setHeaderHeight] = useState(0)
-    const sliderRef = useRef(null)
-    const heroRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isHovering, setIsHovering] = useState(false)
+  const [headerHeight, setHeaderHeight] = useState(0)
+  const sliderRef = useRef(null)
+  const heroRef = useRef(null)
 
-    const cards = [
-      {
-        id: 1,
-        image: `${autocad}?height=200&width=300`,
-        name: "AutoCAD",
-        link: "/courses/autocad",
-      },
-      {
-        id: 2,
-        image: `${civil3d}?height=200&width=300`,
-        name: "Civil 3D",
-        link: "/courses/civil3d",
-      },
-      {
-        id: 3,
-        image: `${solidworks}?height=200&width=300`,
-        name: "SolidWorks",
-        link: "/courses/solidworks",
-      },
-      {
-        id: 4,
-        image: `${microstation}?height=200&width=300`,
-        name: "Microstation",
-        link: "/courses/microstation",
-      },{
-        id: 5,
-        image: `${revit}?height=200&width=300`,
-        name: "Revit Architecture",
-        link: "/courses/revit",
-      },{
-        id: 6,
-        image: `${infraworks}?height=200&width=300`,
-        name: "Infraworks",
-        link: "/courses/infraworks",
-      },
-    ]
+  const cards = [
+    {
+      id: 1,
+      image: `${autocad}?height=200&width=300`,
+      name: "BIM for Construction",
+      description: "Master 2D and 3D design fundamentals",
+      // link: "/courses/autocad",
+    },
+    {
+      id: 2,
+      image: `${civil3d}?height=200&width=300`,
+      name: "BIM for Infrastructure",
+      description: "Advanced civil engineering modeling",
+      // link: "/courses/civil3d",
+    },
+    {
+      id: 3,
+      image: `${solidworks}?height=200&width=300`,
+      name: "BIM for Aechitecture",
+      description: "Professional 3D CAD design",
+      // link: "/courses/solidworks",
+    },
+    {
+      id: 4,
+      image: `${microstation}?height=200&width=300`,
+      name: "Product Design",
+      description: "Infrastructure design solutions",
+      // link: "/courses/microstation",
+    }
+  ]
+  
+  // Calculate header height on mount and window resize
+  useEffect(() => {
+    const calculateHeaderHeight = () => {
+      const header = document.querySelector("header")
+      if (header) {
+        setHeaderHeight(header.offsetHeight)
+      }
+    }
+
+    // Initial calculation
+    calculateHeaderHeight()
+
+    // Recalculate on resize
+    window.addEventListener("resize", calculateHeaderHeight)
+
+    return () => {
+      window.removeEventListener("resize", calculateHeaderHeight)
+    }
+  }, [])
+
+  const slideLeft = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+    } else {
+      // Loop back to the end
+      setCurrentIndex(cards.length - 4)
+    }
+  }
+
+  const slideRight = () => {
+    if (currentIndex < cards.length - 4) {
+      setCurrentIndex(currentIndex + 1)
+    } else {
+      // Loop back to the beginning
+      setCurrentIndex(0)
+    }
+  }
+
+  useEffect(() => {
+    let interval
     
-      // Calculate header height on mount and window resize
-    useEffect(() => {
-      const calculateHeaderHeight = () => {
-        const header = document.querySelector("header")
-        if (header) {
-          setHeaderHeight(header.offsetHeight)
-        }
-      }
-
-      // Initial calculation
-      calculateHeaderHeight()
-
-      // Recalculate on resize
-      window.addEventListener("resize", calculateHeaderHeight)
-
-      return () => {
-        window.removeEventListener("resize", calculateHeaderHeight)
-      }
-    }, [])
-
-    const slideLeft = () => {
-      if (currentIndex > 0) {
-        setCurrentIndex(currentIndex - 1)
-      }
+    if (!isHovering) {
+      interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex >= cards.length - 4 ? 0 : prevIndex + 1
+        )
+      }, 5000) // Change every 5 seconds for smoother experience
     }
 
-    const slideRight = () => {
-      if (currentIndex < cards.length - 3) {
-        setCurrentIndex(currentIndex + 1)
-      }
-    }
-    return (
-      <section className="relative overflow-hidden" ref={heroRef}>
+    return () => clearInterval(interval)
+  }, [cards.length, isHovering])
+
+  const visibleCards = 4 // Number of cards visible at once
+
+  return (
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden h-screen flex items-center" ref={heroRef}>
+        {/* Background with overlay */}
         <div
-        className="absolute px-4 inset-0 w-full h-full bg-cover bg-center z-0"
-        style={{
-          backgroundImage: `url(${bg_image})`,
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
-      </div>
-        <div className="hero-gradient absolute inset-0 z-0"></div>
-        <div className="container relative z-10 py-20 md:py-32">
-          <div className="z-10 mx-auto px-4 mt-20 flex flex-col justify-center">
-            {/* Main Heading */}
-            <div className="max-w-3xl mt-[-80px]">
-                <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
-                  Discover Amazing Courses
-                  <br />
-                  For Your Career
-                </h1>
-            
-                <Link to="/courses" className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-md hover:bg-gray-100 transition duration-300 mb-16">
+          className="absolute inset-0 w-full h-full bg-cover bg-center z-0 transition-opacity duration-700"
+          style={{
+            backgroundImage: `url(${bg_image})`,
+            backgroundSize: "cover",
+          }}
+        >
+          <div className="absolute inset-0 bg-black bg-opacity-75"></div>
+        </div>
+        
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/30 to-black/30"></div>
+        
+        <div className="container relative z-10 px-4 mx-auto">
+          <div className="z-10 flex flex-col justify-center mx-auto">
+            {/* Hero Content */}
+            <div className="max-w-3xl">
+              <motion.h1 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-6"
+              >
+                Discover Amazing Courses
+                <span className="block text-white/90">For Your Career</span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg text-white/80 mb-8 max-w-xl"
+              >
+                Elevate your professional skills with industry-leading design and engineering software courses tailored for your success.
+              </motion.p>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="flex gap-4"
+              >
+                <Link to="/courses" className="px-8 py-3 bg-white text-gray-900 font-semibold rounded-md hover:bg-gray-100 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
                   Explore Now
                 </Link>
-            </div>
-
-            {/* Slider Section */}
-            <div className="mt-16">
-              <div className="flex justify-between items-center ">
-                <h3 className="text-xl md:text-2xl font-semibold text-white">Explore courses by Medini</h3>
-
-                <div className="flex space-x-2 py-4">
-                  <button
-                    onClick={slideLeft}
-                    className={`p-2 rounded-full bg-white/20 hover:bg-white/30 transition ${currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""}`}
-                    disabled={currentIndex === 0}
-                  >
-                    <ChevronLeft className="w-6 h-6 text-white" />
-                  </button>
-                  <button
-                    onClick={slideRight}
-                    className={`p-2 rounded-full bg-white/20 hover:bg-white/30 transition ${currentIndex >= cards.length - 4 ? "opacity-50 cursor-not-allowed" : ""}`}
-                    disabled={currentIndex >= cards.length - 4}
-                  >
-                    <ChevronRight className="w-6 h-6 text-white" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Cards Slider */}
-              <div className="overflow-hidden" ref={sliderRef}>
-                <div
-                  className="flex transition-transform duration-300 ease-in-out"
-                  style={{ transform: `translateX(-${currentIndex * 33.33}%)` }}
-                >
-                  {cards.map((card) => (
-                    <div key={card.id} className="min-w-[25%] px-3">
-                      <Link to={`/medinischoolofdesign${card.link}`}>
-                      <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
-                        <img src={card.image || "/placeholder.svg"} alt={card.name} className="w-full h-48 object-cover" />
-                        <div className="p-4">
-                          <h3 className="font-semibold text-black text-lg mb-2">{card.name}</h3>
-                        </div>
-                      </div>
-                      </Link>
-                    </div>
-                  ))}
-                </div>
-                </div>
+                <a href="#explore-courses" className="px-8 py-3 bg-transparent border border-white text-white font-semibold rounded-md hover:bg-white/10 transition duration-300">
+                  View Courses
+                </a>
+              </motion.div>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+          <a 
+            href="#explore-courses" 
+            className="animate-bounce bg-white/20 p-2 w-10 h-10 rounded-full flex items-center justify-center"
+          >
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </a>
+        </div>
+        
+        {/* Bottom border with gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
       </section>
-    )
-  }
-  
+
+      {/* Explore Courses Section */}
+      <section id="explore-courses" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white mb-4">Explore Our Courses</h2>
+            <p className="dark:text-white/70 max-w-2xl mx-auto">
+              Dive into our comprehensive collection of professional design and engineering courses
+              crafted by industry experts.
+            </p>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl md:text-2xl font-semibold dark:text-white">
+                Courses by <span className="dark:text-white font-bold">Medini</span>
+              </h3>
+
+              <div className="flex space-x-3">
+                <button
+                  onClick={slideLeft}
+                  className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 shadow-md"
+                  aria-label="Previous courses"
+                >
+                  <ChevronLeft className="w-6 h-6 dark:text-white" />
+                </button>
+                <button
+                  onClick={slideRight}
+                  className="p-2 rounded-full bg-white/20 hover:bg-white/40 transition-all duration-300 shadow-md"
+                  aria-label="Next courses"
+                >
+                  <ChevronRight className="w-6 h-6 dark:text-white" />
+                </button>
+              </div>
+            </div>
+
+            {/* Progress indicator */}
+            <div className="flex justify-center gap-2 mb-8">
+              {Array.from({ length: cards.length - visibleCards + 1 }).map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentIndex(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === currentIndex ? "w-8 bg-white" : "w-2 bg-white/40"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            {/* Cards Slider */}
+            <div 
+              className="overflow-hidden" 
+              ref={sliderRef}
+              onMouseEnter={() => setIsHovering(true)}
+              onMouseLeave={() => setIsHovering(false)}
+            >
+              <div
+                className="flex transition-all duration-700 ease-in-out"
+                style={{ transform: `translateX(-${currentIndex * 25}%)` }}
+              >
+                {cards.map((card) => (
+                  <div key={card.id} className="min-w-[25%] px-3">
+                    <Link to={`/medinischoolofdesign${card.link}`}>
+                      <div className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full">
+                        <div className="relative">
+                          <img 
+                            src={card.image || "/placeholder.svg"} 
+                            alt={card.name} 
+                            className="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-semibold text-black text-xl mb-2">{card.name}</h3>
+                          <p className="text-gray-600 text-sm">{card.description}</p>
+                          <div className="mt-4 flex items-center text-sm font-medium text-blue-600">
+                            Learn more
+                            <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* View all courses button */}
+            <div className="mt-12 text-center">
+              <Link to="/courses" className="inline-flex items-center px-6 py-3 border border-white/30 rounded-md text-white hover:bg-white/10 transition duration-300">
+                View All Courses
+                <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </>
+  )
+}
 
 export default HeroSection

@@ -1,120 +1,421 @@
-import { useState, useRef } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
-import CourseCard from "./CourseCard"
-import coursesData from "./courses.json"
+import { useState, useEffect, useRef } from "react";
+import { Search, Filter, ChevronDown, X, ChevronsUpDown } from "lucide-react";
+import CourseCard from "./CourseCard";
+import coursesData from "./courses.json";
 
 const CoursesSection = () => {
-  // State to track active slide indices for each provider and category
-  const [activeSlides, setActiveSlides] = useState({})
-
-  // Initialize refs for slider containers
-  const sliderRefs = useRef({})
-
-  // Function to navigate slides
-  const navigateSlide = (providerId, categoryIndex, direction) => {
-    const key = `${providerId}-${categoryIndex}`
-    const currentIndex = activeSlides[key] || 0
-    const provider = coursesData.courseProviders.find((p) => p.id === providerId)
-    const courses = provider.categories[categoryIndex].courses
-
-    // Calculate visible cards based on screen width
-    let visibleCards = 4 // default for large screens
-    if (window.innerWidth < 1024) visibleCards = 2
-    if (window.innerWidth < 640) visibleCards = 1
-
-    const maxIndex = Math.max(0, courses.length - visibleCards)
-
-    let newIndex = currentIndex + direction
-    if (newIndex < 0) newIndex = 0
-    if (newIndex > maxIndex) newIndex = maxIndex
-
-    setActiveSlides({ ...activeSlides, [key]: newIndex })
-  }
-
+  // Extract all courses from all providers and categories
+  const [allCourses, setAllCourses] = useState([]);
+  const [filteredCourses, setFilteredCourses] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  
+  // Filter states
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [providers, setProviders] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [difficulties, setDifficulties] = useState([]);
+  
+  // Selected filters
+  const [selectedProviders, setSelectedProviders] = useState([]);
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedDifficulties, setSelectedDifficulties] = useState([]);
+  
+  // Sort option
+  const [sortBy, setSortBy] = useState("featured");
+  
+  // Animation references
+  const filterRef = useRef(null);
+  
+  // Extract all courses and filter options on component mount
+  useEffect(() => {
+    const courses = [];
+    const providerOptions = new Set();
+    const categoryOptions = new Set();
+    const difficultyOptions = new Set();
+    
+    coursesData.courseProviders.forEach(provider => {
+      providerOptions.add(provider.name || provider.id);
+      
+      provider.categories.forEach(category => {
+        categoryOptions.add(category.name);
+        
+        category.courses.forEach(course => {
+          difficultyOptions.add(course.difficulty);
+          courses.push({
+            ...course,
+            provider: provider.name || provider.id,
+            category: category.name
+          });
+        });
+      });
+    });
+    
+    setAllCourses(courses);
+    setFilteredCourses(courses);
+    setProviders(Array.from(providerOptions));
+    setCategories(Array.from(categoryOptions));
+    setDifficulties(Array.from(difficultyOptions).filter(Boolean));
+  }, []);
+  
+  // Apply filters when any filter changes
+  useEffect(() => {
+    let result = [...allCourses];
+    
+    // Apply provider filter
+    if (selectedProviders.length > 0) {
+      result = result.filter(course => selectedProviders.includes(course.provider));
+    }
+    
+    // Apply category filter
+    if (selectedCategories.length > 0) {
+      result = result.filter(course => selectedCategories.includes(course.category));
+    }
+    
+    // Apply difficulty filter
+    if (selectedDifficulties.length > 0) {
+      result = result.filter(course => selectedDifficulties.includes(course.difficulty));
+    }
+    
+    // Apply search
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        course => 
+          course.title?.toLowerCase().includes(query) || 
+          course.instructor?.toLowerCase().includes(query) ||
+          course.description?.toLowerCase().includes(query)
+      );
+    }
+    
+    // Apply sorting
+    if (sortBy === "title-asc") {
+      result.sort((a, b) => (a.title || "").localeCompare(b.title || ""));
+    } else if (sortBy === "title-desc") {
+      result.sort((a, b) => (b.title || "").localeCompare(a.title || ""));
+    } else if (sortBy === "newest") {
+      result.sort((a, b) => (new Date(b.releaseDate || 0) - new Date(a.releaseDate || 0)));
+    }
+    
+    // Update filtered courses
+    setFilteredCourses(result);
+  }, [selectedProviders, selectedCategories, selectedDifficulties, searchQuery, sortBy, allCourses]);
+  
+  // Toggle filter selection
+  const toggleFilter = (type, value) => {
+    switch (type) {
+      case "provider":
+        setSelectedProviders(prev => 
+          prev.includes(value) 
+            ? prev.filter(item => item !== value)
+            : [...prev, value]
+        );
+        break;
+      case "category":
+        setSelectedCategories(prev => 
+          prev.includes(value) 
+            ? prev.filter(item => item !== value)
+            : [...prev, value]
+        );
+        break;
+      case "difficulty":
+        setSelectedDifficulties(prev => 
+          prev.includes(value) 
+            ? prev.filter(item => item !== value)
+            : [...prev, value]
+        );
+        break;
+      default:
+        break;
+    }
+  };
+  
+  // Clear all filters
+  const clearFilters = () => {
+    setSelectedProviders([]);
+    setSelectedCategories([]);
+    setSelectedDifficulties([]);
+    setSearchQuery("");
+  };
+  
+  // Count total active filters
+  const totalActiveFilters = 
+    selectedProviders.length + 
+    selectedCategories.length + 
+    selectedDifficulties.length;
+  
   return (
-    <div className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <div className="py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 min-h-screen">
       <div className="container mx-auto px-4">
-        <h2 className="text-5xl font-bold text-center mb-16 bg-clip-text text-customBlue font-sans dark:text-white dark:from-blue-400 dark:to-purple-400">
+        <h2 className="text-5xl font-bold text-center mb-16 text-customBlue font-sans dark:text-white">
           Our Professional Courses
         </h2>
-
-        <div className="space-y-20">
-          {coursesData.courseProviders.map((provider) => (
-            <div key={provider.id} className="provider-section">
-              <div className="flex items-center gap-4 mb-8">
-                {/* {provider.logo && (
-                  <img
-                    src={provider.logo}
-                    alt={`${provider.name || provider.id} logo`}
-                    className="h-12 object-contain"
-                  />
-                )} */}
-                <div>
-                  <h3 className="text-2xl font-bold">{provider.name || provider.id}</h3>
-                </div>
+        
+        {/* Search and Filter Bar */}
+        <div className="mb-10 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-md sticky top-4 z-10 transition-all duration-300">
+          <div className="flex flex-col md:flex-row gap-4">
+            {/* Search Bar */}
+            <div className="relative flex-grow">
+              <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                <Search className="h-5 w-5 text-gray-400" />
               </div>
-
-              <div className="space-y-12">
-                {provider.categories.map((category, categoryIndex) => {
-                  const sliderKey = `${provider.id}-${categoryIndex}`
-                  const currentIndex = activeSlides[sliderKey] || 0
-
-                  return (
-                    <div key={`${provider.id}-${category.name}`} className="category-section">
-                      <div className="flex justify-between items-center mb-6">
-                        <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{category.name}</h4>
-
-                        <div className="flex space-x-2">
-                          <button
-                            onClick={() => navigateSlide(provider.id, categoryIndex, -1)}
-                            className={`p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition ${
-                              currentIndex === 0 ? "opacity-50 cursor-not-allowed" : ""
-                            }`}
-                            disabled={currentIndex === 0}
-                            aria-label="Previous courses"
-                          >
-                            <ChevronLeft className="w-5 h-5" />
-                          </button>
-                          <button
-                            onClick={() => navigateSlide(provider.id, categoryIndex, 1)}
-                            className={`p-2 rounded-full bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 transition ${
-                              currentIndex >= category.courses.length - 4 ? "opacity-50 cursor-not-allowed" : ""
-                            }`}
-                            disabled={currentIndex >= category.courses.length - 4}
-                            aria-label="Next courses"
-                          >
-                            <ChevronRight className="w-5 h-5" />
-                          </button>
-                        </div>
-                      </div>
-
-                      <div className="overflow-hidden" ref={(el) => (sliderRefs.current[sliderKey] = el)}>
-                        <div
-                          className="flex transition-transform duration-500 ease-in-out"
-                          style={{ transform: `translateX(-${currentIndex * 25}%)` }}
-                        >
-                          {category.courses.map((course) => (
-                            <div key={course.id} className="min-w-[25%] sm:min-w-[50%] lg:min-w-[25%] p-3">
-                              <CourseCard 
-                                course={{
-                                  ...course,
-                                  provider: provider.name || provider.id
-                                }} 
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )
-                })}
+              <input
+                type="text"
+                placeholder="Search courses, instructors..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="block w-full pl-10 pr-3 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+              />
+              {searchQuery && (
+                <button 
+                  onClick={() => setSearchQuery("")}
+                  className="absolute inset-y-0 right-0 pr-3 flex items-center"
+                >
+                  <X className="h-5 w-5 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200" />
+                </button>
+              )}
+            </div>
+            
+            {/* Filter Button */}
+            <button
+              onClick={() => setFilterOpen(!filterOpen)}
+              className="flex items-center justify-center gap-2 px-4 py-3 bg-customBlue text-white rounded-lg hover:bg-opacity-90 transition-all duration-200 min-w-40"
+              style={{ backgroundColor: "rgb(25,65,75)" }}
+            >
+              <Filter className="h-5 w-5" />
+              <span>Filters</span>
+              {totalActiveFilters > 0 && (
+                <span className="inline-flex items-center justify-center w-6 h-6 bg-white text-customBlue rounded-full text-sm font-bold">
+                  {totalActiveFilters}
+                </span>
+              )}
+              <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${filterOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {/* Sort Dropdown */}
+            <div className="relative min-w-40">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="block w-full pl-4 pr-10 py-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white appearance-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"
+              >
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="title-asc">Title (A-Z)</option>
+                <option value="title-desc">Title (Z-A)</option>
+              </select>
+              <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                <ChevronsUpDown className="h-5 w-5 text-gray-400" />
               </div>
             </div>
-          ))}
+          </div>
+          
+          {/* Filter Panel */}
+          <div 
+            ref={filterRef}
+            className="overflow-hidden transition-all duration-500 ease-in-out"
+            style={{ 
+              maxHeight: filterOpen ? (filterRef.current ? filterRef.current.scrollHeight + 'px' : '1000px') : '0px',
+              opacity: filterOpen ? 1 : 0
+            }}
+          >
+            <div className="pt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Provider Filter */}
+              <div>
+                <h4 className="font-medium mb-3 text-gray-700 dark:text-gray-300">Provider</h4>
+                <div className="space-y-2">
+                  {providers.map(provider => (
+                    <div key={provider} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={`provider-${provider}`}
+                        checked={selectedProviders.includes(provider)}
+                        onChange={() => toggleFilter("provider", provider)}
+                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <label htmlFor={`provider-${provider}`} className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                        {provider}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Category Filter */}
+              <div>
+                <h4 className="font-medium mb-3 text-gray-700 dark:text-gray-300">Category</h4>
+                <div className="space-y-2">
+                  {categories.map(category => (
+                    <div key={category} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={`category-${category}`}
+                        checked={selectedCategories.includes(category)}
+                        onChange={() => toggleFilter("category", category)}
+                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <label htmlFor={`category-${category}`} className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                        {category}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Difficulty Filter */}
+              <div>
+                <h4 className="font-medium mb-3 text-gray-700 dark:text-gray-300">Difficulty</h4>
+                <div className="space-y-2">
+                  {difficulties.map(difficulty => (
+                    <div key={difficulty} className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id={`difficulty-${difficulty}`}
+                        checked={selectedDifficulties.includes(difficulty)}
+                        onChange={() => toggleFilter("difficulty", difficulty)}
+                        className="w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+                      />
+                      <label htmlFor={`difficulty-${difficulty}`} className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+                        {difficulty}
+                      </label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Active Filters Tags */}
+            {totalActiveFilters > 0 && (
+              <div className="mt-6">
+                <div className="flex flex-wrap gap-2 items-center">
+                  <span className="text-sm text-gray-600 dark:text-gray-400">Active filters:</span>
+                  
+                  {selectedProviders.map(provider => (
+                    <span 
+                      key={`tag-provider-${provider}`}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs flex items-center"
+                    >
+                      {provider}
+                      <button 
+                        onClick={() => toggleFilter("provider", provider)}
+                        className="ml-1"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                  
+                  {selectedCategories.map(category => (
+                    <span 
+                      key={`tag-category-${category}`}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs flex items-center"
+                    >
+                      {category}
+                      <button 
+                        onClick={() => toggleFilter("category", category)}
+                        className="ml-1"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                  
+                  {selectedDifficulties.map(difficulty => (
+                    <span 
+                      key={`tag-difficulty-${difficulty}`}
+                      className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full text-xs flex items-center"
+                    >
+                      {difficulty}
+                      <button 
+                        onClick={() => toggleFilter("difficulty", difficulty)}
+                        className="ml-1"
+                      >
+                        <X className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                  
+                  <button 
+                    onClick={clearFilters}
+                    className="text-sm text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  >
+                    Clear all
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        {/* Course Results */}
+        <div>
+          {/* Results Count */}
+          <div className="flex justify-between items-center mb-6">
+            <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300">
+              {filteredCourses.length} {filteredCourses.length === 1 ? 'Course' : 'Courses'} Available
+            </h3>
+          </div>
+          
+          {/* Grid of Courses */}
+          {filteredCourses.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 animate-fade-in">
+              {filteredCourses.map((course, index) => (
+                <div 
+                  key={course.id || index} 
+                  className="animate-fade-up"
+                  style={{ 
+                    animationDelay: `${index * 50}ms`,
+                    opacity: 0
+                  }}
+                >
+                  <CourseCard course={course} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16">
+              <div className="text-gray-400 dark:text-gray-500 text-6xl mb-4">🔍</div>
+              <h3 className="text-xl font-medium text-gray-700 dark:text-gray-300 mb-2">No courses found</h3>
+              <p className="text-gray-500 dark:text-gray-400">Try adjusting your filters or search query</p>
+              <button 
+                onClick={clearFilters}
+                className="mt-4 px-6 py-2 bg-customBlue text-white rounded-lg hover:bg-opacity-90 transition-all duration-200"
+                style={{ backgroundColor: "rgb(25,65,75)" }}
+              >
+                Clear all filters
+              </button>
+            </div>
+          )}
         </div>
       </div>
+      
+      {/* Add custom CSS for animations */}
+      <style jsx>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        
+        @keyframes fadeUp {
+          from { 
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to { 
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .animate-fade-in {
+          animation: fadeIn 0.5s ease-out forwards;
+        }
+        
+        .animate-fade-up {
+          animation: fadeUp 0.5s ease-out forwards;
+        }
+      `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default CoursesSection
+export default CoursesSection;

@@ -10,7 +10,7 @@ export function AboutHero() {
               <span className="text-muted-foreground">Our Story</span>
             </div>
             <h1 className="text-4xl font-playfair md:text-5xl lg:text-6xl font-bold tracking-tight">
-              Innovating <span className="text-customBlue font-serif">Technology</span> Solutions Since 2010
+              Innovating <span className="text-customBlue font-serif">Technology</span> Solutions Since 2008
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Medini Technologies has been a trusted partner for businesses seeking to leverage technology for growth. For over a decade, we have continued to innovate and deliver exceptional solutions, driven by a commitment to our client's long-term success.  

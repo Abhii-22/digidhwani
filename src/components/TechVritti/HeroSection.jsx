@@ -17,14 +17,8 @@ const HeroSection = ({ isDarkMode = false, servicesData }) => {
   const services = servicesData || [
     {
       icon: <Layout className="h-6 w-6" />,
-      title: "Web Development",
+      title: "Software Solutions",
       color: "from-blue-500 to-blue-600",
-      textColor: "text-white"
-    },
-    {
-      icon: <Smartphone className="h-6 w-6" />,
-      title: "Mobile Apps", 
-      color: "from-indigo-500 to-indigo-600",
       textColor: "text-white"
     },
     {
@@ -145,7 +139,7 @@ const HeroSection = ({ isDarkMode = false, servicesData }) => {
               className="w-full lg:w-2/5 relative"
             >
               <div className="relative z-10 bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-4">
                   {services.map((service, index) => (
                     <motion.div
                       key={index}

@@ -16,6 +16,8 @@ const Header = () => {
   const [showLinks, setShowLinks] = useState(true)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isHovered, setIsHovered] = useState(false);
+
 
   // get all Courses
   const courseCategories = [
@@ -32,8 +34,8 @@ const Header = () => {
       categories: coursesData.courseProviders.find(p => p.id === "DASSAULT")?.categories || []
     },
     {
-      name: "Manufacturing",
-      categories: coursesData.courseProviders.find(p => p.id === "MANUFACTURING")?.categories || []
+      name: "Others",
+      categories: coursesData.courseProviders.find(p => p.id === "OTHER")?.categories || []
     }
   ];
 
@@ -77,6 +79,15 @@ const Header = () => {
   const isTeaMech = location.pathname.includes("teamech");
   const isTechVritti = location.pathname.includes("techvritti");
 
+  const phoneNumber = "919686311005";
+  const handleClick = (e) => {
+    e.preventDefault();
+    // Create WhatsApp URL with the phone number
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 flex flex-col ">
       {/* Navbar */}
@@ -104,30 +115,33 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <div className="hidden md:flex items-center gap-4">
                 <ThemeToggle />
-                <Link
-                  to="/contact"
-                  className="relative overflow-hidden inline-flex h-10 items-center justify-center rounded-full bg-amber-100 px-6 py-2 text-sm font-medium text-amber-600 shadow-lg transition-all duration-500 hover:shadow-amber-500/25 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 dark:shadow-lg dark:shadow-blue-700/30 group"
-                >
-                  <span className="absolute -z-10 inset-0 rounded-full bg-amber-100 blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-500"></span>
-                  <span className="relative z-10 flex items-center">
-                    Get Started
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="ml-2 h-4 w-4 transform transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      <path d="M5 12h14" />
-                      <path d="m12 5 7 7-7 7" />
-                    </svg>
-                  </span>
-                </Link>
+                <a
+      href="#"
+      className="relative overflow-hidden inline-flex h-10 items-center justify-center rounded-full bg-amber-100 px-6 py-2 text-sm font-medium text-amber-600 shadow-lg transition-all duration-500 hover:shadow-amber-500/25 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 dark:shadow-lg dark:shadow-blue-700/30 group"
+      onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <span className="absolute -z-10 inset-0 rounded-full bg-amber-100 blur-lg opacity-60 group-hover:opacity-80 transition-opacity duration-500"></span>
+      <span className="relative z-10 flex items-center">
+        Get Started
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={`ml-2 h-4 w-4 transform transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`}
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </span>
+    </a>
               </div>
               
             </div>

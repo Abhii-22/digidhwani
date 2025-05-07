@@ -1,7 +1,41 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from "@/assets/Logos/Medini_logo.png"
 
 function Footer() {
+  const location = useLocation();
+  const isTechVritti = location.pathname === "/techvritti";
+  
+  // Define social media links based on the current path
+  const socialLinks = isTechVritti 
+    ? [
+        {
+          platform: "facebook",
+          url: "https://www.facebook.com/profile.php?id=61567620676135",
+        },
+        {
+          platform: "linkedin",
+          url: "https://www.linkedin.com/company/techvritti/",
+        },
+        {
+          platform: "instagram",
+          url: "https://www.instagram.com/techvritti/",
+        },
+      ]
+    : [
+        {
+          platform: "facebook",
+          url: "https://www.facebook.com/share/18jahKMGDK/",
+        },
+        {
+          platform: "linkedin",
+          url: "https://www.linkedin.com/company/medinitechnologies/",
+        },
+        {
+          platform: "instagram",
+          url: "https://www.instagram.com/medinitechnologies?igsh=dXRxc3I4anl2NTlw",
+        },
+      ];
+
   return (
     <footer className="bg-white px-8 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-4 py-16">
@@ -10,27 +44,14 @@ function Footer() {
           <div className="space-y-6">
             <Link to="/" className="inline-block">
               <span className="text-3xl font-bold bg-clip-text text-transparent bg-black dark:bg-white">
-                Medini Technologies
+                {isTechVritti ? "TechVritti" : "Medini Technologies"}
               </span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
               Innovative technology solutions that transform businesses through cutting-edge digital strategies and intelligent design.
             </p>
             <div className="flex space-x-4">
-              {[
-                {
-                  platform: "facebook",
-                  url: "https://www.facebook.com/share/18jahKMGDK/",
-                },
-                {
-                  platform: "linkedin",
-                  url: "https://www.linkedin.com/company/medinitechnologies/",
-                },
-                {
-                  platform: "instagram",
-                  url: "https://www.instagram.com/medinitechnologies?igsh=dXRxc3I4anl2NTlw",
-                },
-              ].map(({ platform, url }, index) => (
+              {socialLinks.map(({ platform, url }, index) => (
                 <a
                   key={index}
                   href={url}
@@ -88,7 +109,7 @@ function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center">
           <p className="text-sm text-gray-600 dark:text-gray-400">
-            © {new Date().getFullYear()} Medini Technologies. All Rights Reserved.
+            © {new Date().getFullYear()} {isTechVritti ? "TechVritti" : "Medini Technologies"}. All Rights Reserved.
           </p>
         </div>
       </div>

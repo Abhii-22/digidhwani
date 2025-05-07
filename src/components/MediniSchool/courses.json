@@ -8,6 +8,35 @@
           "name": "Design & Drafting",
           "courses": [
             {
+              "id": "fusion",
+              "title": "Fusion 360 Essentials",
+              "name": "Fusion 360",
+              "icon": "🔄",
+              "description": "Cloud-based 3D CAD/CAM software for product design and manufacturing, combining industrial and mechanical design with simulation and collaboration tools.",
+              "duration": "8 weeks",
+              "difficulty": "Beginner to Intermediate",
+              "price": 899,
+              "instructor": "Jason Miller",
+              "targetAudience": "Product Designers, Engineers, Makers (PROD/MECH)",
+              "curriculum": [
+                "Parametric Modeling",
+                "Assembly Design",
+                "Simulation Basics",
+                "CAM Fundamentals",
+                "Cloud Collaboration"
+              ],
+              "learningOutcomes": [
+                "Create parametric 3D designs",
+                "Perform basic engineering simulations",
+                "Generate toolpaths for manufacturing"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Understanding of design concepts"
+              ],
+              "coverImage": "fusion360.jpg"
+            },
+            {
               "id": "autocad",
               "title": "AutoCAD Fundamentals",
               "name": "AutoCAD",
@@ -204,40 +233,6 @@
           ]
         },
         {
-          "name": "Project Management",
-          "courses": [
-            {
-              "id": "project-planning",
-              "title": "Construction Project Planning",
-              "name": "Project Planning",
-              "icon": "📋",
-              "description": "Covers scheduling, resource allocation, and critical path analysis with tools like Primavera or MS Project for construction management.",
-              "duration": "6 weeks",
-              "difficulty": "Intermediate",
-              "price": 999,
-              "instructor": "Patricia Moore",
-              "targetAudience": "Civil/Architectural (CIV/ARCH)",
-              "curriculum": [
-                "Schedule Development",
-                "Resource Management",
-                "Critical Path Analysis",
-                "Progress Tracking",
-                "Risk Management"
-              ],
-              "learningOutcomes": [
-                "Develop comprehensive project schedules",
-                "Optimize resource allocation",
-                "Apply critical path methodologies"
-              ],
-              "prerequisites": [
-                "Basic project management concepts",
-                "Construction industry knowledge"
-              ],
-              "coverImage": "project-planning.jpg"
-            }
-          ]
-        },
-        {
           "name": "Visualization",
           "courses": [
             {
@@ -268,35 +263,6 @@
                 "Understanding of architectural design"
               ],
               "coverImage": "3ds-max.jpg"
-            },
-            {
-              "id": "lumion",
-              "title": "Real-Time Architectural Rendering with Lumion",
-              "name": "Lumion",
-              "icon": "🖼️",
-              "description": "Transforms 3D models into high-quality visuals and VR walkthroughs for client presentations and marketing.",
-              "duration": "6 weeks",
-              "difficulty": "Intermediate",
-              "price": 999,
-              "instructor": "Sophia Chen",
-              "targetAudience": "Architectural/Civil (ARCH/CIV)",
-              "curriculum": [
-                "Model Import and Setup",
-                "Material Application",
-                "Environmental Effects",
-                "Animation Creation",
-                "Rendering Techniques"
-              ],
-              "learningOutcomes": [
-                "Create stunning architectural visualizations",
-                "Develop immersive walkthroughs",
-                "Master real-time rendering workflows"
-              ],
-              "prerequisites": [
-                "3D modeling experience",
-                "Architectural design knowledge"
-              ],
-              "coverImage": "lumion.jpg"
             }
           ]
         },
@@ -335,99 +301,70 @@
           ]
         },
         {
-          "name": "AI Design",
+          "name": "Infrawork",
           "courses": [
             {
-              "id": "generative-design",
-              "title": "AI-Driven Generative Design",
-              "name": "Generative Design",
-              "icon": "🧠",
-              "description": "Uses AI algorithms to optimize designs based on constraints like materials and loads for sustainable architecture.",
-              "duration": "8 weeks",
-              "difficulty": "Advanced",
-              "price": 1499,
-              "instructor": "Robert Zhang",
-              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "id": "infrawork",
+              "title": "InfraWorks Fundamentals",
+              "name": "InfraWorks",
+              "icon": "🌉",
+              "description": "Conceptual design software for infrastructure projects, enabling large-scale preliminary designs with GIS integration and visualization capabilities.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 1099,
+              "instructor": "Sophia Chen",
+              "targetAudience": "Civil Engineers, Urban Planners (CIV/PLAN)",
               "curriculum": [
-                "Design Goal Definition",
-                "Constraint Modeling",
-                "Generative Algorithm Setup",
-                "Solution Evaluation",
-                "Design Refinement"
+                "Model Builder Fundamentals",
+                "Terrain Modeling",
+                "Road and Highway Design",
+                "Bridge Component Design",
+                "Visualization Techniques"
               ],
               "learningOutcomes": [
-                "Apply AI to architectural design",
-                "Create optimized structural solutions",
-                "Implement sustainable design practices"
+                "Create preliminary infrastructure designs",
+                "Integrate GIS data into projects",
+                "Develop compelling visualizations"
               ],
               "prerequisites": [
-                "Advanced CAD experience",
-                "Parametric design knowledge"
+                "Civil engineering background",
+                "Basic CAD experience"
               ],
-              "coverImage": "generative-design.jpg"
+              "coverImage": "infraworks.jpg"
             }
           ]
         },
         {
-          "name": "Combo Courses",
+          "name": "Maya",
           "courses": [
             {
-              "id": "combo-arch",
-              "title": "Architectural Design Complete Suite",
-              "name": "AutoCAD + Revit + 3DS Max",
-              "icon": "🏆",
-              "description": "End-to-end training covering drafting, BIM modeling, and photorealistic rendering for comprehensive project workflows.",
-              "duration": "16 weeks",
-              "difficulty": "Beginner to Advanced",
-              "price": 2499,
-              "instructor": "Team Teaching",
-              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "id": "maya",
+              "title": "Maya for Architectural Visualization",
+              "name": "Maya",
+              "icon": "🎬",
+              "description": "Professional 3D animation and modeling software for creating high-end architectural visualizations, animations, and visual effects.",
+              "duration": "10 weeks",
+              "difficulty": "Advanced",
+              "price": 1599,
+              "instructor": "Daniel Kim",
+              "targetAudience": "Architectural Visualizers, 3D Artists (ARCH/VIZ)",
               "curriculum": [
-                "CAD Fundamentals",
-                "BIM Modeling Techniques",
-                "Advanced Visualization",
-                "Integrated Workflows",
-                "Project Case Studies"
+                "3D Modeling Techniques",
+                "Material and Texture Creation",
+                "Advanced Lighting Setup",
+                "Animation Fundamentals",
+                "Rendering with Arnold"
               ],
               "learningOutcomes": [
-                "Master complete architectural design workflow",
-                "Create professional deliverables from concept to rendering",
-                "Develop multi-platform skills"
+                "Create photorealistic architectural visualizations",
+                "Develop architectural animations and walkthroughs",
+                "Master advanced rendering techniques"
               ],
               "prerequisites": [
-                "Basic computer skills",
-                "Interest in architecture and design"
+                "3D modeling experience",
+                "Understanding of architectural principles"
               ],
-              "coverImage": "combo-arch.jpg"
-            },
-            {
-              "id": "combo-civil",
-              "title": "Civil Engineering Professional Package",
-              "name": "AutoCAD + Revit + STAAD/ETABS",
-              "icon": "🏗️",
-              "description": "Combines civil drafting, structural BIM, and engineering analysis for infrastructure and building projects.",
-              "duration": "20 weeks",
-              "difficulty": "Intermediate to Advanced",
-              "price": 2999,
-              "instructor": "Team Teaching",
-              "targetAudience": "Civil (CIV)",
-              "curriculum": [
-                "Technical Drawing Standards",
-                "Structural Modeling",
-                "Load Analysis",
-                "Performance Simulation",
-                "Documentation & Reporting"
-              ],
-              "learningOutcomes": [
-                "Design and analyze complete civil projects",
-                "Create professional engineering documentation",
-                "Master industry-standard software suite"
-              ],
-              "prerequisites": [
-                "Engineering background",
-                "Basic CAD knowledge"
-              ],
-              "coverImage": "combo-civil.jpg"
+              "coverImage": "maya.jpg"
             }
           ]
         }
@@ -441,9 +378,9 @@
           "name": "Engineering Software",
           "courses": [
             {
-              "id": "microstation",
+              "id": "openroads-designer",
               "title": "Microstation Fundamentals",
-              "name": "Microstation",
+              "name": "OpenRoads Designer",
               "icon": "📐",
               "description": "Comprehensive training in Bentley's MicroStation CAD software.",
               "duration": "6 weeks",
@@ -470,33 +407,62 @@
               "coverImage": "microstation.jpg"
             },
             {
-              "id": "openroads",
-              "title": "OpenRoads Infrastructure Design",
-              "name": "OpenRoads",
-              "icon": "🛣️",
-              "description": "Specialized in civil infrastructure design for roads, highways and transportation networks.",
-              "duration": "10 weeks",
-              "difficulty": "Advanced",
-              "price": 1299,
-              "instructor": "Marcus Johnson",
-              "targetAudience": "Civil (CIV)",
+              "id": "openflows-watergems",
+              "title": "OpenFlows WaterGEMS Essentials",
+              "name": "OpenFlows WaterGEMS",
+              "icon": "💧",
+              "description": "Specialized hydraulic modeling software for water distribution systems, enabling analysis, design, and optimization of water networks.",
+              "duration": "7 weeks",
+              "difficulty": "Intermediate",
+              "price": 1199,
+              "instructor": "Sarah Thompson",
+              "targetAudience": "Water Engineers, Civil Engineers (CIV/ENV)",
               "curriculum": [
-                "Terrain Modeling",
-                "Alignment Design",
-                "Corridor Modeling",
-                "Cross Section Design",
-                "Drainage Analysis"
+                "Water Network Modeling",
+                "Hydraulic Analysis",
+                "Scenario Management",
+                "Water Quality Simulation",
+                "System Optimization"
               ],
               "learningOutcomes": [
-                "Design comprehensive transportation projects",
-                "Model complex terrain and infrastructure",
-                "Produce professional civil plans"
+                "Design efficient water distribution systems",
+                "Analyze hydraulic performance",
+                "Optimize existing water networks"
               ],
               "prerequisites": [
-                "MicroStation experience",
-                "Civil engineering knowledge"
+                "Civil engineering background",
+                "Understanding of hydraulic principles"
               ],
-              "coverImage": "openroads.jpg"
+              "coverImage": "watergems.jpg"
+            },
+            {
+              "id": "openflows-sewergems",
+              "title": "OpenFlows SewerGEMS Fundamentals",
+              "name": "OpenFlows SewerGEMS",
+              "icon": "🌊",
+              "description": "Comprehensive sanitary and combined sewer modeling software for planning, analysis, and design of wastewater collection systems.",
+              "duration": "7 weeks",
+              "difficulty": "Intermediate",
+              "price": 1199,
+              "instructor": "Michael Rivera",
+              "targetAudience": "Wastewater Engineers, Civil Engineers (CIV/ENV)",
+              "curriculum": [
+                "Sewer Network Modeling",
+                "Hydraulic Analysis",
+                "Rainfall-Dependent Inflow",
+                "Sanitary Load Estimation",
+                "System Capacity Analysis"
+              ],
+              "learningOutcomes": [
+                "Design effective wastewater collection systems",
+                "Model stormwater and sanitary flows",
+                "Analyze system capacity and performance"
+              ],
+              "prerequisites": [
+                "Civil engineering background",
+                "Understanding of wastewater systems"
+              ],
+              "coverImage": "sewergems.jpg"
             }
           ]
         },
@@ -571,115 +537,6 @@
                 "Familiarity with 3D concepts"
               ],
               "coverImage": "solidworks.jpg"
-            },
-            {
-              "id": "catia",
-              "title": "CATIA Advanced Surface Modeling",
-              "name": "CATIA",
-              "icon": "✈️",
-              "description": "High-end CAD/CAM/CAE software for industrial design, surface modeling, and simulations in aerospace and automotive sectors.",
-              "duration": "14 weeks",
-              "difficulty": "Advanced",
-              "price": 1899,
-              "instructor": "Jean-Paul Moreau",
-              "targetAudience": "Mechanical/Electrical (MECH/ELEC)",
-              "curriculum": [
-                "Surface Modeling Fundamentals",
-                "Complex Shape Design",
-                "Assembly Integration",
-                "DMU Kinematics",
-                "Manufacturing Preparation"
-              ],
-              "learningOutcomes": [
-                "Create advanced surface models",
-                "Design complex mechanical systems",
-                "Prepare models for manufacturing"
-              ],
-              "prerequisites": [
-                "Mechanical design experience",
-                "3D modeling background"
-              ],
-              "coverImage": "catia.jpg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "TRIMBLE",
-      "logo": "@/assets/Logos/Trimble-Logo.png",
-      "categories": [
-        {
-          "name": "Conceptual Design",
-          "courses": [
-            {
-              "id": "sketchup",
-              "title": "SketchUp for Architectural Design",
-              "name": "SketchUp",
-              "icon": "🏠",
-              "description": "User-friendly 3D modeling software for quick prototyping, terrain modeling, and rendering integrations like V-Ray.",
-              "duration": "6 weeks",
-              "difficulty": "Beginner",
-              "price": 699,
-              "instructor": "Michelle Patel",
-              "targetAudience": "Architectural/Civil (ARCH/CIV)",
-              "curriculum": [
-                "3D Modeling Basics",
-                "Component Creation",
-                "Terrain Modeling",
-                "Material Application",
-                "Rendering Integration"
-              ],
-              "learningOutcomes": [
-                "Create conceptual 3D models quickly",
-                "Develop architectural prototypes",
-                "Produce basic visualizations"
-              ],
-              "prerequisites": [
-                "Basic computer skills",
-                "No prior 3D experience required"
-              ],
-              "coverImage": "sketchup.jpg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ADOBE",
-      "logo": "@/assets/Logos/Adobe-Authorized-Training-Center.png",
-      "categories": [
-        {
-          "name": "Visual Communication",
-          "courses": [
-            {
-              "id": "photoshop",
-              "title": "Photoshop for Architectural Presentations",
-              "name": "Photoshop",
-              "icon": "🖌️",
-              "description": "Teaches photo editing, vector graphics, and presentation layouts for architects and urban planners.",
-              "duration": "5 weeks",
-              "difficulty": "Intermediate",
-              "price": 699,
-              "instructor": "Tina Nguyen",
-              "targetAudience": "Architectural/Civil (ARCH/CIV)",
-              "curriculum": [
-                "Image Enhancement",
-                "Architectural Composition",
-                "Rendering Post-Processing",
-                "Digital Drawing Techniques",
-                "Presentation Layout Design"
-              ],
-              "learningOutcomes": [
-                "Create professional architectural presentations",
-                "Enhance rendered visualizations",
-                "Develop digital drawing skills"
-              ],
-              "prerequisites": [
-                "Basic design concepts",
-                "Familiarity with digital images"
-              ],
-              "coverImage": "photoshop.jpg"
             }
           ]
         }
@@ -789,6 +646,309 @@
                 "Basic BIM knowledge"
               ],
               "coverImage": "bim-construction.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "OTHER",
+      "logo": "@/assets/Logos/Trimble-Logo.png",
+      "categories": [
+        {
+          "name": "Other",
+          "courses": [
+            {
+              "id": "sketchup",
+              "title": "SketchUp for Architectural Design",
+              "name": "SketchUp",
+              "icon": "🏠",
+              "description": "User-friendly 3D modeling software for quick prototyping, terrain modeling, and rendering integrations like V-Ray.",
+              "duration": "6 weeks",
+              "difficulty": "Beginner",
+              "price": 699,
+              "instructor": "Michelle Patel",
+              "targetAudience": "Architectural/Civil (ARCH/CIV)",
+              "curriculum": [
+                "3D Modeling Basics",
+                "Component Creation",
+                "Terrain Modeling",
+                "Material Application",
+                "Rendering Integration"
+              ],
+              "learningOutcomes": [
+                "Create conceptual 3D models quickly",
+                "Develop architectural prototypes",
+                "Produce basic visualizations"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "No prior 3D experience required"
+              ],
+              "coverImage": "sketchup.jpg"
+            },
+            {
+              "id": "V-Ray",
+              "title": "V-Ray for Architectural Rendering",
+              "name": "V-Ray",
+              "icon": "🖼️",
+              "description": "Industry-standard rendering engine for creating photorealistic visualizations in architecture, design, and visual effects.",
+              "duration": "6 weeks",
+              "difficulty": "Intermediate",
+              "price": 899,
+              "instructor": "Elena Rodriguez",
+              "targetAudience": "Architects, 3D Artists, Designers (ARCH/VIZ)",
+              "curriculum": [
+                "V-Ray Material Creation",
+                "Lighting Techniques",
+                "Camera Setup",
+                "Render Settings Optimization",
+                "Post-Processing Workflows"
+              ],
+              "learningOutcomes": [
+                "Create photorealistic architectural renderings",
+                "Develop efficient rendering workflows",
+                "Master lighting and material techniques"
+              ],
+              "prerequisites": [
+                "3D modeling experience",
+                "Basic understanding of rendering concepts"
+              ],
+              "coverImage": "vray.jpg"
+            },
+            {
+              "id": "lumion",
+              "title": "Lumion Real-time Visualization",
+              "name": "Lumion",
+              "icon": "🏙️",
+              "description": "Real-time 3D rendering software designed specifically for architects and designers to create stunning visualizations with minimal technical expertise.",
+              "duration": "5 weeks",
+              "difficulty": "Beginner to Intermediate",
+              "price": 799,
+              "instructor": "Christopher Lee",
+              "targetAudience": "Architects, Designers, Visualizers (ARCH/VIZ)",
+              "curriculum": [
+                "Model Import and Preparation",
+                "Material Application",
+                "Landscape and Environment Design",
+                "Animation Techniques",
+                "Rendering and Output Options"
+              ],
+              "learningOutcomes": [
+                "Create high-quality architectural visualizations quickly",
+                "Develop compelling animated presentations",
+                "Master real-time rendering techniques"
+              ],
+              "prerequisites": [
+                "Basic 3D modeling knowledge",
+                "Architectural design experience"
+              ],
+              "coverImage": "lumion.jpg"
+            },
+            {
+              "id": "enscape",
+              "title": "Enscape for Real-time Rendering",
+              "name": "Enscape",
+              "icon": "🖥️",
+              "description": "Real-time rendering and virtual reality plugin that integrates directly with BIM/CAD software for instant visualization during the design process.",
+              "duration": "4 weeks",
+              "difficulty": "Beginner",
+              "price": 699,
+              "instructor": "Andrew Wilson",
+              "targetAudience": "Architects, Designers, BIM Specialists (ARCH/BIM)",
+              "curriculum": [
+                "Enscape Setup and Integration",
+                "Material and Asset Libraries",
+                "Lighting Techniques",
+                "Virtual Reality Walkthroughs",
+                "Presentation Output Options"
+              ],
+              "learningOutcomes": [
+                "Create real-time visualizations during design",
+                "Develop immersive VR presentations",
+                "Streamline design-to-visualization workflow"
+              ],
+              "prerequisites": [
+                "Experience with Revit, SketchUp, or other CAD software",
+                "Basic design knowledge"
+              ],
+              "coverImage": "enscape.jpg"
+            },
+            {
+              "id": "primavera",
+              "title": "Primavera P6 Project Management",
+              "name": "Primavera",
+              "icon": "📊",
+              "description": "Enterprise project portfolio management software for planning, scheduling, and controlling large-scale construction and engineering projects.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 1099,
+              "instructor": "Robert Johnson",
+              "targetAudience": "Project Managers, Construction Professionals (PM/CONST)",
+              "curriculum": [
+                "Project Setup and WBS Creation",
+                "Resource and Cost Management",
+                "Schedule Development",
+                "Risk Analysis",
+                "Progress Tracking and Reporting"
+              ],
+              "learningOutcomes": [
+                "Create comprehensive project schedules",
+                "Manage resources and costs effectively",
+                "Track and report project progress"
+              ],
+              "prerequisites": [
+                "Project management experience",
+                "Understanding of construction processes"
+              ],
+              "coverImage": "primavera.jpg"
+            },
+            {
+              "id": "rhino",
+              "title": "Rhino 3D Modeling",
+              "name": "Rhino",
+              "icon": "🦏",
+              "description": "Versatile 3D modeling tool for designers working with highly complex shapes and organic forms, popular in architecture and industrial design.",
+              "duration": "8 weeks",
+              "difficulty": "Intermediate",
+              "price": 999,
+              "instructor": "Olivia Martinez",
+              "targetAudience": "Architects, Industrial Designers, Artists (ARCH/DES)",
+              "curriculum": [
+                "NURBS Modeling Fundamentals",
+                "Surface Creation and Editing",
+                "Curve Manipulation",
+                "Solid Modeling Techniques",
+                "Rendering with Rhino Render"
+              ],
+              "learningOutcomes": [
+                "Create complex 3D forms and surfaces",
+                "Develop precise digital models",
+                "Master advanced modeling techniques"
+              ],
+              "prerequisites": [
+                "Basic 3D modeling concepts",
+                "Design background"
+              ],
+              "coverImage": "rhino.jpg"
+            },
+            {
+              "id": "grasshopper",
+              "title": "Grasshopper Parametric Design",
+              "name": "Grasshopper",
+              "icon": "🦗",
+              "description": "Visual programming language for Rhino that enables parametric and algorithmic design, allowing for complex form generation and design exploration.",
+              "duration": "9 weeks",
+              "difficulty": "Advanced",
+              "price": 1299,
+              "instructor": "David Park",
+              "targetAudience": "Architects, Computational Designers (ARCH/COMP)",
+              "curriculum": [
+                "Grasshopper Interface and Logic",
+                "Parametric Modeling Basics",
+                "Data Trees and List Management",
+                "Pattern Generation",
+                "Form-Finding Techniques"
+              ],
+              "learningOutcomes": [
+                "Create parametric architectural designs",
+                "Develop algorithmic design solutions",
+                "Automate complex modeling tasks"
+              ],
+              "prerequisites": [
+                "Rhino 3D experience",
+                "Understanding of design principles"
+              ],
+              "coverImage": "grasshopper.jpg"
+            },
+            {
+              "id": "photoshop",
+              "title": "Photoshop for Architectural Visualization",
+              "name": "Photoshop",
+              "icon": "🎨",
+              "description": "Industry-standard image editing software for post-processing architectural renderings, creating presentation boards, and enhancing visualizations.",
+              "duration": "6 weeks",
+              "difficulty": "Beginner to Intermediate",
+              "price": 799,
+              "instructor": "Sophia Garcia",
+              "targetAudience": "Architects, Visualizers, Designers (ARCH/VIZ)",
+              "curriculum": [
+                "Interface and Tool Basics",
+                "Layer Management",
+                "Interface and Tool Basics",
+                "Layer Management",
+                "Selection and Masking",
+                "Color Correction and Grading",
+                "Composition and Presentation Layout"
+              ],
+              "learningOutcomes": [
+                "Enhance architectural renderings",
+                "Create professional presentation boards",
+                "Develop efficient post-processing workflows"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Understanding of design principles"
+              ],
+              "coverImage": "photoshop.jpg"
+            },
+            {
+              "id": "illustrator",
+              "title": "Illustrator for Technical Drawing",
+              "name": "Illustrator",
+              "icon": "✏️",
+              "description": "Vector graphics editor for creating precise technical drawings, diagrams, and presentation graphics for architectural and engineering projects.",
+              "duration": "5 weeks",
+              "difficulty": "Beginner to Intermediate",
+              "price": 749,
+              "instructor": "Marcus Wright",
+              "targetAudience": "Architects, Engineers, Designers (ARCH/ENG)",
+              "curriculum": [
+                "Vector Drawing Fundamentals",
+                "Technical Drawing Tools",
+                "Precision and Measurement",
+                "Diagramming Techniques",
+                "Presentation Graphics"
+              ],
+              "learningOutcomes": [
+                "Create precise technical illustrations",
+                "Develop clear diagrams and schematics",
+                "Design professional presentation graphics"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Understanding of technical drawing concepts"
+              ],
+              "coverImage": "illustrator.jpg"
+            },
+            {
+              "id": "etabs",
+              "title": "ETABS Structural Analysis",
+              "name": "ETABS",
+              "icon": "🏢",
+              "description": "Specialized structural analysis and design software for buildings, particularly high-rises, with integrated design codes and building systems analysis.",
+              "duration": "10 weeks",
+              "difficulty": "Advanced",
+              "price": 1499,
+              "instructor": "Dr. James Chen",
+              "targetAudience": "Structural Engineers, Civil Engineers (STRUCT/CIV)",
+              "curriculum": [
+                "Building Modeling Fundamentals",
+                "Load Case Definition",
+                "Seismic Analysis",
+                "Structural Element Design",
+                "Code Compliance Checking"
+              ],
+              "learningOutcomes": [
+                "Analyze complex building structures",
+                "Design code-compliant structural systems",
+                "Perform seismic and dynamic analysis"
+              ],
+              "prerequisites": [
+                "Structural engineering background",
+                "Understanding of building codes"
+              ],
+              "coverImage": "etabs.jpg"
             }
           ]
         }

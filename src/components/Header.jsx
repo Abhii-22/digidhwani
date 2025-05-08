@@ -83,7 +83,7 @@ function Header() {
           <div className="flex items-center gap-6">
             <Link to="/" className="flex items-center space-x-2 group">
               <div className={`rounded-lg p-1 transition-all duration-300 ${theme === "light" ? "bg-gray-800" : ""}`}>
-                <img src={`${logo}?height=80&width=120`} alt="Medini Logo" className="w-auto h-20" />
+                <img src={`${logo}?height=120&width=120`} alt="Medini Logo" className="w-auto h-20" />
               </div>
             </Link>
           </div>

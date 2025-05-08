@@ -131,41 +131,6 @@ const HeroSection = ({ isDarkMode = false, servicesData }) => {
               </motion.div>
             </motion.div>
             
-            {/* Right Column - Services Card */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-full lg:w-2/5 relative"
-            >
-              <div className="relative z-10 bg-white/10 backdrop-blur-lg rounded-2xl p-6 shadow-xl border border-white/20">
-                <div className="grid grid-cols-1 gap-4">
-                  {services.map((service, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ y: 20, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ delay: 0.2 + index * 0.15 }}
-                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                      className="flex flex-col items-center text-center p-4 rounded-xl bg-gradient-to-b from-white/5 to-white/10 border border-white/10 hover:border-white/30 transition-all duration-300 cursor-pointer"
-                    >
-                      <div className={`p-3 rounded-full bg-gradient-to-r ${service.color} mb-3 shadow-lg`}>
-                        {service.icon}
-                      </div>
-                      <h3 className={`font-medium ${service.textColor || "text-white"}`}>{service.title}</h3>
-                    </motion.div>
-                  ))}
-                </div>
-                
-                {/* Decorative lines */}
-                <div className="absolute -bottom-2 -right-2 -left-2 h-px bg-gradient-to-r from-transparent via-blue-300 to-transparent"></div>
-                <div className="absolute -top-2 -right-2 -left-2 h-px bg-gradient-to-r from-transparent via-indigo-300 to-transparent"></div>
-              </div>
-
-              {/* Decorative elements */}
-              <div className="absolute top-1/2 -right-8 w-24 h-24 bg-blue-400 rounded-full filter blur-3xl opacity-20"></div>
-              <div className="absolute bottom-1/3 -left-8 w-24 h-24 bg-indigo-400 rounded-full filter blur-3xl opacity-20"></div>
-            </motion.div>
           </div>
           
           {/* Scroll indicator */}

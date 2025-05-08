@@ -57,7 +57,7 @@ function App() {
           </main>
           <Footer />
 
-          <ChatBot />
+          {/* <ChatBot /> */}
         </div>
       </Router>
     </ThemeProvider>

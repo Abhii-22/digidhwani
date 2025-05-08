@@ -5,7 +5,7 @@ import autocad from "@/assets/IMAGES/AutoCAD.jpg"
 import civil3d from "@/assets/IMAGES/tool-inc-AkpJnHXu6Hg-unsplash.jpg"
 import solidworks from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"
 import microstation from "@/assets/IMAGES/getty-images-ItieuN1ec0k-unsplash.jpg"
-import revit from "@/assets/IMAGES/getty-images-OYBtn34RPzY-unsplash.jpg"
+import revit from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"
 import infraworks from "@/assets/IMAGES/getty-images-KD_fT_T4D24-unsplash.jpg"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
@@ -35,7 +35,7 @@ function HeroSection() {
     {
       id: 3,
       image: `${solidworks}?height=200&width=300`,
-      name: "BIM for Aechitecture",
+      name: "BIM for Architecture",
       description: "Professional 3D CAD design",
       // link: "/courses/solidworks",
     },
@@ -45,6 +45,12 @@ function HeroSection() {
       name: "Product Design",
       description: "Infrastructure design solutions",
       // link: "/courses/microstation",
+    },
+    {
+      id: 5,
+      image: `${revit}?height=200&width=300`,
+      name: 'Revit',
+      description: "Revit is a powerful Building Information Modeling (BIM) software "
     }
   ]
   

@@ -16,43 +16,9 @@ import {
 } from "lucide-react"
 
 const ServicesComponent = () => {
-  const [activeTab, setActiveTab] = useState("web")
+  const [activeTab, setActiveTab] = useState("enterprise")
 
   const services = {
-    web: [
-      {
-        icon: <Layout />,
-        title: "Web Development",
-        description: "Custom websites and web applications built with modern technologies and frameworks.",
-      },
-      {
-        icon: <Globe />,
-        title: "E-Commerce Solutions",
-        description: "Scalable online stores with secure payment gateways and inventory management.",
-      },
-      {
-        icon: <Layers />,
-        title: "Progressive Web Apps",
-        description: "Fast, reliable, and engaging web applications that work offline.",
-      },
-    ],
-    mobile: [
-      {
-        icon: <Smartphone />,
-        title: "Mobile App Development",
-        description: "Native and cross-platform mobile applications for iOS and Android.",
-      },
-      {
-        icon: <Settings />,
-        title: "App Maintenance",
-        description: "Ongoing support, updates, and optimization for existing mobile applications.",
-      },
-      {
-        icon: <ShieldCheck />,
-        title: "Secure Authentication",
-        description: "Implement biometric, social, and multi-factor authentication systems.",
-      },
-    ],
     enterprise: [
       {
         icon: <Database />,
@@ -90,8 +56,6 @@ const ServicesComponent = () => {
   }
 
   const tabs = [
-    { id: "web", label: "Web Development" },
-    { id: "mobile", label: "Mobile Apps" },
     { id: "enterprise", label: "Enterprise Solutions" },
     { id: "cloud", label: "Cloud & DevOps" },
   ]

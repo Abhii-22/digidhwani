@@ -103,7 +103,7 @@ const Header = () => {
             <img
               src={logo}
               alt="Medini"
-              className="h-10 mr-2"
+              className="h-14 mr-2"
             />
             {isTechVritti && (
               <p className="font-playfair">TechVritti</p>

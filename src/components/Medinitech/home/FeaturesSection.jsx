@@ -1,17 +1,17 @@
-import { useState, useRef, useEffect } from "react"
-import { Globe, ChevronLeft, ChevronRight } from "lucide-react"
-import { Link } from "react-router-dom"
+import { useState, useRef, useEffect } from "react";
+import { Globe, ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
-import image1 from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg"
-import image2 from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg"
-import image3 from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"
-import image4 from "@/assets/IMAGES/getty-images-X-lDEMCZBz0-unsplash.jpg"
+import image1 from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg";
+import image2 from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg";
+import image3 from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg";
+import image4 from "@/assets/IMAGES/getty-images-X-lDEMCZBz0-unsplash.jpg";
 
 const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-  const sliderRef = useRef(null)
-  const autoSlideTimerRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const sliderRef = useRef(null);
+  const autoSlideTimerRef = useRef(null);
 
   const services = [
     {
@@ -35,83 +35,101 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
       bg_image: `${image4}?height=600&width=800`,
     },
     {
-      title: "TEAMECH",
+      title: "EDUPHYGITAL",
+      description: "Restructuring the Dreams through innovative educational solutions that bridge physical and digital learning environments.",
+      link: "/eduphygital",
+      bg_image: `${image2}?height=600&width=800`,
+    },
+    {
+      title: "DIGIDHVANI",
+      description: "Digital Marketing Solutions for businesses looking to amplify their online presence and reach.",
+      link: "/digidhvani",
+      bg_image: `${image4}?height=600&width=800`,
+    },
+    {
+      title: "BUILDDSPACE",
+      description: "For Startup Support - Empowering entrepreneurs with the resources and guidance needed to build successful ventures.",
+      link: "/builddspace",
+      bg_image: `${image1}?height=600&width=800`,
+    },
+    {
+      title: "MECHSETU",
       description: "From design to manufacturing, any need of the market to the market",
       link: "/teamech",
       bg_image: `${image3}?height=600&width=800`,
     },
-  ]
+  ];
 
   const slideLeft = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
+      setCurrentIndex(currentIndex - 1);
     } else {
       // Loop to the end when at the beginning
-      setCurrentIndex(services.length - getVisibleCards())
+      setCurrentIndex(services.length - getVisibleCards());
     }
-  }
+  };
 
   const slideRight = () => {
-    const maxIndex = services.length - getVisibleCards()
+    const maxIndex = services.length - getVisibleCards();
     if (currentIndex < maxIndex) {
-      setCurrentIndex(currentIndex + 1)
+      setCurrentIndex(currentIndex + 1);
     } else {
       // Loop to the beginning when at the end
-      setCurrentIndex(0)
+      setCurrentIndex(0);
     }
-  }
+  };
 
   const getVisibleCards = () => {
     if (typeof window !== "undefined") {
-      if (window.innerWidth >= 1280) return 3 
-      if (window.innerWidth >= 768) return 2 
-      return 1 
+      if (window.innerWidth >= 1280) return 3; 
+      if (window.innerWidth >= 768) return 2; 
+      return 1; 
     }
-    return 1
-  }
+    return 1;
+  };
 
   const getTranslatePercentage = () => {
-    const visibleCards = getVisibleCards()
-    const cardWidth = 100 / visibleCards
-    return currentIndex * cardWidth
-  }
+    const visibleCards = getVisibleCards();
+    const cardWidth = 100 / visibleCards;
+    return currentIndex * cardWidth;
+  };
 
   // Set up automatic sliding
   useEffect(() => {
     const startAutoSlide = () => {
       autoSlideTimerRef.current = setInterval(() => {
         if (!isPaused) {
-          slideRight()
+          slideRight();
         }
-      }, autoSlideInterval)
-    }
+      }, autoSlideInterval);
+    };
 
-    startAutoSlide()
+    startAutoSlide();
 
     // Clean up timer on unmount
     return () => {
       if (autoSlideTimerRef.current) {
-        clearInterval(autoSlideTimerRef.current)
+        clearInterval(autoSlideTimerRef.current);
       }
-    }
-  }, [currentIndex, isPaused, autoSlideInterval])
+    };
+  }, [currentIndex, isPaused, autoSlideInterval]);
 
   // Handle window resize
   useEffect(() => {
     const handleResize = () => {
-      const maxIndex = services.length - getVisibleCards()
+      const maxIndex = services.length - getVisibleCards();
       if (currentIndex > maxIndex) {
-        setCurrentIndex(maxIndex)
+        setCurrentIndex(maxIndex);
       }
-    }
+    };
 
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [currentIndex, services.length])
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [currentIndex, services.length]);
 
   // Pagination indicators
   const renderPaginationDots = () => {
-    const dotsCount = services.length - getVisibleCards() + 1
+    const dotsCount = services.length - getVisibleCards() + 1;
     return (
       <div className="flex justify-center mt-8 space-x-2">
         {Array.from({ length: dotsCount }).map((_, index) => (
@@ -127,8 +145,8 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
           />
         ))}
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <div className="py-16 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
@@ -136,10 +154,10 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700 dark:from-blue-400 dark:to-purple-400">
-            Our Service
+            Our Services
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We deliver Transformative solutions to foster innovation, optimize efficiency , and fuel strategic growth.
+            We deliver transformative solutions to foster innovation, optimize efficiency, and fuel strategic growth.
           </p>
         </div>
 
@@ -191,7 +209,7 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
                       </h3>
                     </div>
 
-                    <p className="text-xl text-white/90 font-sans font-light mb-8 leading-relaxed">
+                    <p className="text-xl text-white/90 font-sans font-light mb-8 leading-relaxed text-justify">
                       {service.description}
                     </p>
 
@@ -210,7 +228,7 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
                           transform hover:scale-105
                         "
                       >
-                        <span>Explore Service</span>
+                        <span>Explore Services</span>
                         <Globe className="w-6 h-6 ml-2 animate-pulse" />
                       </Link>
                     </div>
@@ -225,8 +243,8 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
         {renderPaginationDots()}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FeaturesSection
+export default FeaturesSection;
 

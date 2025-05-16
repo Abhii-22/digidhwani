@@ -28,7 +28,7 @@ const ThreeDCarousel = ({ autoSlideInterval = 5000 }) => {
       bg_image: `${image2}?height=600&width=800`,
     },
     {
-      title: "TEAMECH",
+      title: "MECHSETU",
       description: "From design to manufacturing, any need of the market to the market",
       link: "/teamech",
       bg_image: `${image3}?height=600&width=800`,

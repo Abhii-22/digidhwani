@@ -129,7 +129,7 @@ const BimHeroSection = () => {
             ].map((service, index) => (
               <motion.div
                 key={index}
-                initial={{ y: 20, opacity: 0 }}
+                initial={{ y: 20, opacity: 1 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.4 + index * 0.1 }}
                 className="flex flex-col items-center text-center p-4 rounded-xl bg-white/80 backdrop-blur-sm border border-gray-200 hover:bg-gray-100 transition-all duration-300 cursor-pointer"

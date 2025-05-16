@@ -15,12 +15,11 @@ const SLIDER_CONTENT = [
     image: `${image1}?height=1200&width=1920&color=purple`, 
     title: "Exterior Design",
     description: "Tailored solutions that drive efficiency and growth",
-    buttonText: "View Services",
+    buttonText: "Explore Services",
     buttonLink: "/solutions"
   },
 ]
-
-const HeroSection = () => {
+function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   // Auto-advance slides
@@ -41,7 +40,7 @@ const HeroSection = () => {
       <AnimatePresence>
         {SLIDER_CONTENT.map((slide, index) => (
           currentSlide === index && (
-            <motion.div 
+            <motion.div
               key={index}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -50,19 +49,18 @@ const HeroSection = () => {
               className="absolute inset-0"
             >
               {/* Background Image */}
-              <div 
+              <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ 
+                style={{
                   backgroundImage: `url(${slide.image})`,
                   backgroundSize: 'cover',
-                  filter: 'brightness(0.7)' 
-                }}
-              />
+                  filter: 'brightness(0.7)'
+                }} />
 
               {/* Content Overlay */}
               <div className="relative z-10 container mx-auto h-full flex items-center px-6">
                 <div className="max-w-xl text-white dark:text-white space-y-6">
-                  <motion.h1 
+                  <motion.h1
                     // initial={{ x: -50, opacity: 0 }}
                     // animate={{ x: 0, opacity: 1 }}
                     // transition={{ delay: 0.2, duration: 0.6 }}
@@ -70,7 +68,7 @@ const HeroSection = () => {
                   >
                     {slide.title}
                   </motion.h1>
-                  
+
                   <motion.p
                     // initial={{ x: -50, opacity: 0 }}   
                     // animate={{ x: 0, opacity: 1 }}
@@ -79,7 +77,7 @@ const HeroSection = () => {
                   >
                     {slide.description}
                   </motion.p>
-                  
+
                   <motion.a
                     // initial={{ x: -50, opacity: 0 }}
                     // animate={{ x: 0, opacity: 1 }}
@@ -104,11 +102,10 @@ const HeroSection = () => {
             onClick={() => handleDotClick(index)}
             className={`
               w-3 h-3 rounded-full transition-all duration-300
-              ${currentSlide === index 
-                ? 'bg-black dark:bg-white w-8' 
+              ${currentSlide === index
+                ? 'bg-black dark:bg-white w-8'
                 : 'bg-black/50 dark:bg-white/50 hover:bg-white/75'}
-            `}
-          />
+            `} />
         ))}
       </div>
     </div>

@@ -9,7 +9,7 @@ export function MissionSection() {
               <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
                 Our Vision
               </div>
-              <h2 className="text-3xl font-bold tracking-tight">Empowering Businesses Through Innovative Technology</h2>
+              <h2 className="text-3xl font-bold tracking-tight">Empowering Bharat by transforming technologies into progress</h2>
               <p className="text-muted-foreground">
                   To lead the transformation of individuals, academics, students, and professionals through innovative digital technology. By integrating cutting-edge tools into education and professional development. Our vision is to bridge traditional learning and digital advancements, ensuring that all stakeholders have the skills and knowledge necessary to drive progress and success across diverse industries.
               </p>

@@ -136,8 +136,8 @@ function HeroSection() {
                 transition={{ duration: 0.8 }}
                 className="text-3xl md:text-4xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
-                Discover Amazing Courses
-                <span className="block text-white/90">For Your Career</span>
+                Shaping the Future
+                <span className="block text-white/90"></span>
               </motion.h1>
               
               <motion.p 

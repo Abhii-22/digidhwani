@@ -60,14 +60,6 @@ const CourseDetailsPage = () => {
                 <Target className="text-green-600 dark:text-green-400" />
                 <span className="dark:text-gray-300">Difficulty: {course.difficulty}</span>
               </div>
-              <div className="flex items-center space-x-4">
-                <User className="text-purple-600 dark:text-purple-400" />
-                <span className="dark:text-gray-300">Instructor: {course.instructor}</span>
-              </div>
-              <div className="flex items-center space-x-4">
-                <DollarSign className="text-yellow-600 dark:text-yellow-400" />
-                <span className="dark:text-gray-300">Price: ${course.price}</span>
-              </div>
             </div>
           </div>
 

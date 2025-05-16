@@ -113,7 +113,7 @@ function HeroSection() {
                   to="/services"
                   className="inline-flex items-center justify-center rounded-full border-2 border-blue-200 dark:border-blue-800 bg-white/60 dark:bg-gray-900/60 backdrop-blur-md px-8 py-3.5 text-gray-700 dark:text-gray-300 shadow-md hover:bg-blue-50 dark:hover:bg-gray-800 transition-all duration-300"
                 >
-                  Explore Solutions
+                  Explore Services
                 </Link>
               </motion.div>
             </div>

@@ -16,6 +16,9 @@ import BIMHome from "./pages/BIM/Home"
 import TechvrittiHome from "./pages/TechVritti/Home"
 import CourseDetailsPage from "./components/MediniSchool/CourseDetailsPage"
 import TeamechHome from "./pages/TeaMech/Home"
+import EduphygitalHome from "./pages/Eduphygital/Home"
+import DigiDhvaniHome from "./pages/DigiDhvani/Home"
+import BuilddSpaceHome from "./pages/BuilddSpace/Home"
 import BimServicesComponent from "./components/BIM/Services"
 import ServicesComponent from "./components/TechVritti/Services"
 import TeamechServicesComponent from "./components/Teamech/Services"
@@ -53,6 +56,18 @@ function App() {
               <Route path="/teamech/services" element={<TeamechServicesComponent />} />
               <Route path="/teamech/about" element={<AboutPage />} />
               <Route path="/teamech/contact" element={<ContactPage />} />
+              
+              <Route path="/eduphygital" element={<EduphygitalHome />} />
+              <Route path="/eduphygital/about" element={<AboutPage />} />
+              <Route path="/eduphygital/contact" element={<ContactPage />} />
+              
+              <Route path="/digidhvani" element={<DigiDhvaniHome />} />
+              <Route path="/digidhvani/about" element={<AboutPage />} />
+              <Route path="/digidhvani/contact" element={<ContactPage />} />
+              
+              <Route path="/builddspace" element={<BuilddSpaceHome />} />
+              <Route path="/builddspace/about" element={<AboutPage />} />
+              <Route path="/builddspace/contact" element={<ContactPage />} />
             </Routes>
           </main>
           <Footer />

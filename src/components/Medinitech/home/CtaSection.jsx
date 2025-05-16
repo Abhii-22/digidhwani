@@ -42,7 +42,7 @@ export function CtaSection() {
                 <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-800 dark:text-slate-100">
                   Ready to Transform Your Business with us?
                 </h2>
-                <p className="text-slate-600 dark:text-slate-300 text-lg max-w-md">
+                <p className="text-slate-600 dark:text-slate-300 text-lg max-w-md text-justify">
                   Partner with Medini Technologies to unlock innovation, drive growth, and stay ahead of the competition
                   in today's digital landscape.
                 </p>

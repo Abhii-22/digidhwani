@@ -20,15 +20,19 @@ const DynamicTypingHeadline = () => {
     },
     {
       title: "BUILDDSPACE",
-      subtitle: "For Startup Support"
+      subtitle: "Startup Support Ecosystem"
     },
     {
         title: "TECHVRITTI",
         subtitle: "Right Product to Right Customer"
     },
     {
-      title: "TEAMECH",
+      title: "MECHSETU",
       subtitle: "From Design to Manufacturing"
+    },
+    {
+      title: "DIGIDHVANI",
+      subtitle: "Digital Marketing Solutions"
     }
   ];
 

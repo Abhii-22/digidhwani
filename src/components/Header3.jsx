@@ -18,7 +18,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isHovered, setIsHovered] = useState(false);
 
-
+  
   // get all Courses
   const courseCategories = [
     {
@@ -210,7 +210,7 @@ const Header = () => {
       <AnimatePresence>
         {showLinks && (
           <motion.div
-            className="hidden bg-gray-900 text-white shadow-md md:flex"
+            className="hidden bg-[#406d6e] text-white shadow-md md:flex"
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}

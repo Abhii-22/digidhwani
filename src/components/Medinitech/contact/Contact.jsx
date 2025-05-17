@@ -61,7 +61,8 @@ export function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Placeholder for future backend logic
-    console.log('Form submitted:', formData);
+    // console.log('Form submitted:', formData);
+    alert("form submitted");
   };
 
   return (
@@ -86,7 +87,7 @@ export function Contact() {
             Have an idea in mind or want to discuss how we can help your business grow? 
             Fill out the form below, and our team will get back to you soon.
           </motion.p>
-        </div>
+        </div> 
       </header>
 
       {/* Contact Content */}
@@ -105,7 +106,7 @@ export function Contact() {
                   className={`py-2 px-4 text-center rounded-md transition-colors ${
                     activeLocation === loc 
                       ? "bg-customBlue text-white" 
-                      : "bg-gray-100 hover:bg-gray-200"
+                      : "bg-gray-100 hover:bg-gray-200 dark:bg-gray-800"
                   }`}
                 >
                   {locations[loc].name.split(' ')[0]}
@@ -149,7 +150,7 @@ export function Contact() {
                 id="name" 
                 placeholder="Your Name" 
                 required 
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
                 value={formData.name}
                 onChange={handleChange}
               />
@@ -160,7 +161,7 @@ export function Contact() {
                 type="email" 
                 placeholder="Your Email" 
                 required 
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
                 value={formData.email}
                 onChange={handleChange}
               />
@@ -169,7 +170,7 @@ export function Contact() {
               <input 
                 id="phone" 
                 placeholder="Your Phone Number (Optional)" 
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
                 value={formData.phone}
                 onChange={handleChange}
               />
@@ -179,7 +180,7 @@ export function Contact() {
                 id="service"
                 value={formData.service}
                 onChange={handleServiceChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue appearance-none bg-white"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue appearance-none bg-white"
               >
                 <option value="" disabled>Select a Service</option>
                 <option value="consulting">Strategic Consulting</option>
@@ -195,7 +196,7 @@ export function Contact() {
                 id="location"
                 value={formData.location}
                 onChange={(e) => handleLocationChange(e.target.value)}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue appearance-none bg-white"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue appearance-none bg-white"
               >
                 <option value="vijayanagar">Vijayanagar (Main Branch)</option>
                 <option value="gulbarga">Gulbarga Branch</option>
@@ -208,7 +209,7 @@ export function Contact() {
                 placeholder="Tell us about your project or inquiry..." 
                 rows={5} 
                 required 
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
+                className="w-full px-3 py-2 border border-gray-300 dark:border-gray-900 dark:bg-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-customBlue"
                 value={formData.message}
                 onChange={handleChange}
               />

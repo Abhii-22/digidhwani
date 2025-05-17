@@ -36,6 +36,18 @@ const Header = () => {
     {
       name: "Others",
       categories: coursesData.courseProviders.find(p => p.id === "OTHER")?.categories || []
+    },
+    {
+      name: "Programming",
+      categories: [{
+        name: "Web & App Development",
+        courses: [
+          { id: "java-fullstack", name: "Java Fullstack" },
+          { id: "python-fullstack", name: "Python Fullstack" },
+          { id: "mern-stack", name: "MERN Stack" },
+          { id: "cloud-application", name: "Cloud Application Development" }
+        ]
+      }]
     }
   ];
 
@@ -257,22 +269,119 @@ const Header = () => {
                   </PopoverTrigger>
                   <PopoverContent className="w-[800px] p-0">
                     <div className="flex">
-                      {courseCategories.map((provider) => (
-                        <ScrollArea key={provider.name} className="w-1/3 p-4 border-r">
-                          <h4 className="mb-4 text-sm font-medium">{provider.name}</h4>
-                          {provider.categories.flatMap(category => 
-                            category.courses.map((course) => (
-                              <Link to={`/medinischoolofdesign/courses/${course.id}`} key={course.id}>
-                                 <div 
-                                className="text-sm py-2 cursor-pointer hover:text-amber-600"
-                              >
+                      <ScrollArea className="w-1/3 p-4 border-r">
+                        <h4 className="mb-4 text-sm font-medium">AutoDesk</h4>
+                        {courseCategories[0].categories.flatMap(category => 
+                          category.courses.map((course) => (
+                            <Link to={`/medinischoolofdesign/courses/${course.id}`} key={course.id}>
+                              <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
                                 {course.name}
                               </div>
-                              </Link>
-                            ))
-                          )}
-                        </ScrollArea>
-                      ))}
+                            </Link>
+                          ))
+                        )}
+                      </ScrollArea>
+                      
+                      <ScrollArea className="w-1/3 p-4 border-r">
+                        <h4 className="mb-4 text-sm font-medium">Bentley Systems</h4>
+                        {courseCategories[1].categories.flatMap(category => 
+                          category.courses.map((course) => (
+                            <Link to={`/medinischoolofdesign/courses/${course.id}`} key={course.id}>
+                              <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                                {course.name}
+                              </div>
+                            </Link>
+                          ))
+                        )}
+                      </ScrollArea>
+                      
+                      <ScrollArea className="w-1/3 p-4 border-r">
+                        <h4 className="mb-4 text-sm font-medium">Dassault</h4>
+                        <Link to={`/medinischoolofdesign/courses/solidworks`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            SolidWorks
+                          </div>
+                        </Link>
+                        <div className="text-sm py-2 font-medium text-gray-700 dark:text-gray-300 mt-3 mb-1">Trimble</div>
+                        <Link to={`/medinischoolofdesign/courses/sketchup`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            SketchUp
+                          </div>
+                        </Link>
+                        <div className="text-sm py-2 font-medium text-gray-700 dark:text-gray-300 mt-3 mb-1">Chaos</div>
+                        <Link to={`/medinischoolofdesign/courses/vray`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            V-Ray
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/enscape`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Enscape
+                          </div>
+                        </Link>
+                      </ScrollArea>
+                      
+                      <ScrollArea className="w-1/3 p-4 border-r">
+                        <h4 className="mb-4 text-sm font-medium">Others</h4>
+                        <Link to={`/medinischoolofdesign/courses/lumion`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Lumion
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/rhino`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Rhino
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/grasshopper`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Grasshopper
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/photoshop`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Photoshop
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/illustrator`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Illustrator
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/etabs`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            ETABS
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/ms-project`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            MS Project
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/qgis`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            QGIS
+                          </div>
+                        </Link>
+                        <Link to={`/medinischoolofdesign/courses/adobe-animate`}>
+                          <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                            Adobe Animate
+                          </div>
+                        </Link>
+                      </ScrollArea>
+                      
+                      <ScrollArea className="w-1/3 p-4 border-r">
+                        <h4 className="mb-4 text-sm font-medium">Programming</h4>
+                        {courseCategories[4].categories.flatMap(category => 
+                          category.courses.map((course) => (
+                            <Link to={`/medinischoolofdesign/courses/${course.id}`} key={course.id}>
+                              <div className="text-sm py-2 cursor-pointer hover:text-amber-600">
+                                {course.name}
+                              </div>
+                            </Link>
+                          ))
+                        )}
+                      </ScrollArea>
                     </div>
                   </PopoverContent>
                 </Popover>

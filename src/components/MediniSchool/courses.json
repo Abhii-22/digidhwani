@@ -1192,6 +1192,224 @@
           ]
         }
       ]
+    },
+    {
+      "id": "IT",
+      "logo": "@/assets/Logos/IT-Logo.png",
+      "categories": [
+        {
+          "name": "Software Development",
+          "courses": [
+            {
+              "id": "java-fullstack",
+              "title": "Java Full Stack Development",
+              "name": "Java Full Stack",
+              "icon": "☕",
+              "description": "Comprehensive training in Java, Spring Boot, REST APIs, frontend frameworks, and database integration for full stack web development.",
+              "duration": "12 Weeks",
+              "difficulty": "Intermediate",
+              "price": 1599,
+              "instructor": "Priya Sharma",
+              "targetAudience": "Aspiring Full Stack Developers, CS/IT Students",
+              "curriculum": [
+                "Core Java & OOP Concepts",
+                "Spring Boot & RESTful APIs",
+                "Frontend with HTML, CSS, JavaScript",
+                "React or Angular Basics",
+                "Database Integration (MySQL/PostgreSQL)",
+                "Authentication & Security",
+                "Deployment & DevOps Basics"
+              ],
+              "learningOutcomes": [
+                "Build end-to-end web applications",
+                "Develop RESTful APIs with Spring Boot",
+                "Integrate frontend and backend",
+                "Deploy Java applications"
+              ],
+              "prerequisites": [
+                "Basic programming knowledge",
+                "Familiarity with web concepts"
+              ],
+              "coverImage": "java-fullstack.jpg"
+            },
+            {
+              "id": "python-fullstack",
+              "title": "Python Full Stack Development",
+              "name": "Python Full Stack",
+              "icon": "🐍",
+              "description": "Learn Python, Django, REST APIs, modern frontend frameworks, and database management for full stack web development.",
+              "duration": "12 Weeks",
+              "difficulty": "Intermediate",
+              "price": 1599,
+              "instructor": "Rahul Menon",
+              "targetAudience": "Aspiring Full Stack Developers, CS/IT Students",
+              "curriculum": [
+                "Python Programming Basics",
+                "Django Web Framework",
+                "REST API Development",
+                "Frontend with HTML, CSS, JavaScript",
+                "React or Angular Basics",
+                "Database Integration (SQLite/PostgreSQL)",
+                "Authentication & Deployment"
+              ],
+              "learningOutcomes": [
+                "Develop web apps using Django",
+                "Create RESTful APIs",
+                "Integrate frontend and backend",
+                "Deploy Python web applications"
+              ],
+              "prerequisites": [
+                "Basic programming knowledge",
+                "Familiarity with web concepts"
+              ],
+              "coverImage": "python-fullstack.jpg"
+            },
+            {
+              "id": "mern-stack",
+              "title": "MERN Stack Development",
+              "name": "MERN Stack",
+              "icon": "🌐",
+              "description": "Master MongoDB, Express.js, React, and Node.js to build modern, scalable full stack JavaScript applications.",
+              "duration": "12 Weeks",
+              "difficulty": "Intermediate",
+              "price": 1599,
+              "instructor": "Anjali Gupta",
+              "targetAudience": "Aspiring Full Stack Developers, CS/IT Students",
+              "curriculum": [
+                "JavaScript & ES6+ Fundamentals",
+                "Node.js & Express.js Backend",
+                "MongoDB Database Integration",
+                "React Frontend Development",
+                "RESTful API Design",
+                "Authentication & JWT",
+                "Deployment & Cloud Hosting"
+              ],
+              "learningOutcomes": [
+                "Build full stack apps with MERN",
+                "Design RESTful APIs",
+                "Integrate MongoDB with Node.js",
+                "Deploy MERN applications"
+              ],
+              "prerequisites": [
+                "Basic JavaScript knowledge",
+                "Familiarity with web development"
+              ],
+              "coverImage": "mern-stack.jpg"
+            },
+            {
+              "id": "cloud-app-dev",
+              "title": "Cloud Application Development",
+              "name": "Cloud Application Development",
+              "icon": "☁️",
+              "description": "Learn to design, develop, and deploy applications on leading cloud platforms (AWS, Azure, GCP) using modern DevOps practices.",
+              "duration": "10 Weeks",
+              "difficulty": "Intermediate",
+              "price": 1799,
+              "instructor": "Vikram Rao",
+              "targetAudience": "Developers, IT Professionals, Cloud Enthusiasts",
+              "curriculum": [
+                "Cloud Computing Fundamentals",
+                "AWS/Azure/GCP Overview",
+                "Building Cloud-Native Apps",
+                "Serverless Architecture",
+                "CI/CD & DevOps Basics",
+                "Monitoring & Scaling",
+                "Security & Best Practices"
+              ],
+              "learningOutcomes": [
+                "Develop and deploy cloud-native apps",
+                "Use serverless and managed services",
+                "Implement CI/CD pipelines",
+                "Apply cloud security best practices"
+              ],
+              "prerequisites": [
+                "Basic programming knowledge",
+                "Familiarity with web/app development"
+              ],
+              "coverImage": "cloud-app-dev.jpg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "DASSAULT",
+      "logo": "@/assets/Logos/dassault-logo.png",
+      "categories": [
+        {
+          "name": "3D Design",
+          "courses": [
+            {
+              "id": "solidworks",
+              "title": "SolidWorks Essentials",
+              "name": "SolidWorks",
+              "icon": "🔧",
+              "description": "Comprehensive 3D CAD software for designing products, assemblies, and technical drawings with powerful simulation capabilities.",
+              "duration": "40 Hours",
+              "difficulty": "Beginner to Intermediate",
+              "price": 999,
+              "instructor": "Michael Johnson",
+              "targetAudience": "Product Designers, Engineers, Industrial Designers",
+              "curriculum": [
+                "Introduction to SolidWorks Interface",
+                "Part Modeling Fundamentals",
+                "Assembly Modeling",
+                "Creating Technical Drawings",
+                "Sheet Metal Design",
+                "Simulation Basics",
+                "Rendering and Visualization",
+                "Design Documentation"
+              ],
+              "learningOutcomes": [
+                "Create parametric 3D models of parts and assemblies",
+                "Generate detailed engineering drawings",
+                "Perform basic simulation and analysis",
+                "Create photorealistic renderings",
+                "Apply design for manufacturing principles"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Understanding of mechanical design concepts"
+              ],
+              "coverImage": "solidworks.jpg"
+            },
+            {
+              "id": "sketchup",
+              "title": "SketchUp Pro Fundamentals",
+              "name": "SketchUp",
+              "icon": "🏠",
+              "description": "Intuitive 3D modeling software for architecture, interior design, landscape architecture, and engineering with powerful visualization tools.",
+              "duration": "30 Hours",
+              "difficulty": "Beginner to Intermediate",
+              "price": 899,
+              "instructor": "Sarah Williams",
+              "targetAudience": "Architects, Interior Designers, Landscape Architects, Engineers",
+              "curriculum": [
+                "SketchUp Interface and Navigation",
+                "Basic Drawing and Modeling Tools",
+                "Creating and Modifying 3D Geometry",
+                "Working with Components and Groups",
+                "Materials, Textures, and Styles",
+                "Layout and Documentation",
+                "Extensions and Plugins",
+                "Rendering and Presentation"
+              ],
+              "learningOutcomes": [
+                "Create 3D architectural and interior models",
+                "Apply materials and textures for realistic visualization",
+                "Generate 2D documentation from 3D models",
+                "Create presentation-quality renderings",
+                "Utilize extensions to enhance workflow"
+              ],
+              "prerequisites": [
+                "Basic computer skills",
+                "Understanding of spatial concepts"
+              ],
+              "coverImage": "sketchup.jpg"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -54,7 +54,7 @@ export function PartnersSection() {
                                 <img
                                     src={partner.image}
                                     alt={partner.name}
-                                    className="max-h-16 w-auto transition-all duration-300"
+                                    className="max-h-12 w-auto transition-all duration-300"
                                 />
                             </div>
                         ))}

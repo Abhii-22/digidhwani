@@ -40,30 +40,48 @@ function Footer() {
     <footer className="bg-white px-8 dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800">
       <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Brand Section */}
+          {/* Services List Section */}
           <div className="space-y-6">
-            <Link to="/" className="inline-block">
-              <span className="text-3xl font-bold bg-clip-text text-transparent bg-black dark:bg-white">
-                {isTechVritti ? "TechVritti" : "Medini Technologies"}
-              </span>
-            </Link>
-            <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              Innovative technology solutions that transform businesses through cutting-edge digital strategies and intelligent design.
-            </p>
-            <div className="flex space-x-4">
-              {socialLinks.map(({ platform, url }, index) => (
-                <a
-                  key={index}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-100 hover:text-customBlue dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors"
-                  aria-label={platform}
-                >
-                  <SocialIcon platform={platform} />
-                </a>
-              ))}
-            </div>
+            <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
+              {isTechVritti ? "TechVritti Services" : "Our Services"}
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link to="/medinischoolofdesign" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Medini School of Design
+                </Link>
+              </li>
+              <li>
+                <Link to="/bim_construct" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  BIM Construct
+                </Link>
+              </li>
+              <li>
+                <Link to="/techvritti" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  TechVritti
+                </Link>
+              </li>
+              <li>
+                <Link to="/teamech" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  TeaMech
+                </Link>
+              </li>
+              <li>
+                <Link to="/eduphygital" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  EDUPHYGITAL
+                </Link>
+              </li>
+              <li>
+                <Link to="/digidhvani" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  DigiDhvani
+                </Link>
+              </li>
+              <li>
+                <Link to="/builddspace" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  BuilddSpace
+                </Link>
+              </li>
+            </ul>
           </div>
 
           {/* Quick Links */}
@@ -87,7 +105,7 @@ function Footer() {
             </nav>
           </div>
 
-          {/* Newsletter */}
+          {/* Newsletter and Social Media */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">Stay Connected</h3>
             <p className="text-gray-600 dark:text-gray-400 text-sm">
@@ -102,6 +120,25 @@ function Footer() {
               <button className="bg-customBlue text-white px-4 py-2 text-sm rounded-r-md hover:bg-blue-700 transition-colors duration-300">
                 Subscribe
               </button>
+            </div>
+            
+            {/* Social Media Icons */}
+            <div className="mt-4">
+              <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Follow Us</h4>
+              <div className="flex space-x-4">
+                {socialLinks.map(({ platform, url }, index) => (
+                  <a
+                    key={index}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-blue-100 hover:text-customBlue dark:hover:bg-blue-900/30 dark:hover:text-blue-400 transition-colors"
+                    aria-label={platform}
+                  >
+                    <SocialIcon platform={platform} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>

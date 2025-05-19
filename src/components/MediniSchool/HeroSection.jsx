@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import bg_image from "@/assets/IMAGES/getty-images-OB7KJ7WtHOs-unsplash.jpg"
 import autocad from "@/assets/IMAGES/AutoCAD.jpg"
 import civil3d from "@/assets/IMAGES/tool-inc-AkpJnHXu6Hg-unsplash.jpg"
@@ -8,13 +8,16 @@ import microstation from "@/assets/IMAGES/getty-images-ItieuN1ec0k-unsplash.jpg"
 import itImage from "@/assets/IMAGES/thisisengineering-AvGIBmvdcac-unsplash.jpg"
 import infraworks from "@/assets/IMAGES/getty-images-KD_fT_T4D24-unsplash.jpg"
 import { Link } from "react-router-dom"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import FeedbackSection from "./FeedbackSection"
 
 function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
   const [headerHeight, setHeaderHeight] = useState(0)
+  const [showITPopup, setShowITPopup] = useState(false)
+  const [showAECPopup, setShowAECPopup] = useState(false)
+  const [showProductDesignPopup, setShowProductDesignPopup] = useState(false)
   const sliderRef = useRef(null)
   const heroRef = useRef(null)
 
@@ -257,8 +260,11 @@ function HeroSection() {
               >
                 {cards.map((card) => (
                   <div key={card.id} className="min-w-[25%] px-3">
-                    <Link to={`/medinischoolofdesign${card.link}`}>
-                      <div className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full">
+                    {card.name === 'IT' ? (
+                      <div 
+                        className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full cursor-pointer"
+                        onClick={() => setShowITPopup(true)}
+                      >
                         <div className="relative">
                           <img 
                             src={card.image || "/placeholder.svg"} 
@@ -271,14 +277,85 @@ function HeroSection() {
                           <h3 className="font-semibold text-black text-xl mb-2">{card.name}</h3>
                           <p className="text-gray-600 text-sm">{card.description}</p>
                           <div className="mt-4 flex items-center text-sm font-medium text-blue-600">
-                            Learn more
+                            View Options
                             <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                             </svg>
                           </div>
                         </div>
                       </div>
-                    </Link>
+                    ) : card.name === 'AEC' ? (
+                      <div 
+                        className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full cursor-pointer"
+                        onClick={() => setShowAECPopup(true)}
+                      >
+                        <div className="relative">
+                          <img 
+                            src={card.image || "/placeholder.svg"} 
+                            alt={card.name} 
+                            className="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-semibold text-black text-xl mb-2">{card.name}</h3>
+                          <p className="text-gray-600 text-sm">{card.description}</p>
+                          <div className="mt-4 flex items-center text-sm font-medium text-blue-600">
+                            View Options
+                            <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    ) : card.name === 'Product Design and Manufacturing' ? (
+                      <div 
+                        className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full cursor-pointer"
+                        onClick={() => setShowProductDesignPopup(true)}
+                      >
+                        <div className="relative">
+                          <img 
+                            src={card.image || "/placeholder.svg"} 
+                            alt={card.name} 
+                            className="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        <div className="p-6">
+                          <h3 className="font-semibold text-black text-xl mb-2">{card.name}</h3>
+                          <p className="text-gray-600 text-sm">{card.description}</p>
+                          <div className="mt-4 flex items-center text-sm font-medium text-blue-600">
+                            View Options
+                            <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      <Link to={`/medinischoolofdesign${card.link}`}>
+                        <div className="bg-white rounded-lg overflow-hidden shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl h-full">
+                          <div className="relative">
+                            <img 
+                              src={card.image || "/placeholder.svg"} 
+                              alt={card.name} 
+                              className="w-full h-48 object-cover transition-transform duration-700 hover:scale-110" 
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                          </div>
+                          <div className="p-6">
+                            <h3 className="font-semibold text-black text-xl mb-2">{card.name}</h3>
+                            <p className="text-gray-600 text-sm">{card.description}</p>
+                            <div className="mt-4 flex items-center text-sm font-medium text-blue-600">
+                              Learn more
+                              <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </Link>
+                    )}
                   </div>
                 ))}
               </div>
@@ -297,6 +374,284 @@ function HeroSection() {
         </div>
       </section>
       <FeedbackSection />
+      
+      {/* IT Options Popup */}
+      <AnimatePresence>
+        {showITPopup && (
+          <motion.div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowITPopup(false)}
+          >
+            <motion.div 
+              className="bg-white rounded-lg shadow-2xl max-w-md w-full overflow-hidden"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center p-6 border-b">
+                <h3 className="text-2xl font-bold text-gray-900">IT Courses</h3>
+                <button 
+                  onClick={() => setShowITPopup(false)}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="p-6">
+                <div className="grid grid-cols-1 gap-4">
+                  {[
+                    { name: 'Java Full Stack', path: '/medinischoolofdesign/courses/java-fullstack' },
+                    { name: 'Python Full Stack', path: '/medinischoolofdesign/courses/python-fullstack' },
+                    { name: 'MERN Stack', path: '/medinischoolofdesign/courses/mern-stack' },
+                    { name: 'Cloud Application Development', path: '/medinischoolofdesign/courses/cloud-development' }
+                  ].map((option, index) => (
+                    <Link 
+                      key={index} 
+                      to={option.path}
+                      className="block p-4 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors text-blue-700 font-medium"
+                      onClick={() => setShowITPopup(false)}
+                    >
+                      {option.name}
+                      <span className="float-right">&rarr;</span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      {/* AEC Options Popup */}
+      <AnimatePresence>
+        {showAECPopup && (
+          <motion.div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowAECPopup(false)}
+          >
+            <motion.div 
+              className="bg-white rounded-lg shadow-2xl max-w-4xl w-full overflow-hidden max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center p-6 border-b sticky top-0 bg-white z-10">
+                <h3 className="text-2xl font-bold text-gray-900">AEC Courses</h3>
+                <button 
+                  onClick={() => setShowAECPopup(false)}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="p-6">
+                {/* Autodesk Section */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Autodesk
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {[
+                      { name: 'AutoCAD', path: '/medinischoolofdesign/courses/autocad' },
+                      { name: 'AutoCAD Electrical', path: '/medinischoolofdesign/courses/autocad-electrical' },
+                      { name: 'Revit Architecture', path: '/medinischoolofdesign/courses/revit-architecture' },
+                      { name: 'Revit MEP', path: '/medinischoolofdesign/courses/revit-mep' },
+                      { name: 'Revit Structure', path: '/medinischoolofdesign/courses/revit-structure' },
+                      { name: 'Civil 3D', path: '/medinischoolofdesign/courses/civil-3d' },
+                      { name: 'Navisworks', path: '/medinischoolofdesign/courses/navisworks' },
+                      { name: 'InfraWorks', path: '/medinischoolofdesign/courses/infraworks' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`autodesk-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors text-blue-700 font-medium"
+                        onClick={() => setShowAECPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Bentley Systems Section */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Bentley Systems
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {[
+                      { name: 'OpenRoads Designer', path: '/medinischoolofdesign/courses/openroads-designer' },
+                      { name: 'OpenFlows WaterGEMS', path: '/medinischoolofdesign/courses/openflows-watergems' },
+                      { name: 'OpenFlows SewerGEMS', path: '/medinischoolofdesign/courses/openflows-sewergems' },
+                      { name: 'STAAD Pro', path: '/medinischoolofdesign/courses/staad-pro' },
+                      { name: 'MicroStation', path: '/medinischoolofdesign/courses/microstation' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`bentley-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-green-50 hover:bg-green-100 rounded-lg transition-colors text-green-700 font-medium"
+                        onClick={() => setShowAECPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Others Section */}
+                <div>
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Others
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {[
+                      { name: 'SketchUp', path: '/medinischoolofdesign/courses/sketchup' },
+                      { name: 'Lumion', path: '/medinischoolofdesign/courses/lumion' },
+                      { name: 'V-Ray', path: '/medinischoolofdesign/courses/v-ray' },
+                      { name: 'Enscape', path: '/medinischoolofdesign/courses/enscape' },
+                      { name: 'Chaos', path: '/medinischoolofdesign/courses/chaos' },
+                      { name: 'Rhino', path: '/medinischoolofdesign/courses/rhino' },
+                      { name: 'Grasshopper', path: '/medinischoolofdesign/courses/grasshopper' },
+                      { name: 'ETABS', path: '/medinischoolofdesign/courses/etabs' },
+                      { name: 'MS Project', path: '/medinischoolofdesign/courses/ms-project' },
+                      { name: 'QGIS', path: '/medinischoolofdesign/courses/qgis' },
+                      { name: 'Adobe Animate', path: '/medinischoolofdesign/courses/adobe-animate' },
+                      { name: 'Photoshop', path: '/medinischoolofdesign/courses/photoshop' },
+                      { name: 'Illustrator', path: '/medinischoolofdesign/courses/illustrator' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`others-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors text-purple-700 font-medium"
+                        onClick={() => setShowAECPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      
+      {/* Product Design and Manufacturing Options Popup */}
+      <AnimatePresence>
+        {showProductDesignPopup && (
+          <motion.div 
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowProductDesignPopup(false)}
+          >
+            <motion.div 
+              className="bg-white rounded-lg shadow-2xl max-w-3xl w-full overflow-hidden max-h-[90vh] overflow-y-auto"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex justify-between items-center p-6 border-b sticky top-0 bg-white z-10">
+                <h3 className="text-2xl font-bold text-gray-900">Product Design and Manufacturing Courses</h3>
+                <button 
+                  onClick={() => setShowProductDesignPopup(false)}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+              
+              <div className="p-6">
+                {/* Autodesk Section */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Autodesk
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { name: 'Fusion 360', path: '/medinischoolofdesign/courses/fusion-360' },
+                      { name: 'AutoCAD (Mechanical)', path: '/medinischoolofdesign/courses/autocad-mechanical' },
+                      { name: 'Maya', path: '/medinischoolofdesign/courses/maya' },
+                      { name: '3DS Max', path: '/medinischoolofdesign/courses/3ds-max' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`autodesk-pdm-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors text-blue-700 font-medium"
+                        onClick={() => setShowProductDesignPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Dassault Section */}
+                <div className="mb-8">
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Dassault
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { name: 'SolidWorks', path: '/medinischoolofdesign/courses/solidworks' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`dassault-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-red-50 hover:bg-red-100 rounded-lg transition-colors text-red-700 font-medium"
+                        onClick={() => setShowProductDesignPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Others Section */}
+                <div>
+                  <h4 className="text-xl font-bold text-gray-800 mb-4">
+                    Others
+                  </h4>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {[
+                      { name: 'CREO – PTC', path: '/medinischoolofdesign/courses/creo-ptc' },
+                      { name: 'ANSYS', path: '/medinischoolofdesign/courses/ansys' },
+                      { name: 'Adobe Animate', path: '/medinischoolofdesign/courses/adobe-animate-product' }
+                    ].map((option, index) => (
+                      <Link 
+                        key={`others-pdm-${index}`} 
+                        to={option.path}
+                        className="block p-3 bg-yellow-50 hover:bg-yellow-100 rounded-lg transition-colors text-yellow-700 font-medium"
+                        onClick={() => setShowProductDesignPopup(false)}
+                      >
+                        {option.name}
+                        <span className="float-right">&rarr;</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   )
 }

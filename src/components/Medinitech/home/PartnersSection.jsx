@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTheme } from "../../ThemeProvider";
 
 // Import actual partner logos
 import autodeskLogo from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png";
@@ -12,14 +13,21 @@ import bmsLogo from "@/assets/Logos/BMS.jpg";
 import jdschoolLogo from "@/assets/Logos/JDSCHOOL.jpg";
 import pesitLogo from "@/assets/Logos/PESIT.jpg";
 import ramaiaLogo from "@/assets/Logos/RAMAIAH-INSTITUTE-OF-TECHNOLOGY.png";
+import aicteLogo from "@/assets/Logos/aicte.png";
+import vtuLogo from "@/assets/Logos/VTU.jpg";
+import sharnbasvaLogo from "@/assets/Logos/Sharnbasva_University_logo.png";
+import iitBbsrLogo from "@/assets/Logos/Indian_Institute_of_Technology_Bhubaneswar_Logo.png.jpg";
+import rv1Logo from "@/assets/Logos/rv1.png";
+import rv2Logo from "@/assets/Logos/rv2.jpg";
 
 function PartnersSection() {
+  const { theme } = useTheme();
   const [scrollPosition1, setScrollPosition1] = useState(0);
   const [scrollPosition2, setScrollPosition2] = useState(0);
   const [scrollPosition3, setScrollPosition3] = useState(0);
   const [scrollPosition4, setScrollPosition4] = useState(0);
 
-  // Partner data for column 1 (moving up)
+  // Partner data for column 1 (moving up) - Company logos
   const partnersColumn1 = [
     {
       id: 1,
@@ -59,47 +67,47 @@ function PartnersSection() {
     }
   ];
 
-  // Partner data for column 2 (moving down)
+  // Partner data for column 2 (moving down) - University/institutional logos
   const partnersColumn2 = [
     {
       id: 8,
-      name: "SketchUp",
-      logo: sketchUpLogo,
+      name: "AICTE",
+      logo: aicteLogo,
     },
     {
       id: 9,
-      name: "Chaos",
-      logo: chaosLogo,
+      name: "VTU",
+      logo: vtuLogo,
     },
     {
       id: 10,
-      name: "PTC",
-      logo: ptcLogo,
+      name: "Sharnbasva University",
+      logo: sharnbasvaLogo,
     },
     {
       id: 11,
-      name: "Autodesk",
-      logo: autodeskLogo,
-    },
-    {
-      id: 12,
-      name: "Bentley Systems",
-      logo: bentleyLogo,
+      name: "IIT Bhubaneswar",
+      logo: iitBbsrLogo,
     },
     // Duplicate to create a continuous scroll effect
     {
+      id: 12,
+      name: "AICTE",
+      logo: aicteLogo,
+    },
+    {
       id: 13,
-      name: "SketchUp",
-      logo: sketchUpLogo,
+      name: "VTU",
+      logo: vtuLogo,
     },
     {
       id: 14,
-      name: "Chaos",
-      logo: chaosLogo,
+      name: "Sharnbasva University",
+      logo: sharnbasvaLogo,
     }
   ];
   
-  // Partner data for column 3 (moving up) - New educational partners
+  // Partner data for column 3 (moving up) - College partners (3 logos)
   const partnersColumn3 = [
     {
       id: 15,
@@ -113,59 +121,59 @@ function PartnersSection() {
     },
     {
       id: 17,
-      name: "PES Institute of Technology",
-      logo: pesitLogo,
-    },
-    {
-      id: 18,
       name: "Ramaiah Institute of Technology",
       logo: ramaiaLogo,
     },
     // Duplicate to create a continuous scroll effect
     {
-      id: 19,
+      id: 18,
       name: "BMS College of Engineering",
       logo: bmsLogo,
+    },
+    {
+      id: 19,
+      name: "JD School of Design",
+      logo: jdschoolLogo,
     },
     {
       id: 20,
-      name: "JD School of Design",
-      logo: jdschoolLogo,
+      name: "Ramaiah Institute of Technology",
+      logo: ramaiaLogo,
     }
   ];
 
-  // Partner data for column 4 (moving down) - New educational partners
+  // Partner data for column 4 (moving down) - College partners (3 logos)
   const partnersColumn4 = [
     {
       id: 21,
-      name: "PES Institute of Technology",
-      logo: pesitLogo,
+      name: "RV College of Engineering",
+      logo: rv1Logo,
     },
     {
       id: 22,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
+      name: "RV University",
+      logo: rv2Logo,
     },
     {
       id: 23,
-      name: "BMS College of Engineering",
-      logo: bmsLogo,
-    },
-    {
-      id: 24,
-      name: "JD School of Design",
-      logo: jdschoolLogo,
-    },
-    // Duplicate to create a continuous scroll effect
-    {
-      id: 25,
       name: "PES Institute of Technology",
       logo: pesitLogo,
     },
+    // Duplicate to create a continuous scroll effect
+    {
+      id: 24,
+      name: "RV College of Engineering",
+      logo: rv1Logo,
+    },
+    {
+      id: 25,
+      name: "RV University",
+      logo: rv2Logo,
+    },
     {
       id: 26,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
+      name: "PES Institute of Technology",
+      logo: pesitLogo,
     }
   ];
 
@@ -216,15 +224,15 @@ function PartnersSection() {
   }, []);
 
   return (
-    <section className="py-24 bg-white dark:bg-gray-900 flex items-center">
+    <section className={`py-16 ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 to-gray-800 text-white' : 'bg-gradient-to-b from-white to-gray-50 text-gray-900'}`}>
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center md:items-center gap-12">
           {/* Left side: Title and description */}
           <div className="md:w-1/2 text-left">
-            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-6">
+            <h2 className={`text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'} mb-6`}>
               Trusted by 100+ Leaders
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 text-justify">
+            <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-8 text-justify`}>
               At Medini Technologies, we thrive through strong alliances with technology partners, strategic collaborators, and leading institutes. Together, we drive digital transformation in construction—optimizing operations, enhancing customer experiences, and accelerating innovation.
             </p>
           </div>
@@ -233,7 +241,7 @@ function PartnersSection() {
           <div className="md:w-1/2">
             <div className="flex gap-[0.5cm]">
               {/* Column 1 - Moving Up Continuously */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -242,7 +250,7 @@ function PartnersSection() {
                   {partnersColumn1.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -261,7 +269,7 @@ function PartnersSection() {
                   {partnersColumn1.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -274,7 +282,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 2 - Moving Down Continuously */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -283,7 +291,7 @@ function PartnersSection() {
                   {partnersColumn2.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -302,7 +310,7 @@ function PartnersSection() {
                   {partnersColumn2.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -315,7 +323,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 3 - Moving Up Continuously - Educational Partners */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -324,7 +332,7 @@ function PartnersSection() {
                   {partnersColumn3.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -343,7 +351,7 @@ function PartnersSection() {
                   {partnersColumn3.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -356,7 +364,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 4 - Moving Down Continuously - Educational Partners */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -365,7 +373,7 @@ function PartnersSection() {
                   {partnersColumn4.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 
@@ -384,7 +392,7 @@ function PartnersSection() {
                   {partnersColumn4.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className={`flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4`}
                     >
                       <img 
                         src={partner.logo} 

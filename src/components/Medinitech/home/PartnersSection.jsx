@@ -231,9 +231,9 @@ function PartnersSection() {
           
           {/* Right side: Four columns of vertically scrolling logos in opposite directions */}
           <div className="md:w-1/2">
-            <div className="flex gap-[0.5cm]">
+            <div className="flex gap-2">
               {/* Column 1 - Moving Up Continuously */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className="w-1/4 overflow-hidden relative h-[400px] bg-white dark:bg-gray-900">
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -242,7 +242,7 @@ function PartnersSection() {
                   {partnersColumn1.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -261,7 +261,7 @@ function PartnersSection() {
                   {partnersColumn1.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -274,7 +274,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 2 - Moving Down Continuously */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className="w-1/4 overflow-hidden relative h-[400px] bg-white dark:bg-gray-900">
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -283,7 +283,7 @@ function PartnersSection() {
                   {partnersColumn2.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -302,7 +302,7 @@ function PartnersSection() {
                   {partnersColumn2.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -315,7 +315,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 3 - Moving Up Continuously - Educational Partners */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className="w-1/4 overflow-hidden relative h-[400px] bg-white dark:bg-gray-900">
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -324,7 +324,7 @@ function PartnersSection() {
                   {partnersColumn3.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -343,7 +343,7 @@ function PartnersSection() {
                   {partnersColumn3.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -356,7 +356,7 @@ function PartnersSection() {
               </div>
               
               {/* Column 4 - Moving Down Continuously - Educational Partners */}
-              <div className="w-1/4 overflow-hidden relative h-[400px] bg-gradient-to-b from-white via-gray-50 to-white">
+              <div className="w-1/4 overflow-hidden relative h-[400px] bg-white dark:bg-gray-900">
                 {/* First set of logos */}
                 <div 
                   className="flex flex-col gap-4 absolute w-full transition-transform duration-1000 ease-linear" 
@@ -365,7 +365,7 @@ function PartnersSection() {
                   {partnersColumn4.map((partner) => (
                     <div
                       key={partner.id}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-400 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 
@@ -384,7 +384,7 @@ function PartnersSection() {
                   {partnersColumn4.map((partner) => (
                     <div
                       key={`dup-${partner.id}`}
-                      className="flex items-center justify-center p-4 bg-white rounded-lg shadow-md hover:shadow-lg border border-amber-200 transition-all duration-300 w-full h-32 mx-auto my-4"
+                      className="flex items-center justify-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg border border-amber-300 dark:border-amber-700 transition-all duration-300 w-full h-32 mx-auto my-4"
                     >
                       <img 
                         src={partner.logo} 

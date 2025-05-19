@@ -60,7 +60,6 @@ export function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder for future backend logic
     // console.log('Form submitted:', formData);
     alert("form submitted");
   };

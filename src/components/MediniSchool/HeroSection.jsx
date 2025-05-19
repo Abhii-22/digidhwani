@@ -9,6 +9,7 @@ import itImage from "@/assets/IMAGES/thisisengineering-AvGIBmvdcac-unsplash.jpg"
 import infraworks from "@/assets/IMAGES/getty-images-KD_fT_T4D24-unsplash.jpg"
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import FeedbackSection from "./FeedbackSection"
 
 function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -48,6 +49,13 @@ function HeroSection() {
     },
     {
       id: 5,
+      image: `${infraworks}?height=200&width=300`,
+      name: "AEC",
+      description: "Architecture, Engineering & Construction design solutions",
+      // link: "/courses/aec",
+    },
+    {
+      id: 6,
       image: `${itImage}?height=200&width=300`,
       name: 'IT',
       description: "Software development courses including Java, Python, MERN Stack, and Cloud technologies"
@@ -288,6 +296,7 @@ function HeroSection() {
           </motion.div>
         </div>
       </section>
+      <FeedbackSection />
     </>
   )
 }

@@ -90,7 +90,7 @@ function Footer() {
             <nav className="grid grid-cols-2 gap-4">
               {[
                 { label: 'About Us', path: '/about' },
-                { label: 'Services', path: '/services' },
+                { label: 'Services', path: '/' },
                 { label: 'Blog', path: '/blog' },
                 { label: 'Contact', path: '/contact' },
               ].map(({ label, path }) => (

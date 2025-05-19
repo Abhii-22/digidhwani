@@ -192,48 +192,49 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
           >
             {services.map((service, index) => (
               <div key={index} className="px-4 min-w-full md:min-w-[50%] xl:min-w-[33.333%]">
-                <div
-                  className="h-[36rem] rounded-2xl shadow-xl overflow-hidden relative group transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2"
-                  style={{
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${service.bg_image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 group-hover:from-black/50 group-hover:via-black/30 group-hover:to-black/60 transition-all duration-500"></div>
+                <Link to={service.link} className="block h-full">
+                  <div
+                    className="h-[36rem] rounded-2xl shadow-xl overflow-hidden relative group transition-all duration-500 hover:shadow-2xl transform hover:-translate-y-2 cursor-pointer"
+                    style={{
+                      backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${service.bg_image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 group-hover:from-black/50 group-hover:via-black/30 group-hover:to-black/60 transition-all duration-500"></div>
 
-                  <div className="relative z-10 flex flex-col h-full p-8">
-                    <div className="flex items-center mb-6">
-                      <h3 className="text-3xl font-bold text-white font-mono tracking-wide group-hover:text-amber-300 transition-colors duration-300">
-                        {service.title}
-                      </h3>
-                    </div>
+                    <div className="relative z-10 flex flex-col h-full p-8">
+                      <div className="flex items-center mb-6">
+                        <h3 className="text-3xl font-bold text-white font-mono tracking-wide group-hover:text-amber-300 transition-colors duration-300">
+                          {service.title}
+                        </h3>
+                      </div>
 
-                    <p className="text-xl text-white/90 font-sans font-light mb-8 leading-relaxed text-justify">
-                      {service.description}
-                    </p>
+                      <p className="text-xl text-white/90 font-sans font-light mb-8 leading-relaxed text-justify">
+                        {service.description}
+                      </p>
 
-                    <div className="mt-auto">
-                      <Link
-                        to={service.link}
-                        className="
-                          inline-flex items-center space-x-3
-                          bg-white/20 hover:bg-amber-600/80 
-                          backdrop-blur-sm
-                          text-white font-semibold
-                          px-6 py-3 rounded-lg
-                          transition-all duration-300
-                          border border-white/30
-                          hover:border-amber-500/50
-                          transform hover:scale-105
-                        "
-                      >
-                        <span>Explore Services</span>
-                        <Globe className="w-6 h-6 ml-2 animate-pulse" />
-                      </Link>
+                      <div className="mt-auto">
+                        <div
+                          className="
+                            inline-flex items-center space-x-3
+                            bg-white/20 hover:bg-amber-600/80 
+                            backdrop-blur-sm
+                            text-white font-semibold
+                            px-6 py-3 rounded-lg
+                            transition-all duration-300
+                            border border-white/30
+                            hover:border-amber-500/50
+                            transform hover:scale-105
+                          "
+                        >
+                          <span>Explore Services</span>
+                          <Globe className="w-6 h-6 ml-2 animate-pulse" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             ))}
           </div>

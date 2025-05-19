@@ -63,7 +63,7 @@ function Footer() {
               </li>
               <li>
                 <Link to="/teamech" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  TeaMech
+                  Mechsetu
                 </Link>
               </li>
               <li>

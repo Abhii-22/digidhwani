@@ -13,6 +13,12 @@ import bmsLogo from "@/assets/Logos/BMS.jpg";
 import jdschoolLogo from "@/assets/Logos/JDSCHOOL.jpg";
 import pesitLogo from "@/assets/Logos/PESIT.jpg";
 import ramaiaLogo from "@/assets/Logos/RAMAIAH-INSTITUTE-OF-TECHNOLOGY.png";
+import aicteLogo from "@/assets/Logos/aicte.png";
+import vtuLogo from "@/assets/Logos/VTU.jpg";
+import sharnbasvaLogo from "@/assets/Logos/Sharnbasva_University_logo.png";
+import iitBbsrLogo from "@/assets/Logos/Indian_Institute_of_Technology_Bhubaneswar_Logo.png.jpg";
+import rv1Logo from "@/assets/Logos/rv1.png";
+import rv2Logo from "@/assets/Logos/rv2.jpg";
 
 function PartnersSection() {
   const { theme } = useTheme();
@@ -61,47 +67,47 @@ function PartnersSection() {
     }
   ];
 
-  // Partner data for column 2 (moving down)
+  // Partner data for column 2 (moving down) - University/institutional logos
   const partnersColumn2 = [
     {
       id: 8,
-      name: "SketchUp",
-      logo: sketchUpLogo,
+      name: "AICTE",
+      logo: aicteLogo,
     },
     {
       id: 9,
-      name: "Chaos",
-      logo: chaosLogo,
+      name: "VTU",
+      logo: vtuLogo,
     },
     {
       id: 10,
-      name: "PTC",
-      logo: ptcLogo,
+      name: "Sharnbasva University",
+      logo: sharnbasvaLogo,
     },
     {
       id: 11,
-      name: "Autodesk",
-      logo: autodeskLogo,
-    },
-    {
-      id: 12,
-      name: "Bentley Systems",
-      logo: bentleyLogo,
+      name: "IIT Bhubaneswar",
+      logo: iitBbsrLogo,
     },
     // Duplicate to create a continuous scroll effect
     {
+      id: 12,
+      name: "AICTE",
+      logo: aicteLogo,
+    },
+    {
       id: 13,
-      name: "SketchUp",
-      logo: sketchUpLogo,
+      name: "VTU",
+      logo: vtuLogo,
     },
     {
       id: 14,
-      name: "Chaos",
-      logo: chaosLogo,
+      name: "Sharnbasva University",
+      logo: sharnbasvaLogo,
     }
   ];
   
-  // Partner data for column 3 (moving up) - New educational partners
+  // Partner data for column 3 (moving up) - College partners (3 logos)
   const partnersColumn3 = [
     {
       id: 15,
@@ -115,59 +121,59 @@ function PartnersSection() {
     },
     {
       id: 17,
-      name: "PES Institute of Technology",
-      logo: pesitLogo,
-    },
-    {
-      id: 18,
       name: "Ramaiah Institute of Technology",
       logo: ramaiaLogo,
     },
     // Duplicate to create a continuous scroll effect
     {
-      id: 19,
+      id: 18,
       name: "BMS College of Engineering",
       logo: bmsLogo,
+    },
+    {
+      id: 19,
+      name: "JD School of Design",
+      logo: jdschoolLogo,
     },
     {
       id: 20,
-      name: "JD School of Design",
-      logo: jdschoolLogo,
+      name: "Ramaiah Institute of Technology",
+      logo: ramaiaLogo,
     }
   ];
 
-  // Partner data for column 4 (moving down) - New educational partners
+  // Partner data for column 4 (moving down) - College partners (3 logos)
   const partnersColumn4 = [
     {
       id: 21,
-      name: "PES Institute of Technology",
-      logo: pesitLogo,
+      name: "RV College of Engineering",
+      logo: rv1Logo,
     },
     {
       id: 22,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
+      name: "RV University",
+      logo: rv2Logo,
     },
     {
       id: 23,
-      name: "BMS College of Engineering",
-      logo: bmsLogo,
-    },
-    {
-      id: 24,
-      name: "JD School of Design",
-      logo: jdschoolLogo,
-    },
-    // Duplicate to create a continuous scroll effect
-    {
-      id: 25,
       name: "PES Institute of Technology",
       logo: pesitLogo,
     },
+    // Duplicate to create a continuous scroll effect
+    {
+      id: 24,
+      name: "RV College of Engineering",
+      logo: rv1Logo,
+    },
+    {
+      id: 25,
+      name: "RV University",
+      logo: rv2Logo,
+    },
     {
       id: 26,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
+      name: "PES Institute of Technology",
+      logo: pesitLogo,
     }
   ];
 

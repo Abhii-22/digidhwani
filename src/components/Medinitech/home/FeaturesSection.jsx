@@ -15,10 +15,10 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
 
   const services = [
     {
-      title: "MEDINI SCHOOL OF DESIGN",
+      title: "MEDINI EduTech",
       description:
         "Maximize the productivity of your knowledge with learning programs designed to meet industry requirements. Take live instructor-led classes online/offline, or take advantage of on-demand.",
-      link: "/medinischoolofdesign",
+      link: "/mediniedutech",
       bg_image: `${image1}?height=600&width=800`,
     },
     {

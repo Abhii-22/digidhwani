@@ -40,10 +40,10 @@ function App() {
               <Route path="/blog" element={<BlogPage />} />
               <Route path="/contact" element={<ContactPage />} />
 
-              <Route path="/medinischoolofdesign" element={<Home />} />
-              <Route path="/medinischoolofdesign/about" element={<AboutPage />} />
-              <Route path="/medinischoolofdesign/contact" element={<ContactPage />} />
-              <Route path="/medinischoolofdesign/courses/:courseName" element={<CourseDetailsPage />} />
+              <Route path="/mediniedutech" element={<Home />} />
+              <Route path="/mediniedutech/about" element={<AboutPage />} />
+              <Route path="/mediniedutech/contact" element={<ContactPage />} />
+              <Route path="/mediniedutech/courses/:courseName" element={<CourseDetailsPage />} />
               <Route path="/bim_construct" element={<BIMHome />} />
               <Route path="/bim_construct/about" element={<AboutPage/>} />
               <Route path="/bim_construct/contact" element={<ContactPage/>} />

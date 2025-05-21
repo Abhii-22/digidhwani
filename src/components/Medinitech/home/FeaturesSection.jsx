@@ -6,6 +6,10 @@ import image1 from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg";
 import image2 from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg";
 import image3 from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg";
 import image4 from "@/assets/IMAGES/getty-images-X-lDEMCZBz0-unsplash.jpg";
+import image5 from "@/assets/IMAGES/thisisengineering-AvGIBmvdcac-unsplash.jpg";
+import image6 from "@/assets/IMAGES/andrej-lisakov-JKYk1J7LWA4-unsplash.jpg";
+import image7 from "@/assets/IMAGES/getty-images-Z2eLWZwOcW4-unsplash.jpg";
+import techvrittiImage from "@/assets/IMAGES/techvritti.jpg";
 
 const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,31 +36,31 @@ const FeaturesSection = ({ autoSlideInterval = 5000 }) => {
       title: "TECHVRITTI",
       description: "Looking into the need and supporting for the right product/software.",
       link: "/techvritti",
-      bg_image: `${image4}?height=600&width=800`,
+      bg_image: `${image3}?height=600&width=800`,
     },
     {
       title: "EDUPHYGITAL",
       description: "Restructuring the Dreams through innovative educational solutions that bridge physical and digital learning environments.",
       link: "/eduphygital",
-      bg_image: `${image2}?height=600&width=800`,
+      bg_image: `${techvrittiImage}?height=600&width=800`,
     },
     {
       title: "DIGIDHVANI",
       description: "Digital Marketing Solutions for businesses looking to amplify their online presence and reach.",
       link: "/digidhvani",
-      bg_image: `${image4}?height=600&width=800`,
+      bg_image: `${image5}?height=600&width=800`,
     },
     {
       title: "BUILDDSPACE",
       description: "For Startup Support - Empowering entrepreneurs with the resources and guidance needed to build successful ventures.",
       link: "/builddspace",
-      bg_image: `${image1}?height=600&width=800`,
+      bg_image: `${image6}?height=600&width=800`,
     },
     {
       title: "MECHSETU",
       description: "From design to manufacturing, any need of the market to the market",
       link: "/teamech",
-      bg_image: `${image3}?height=600&width=800`,
+      bg_image: `${image7}?height=600&width=800`,
     },
   ];
 

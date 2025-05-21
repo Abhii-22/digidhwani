@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Header from "./components/Header3"
 import Footer from "./components/Footer"
 import HomePage from "./pages/MediniTech/HomePage"
+import FrontPage from "./pages/MediniTech/FrontPage"
 // import ServicesPage from "./pages/ServicesPage"
 // import BlogPage from "./pages/BlogPage"
 import ContactPage from "./pages/MediniTech/ContactPage"
@@ -33,7 +34,8 @@ function App() {
           <main className="flex-1 mt-10">
             <ScrollToTop />
             <Routes>
-              <Route path="/" element={<HomePage />} />
+              <Route path="/" element={<FrontPage />} />
+              <Route path="/home" element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               {/* <Route path="/services" element={<ServicesPage />} /> */}
               <Route path="/awards" element={<AwardsPage />} />

@@ -230,7 +230,7 @@ function PartnersSection() {
           {/* Left side: Title and description */}
           <div className="md:w-1/2 text-left">
             <h2 className={`text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'} mb-6`}>
-              Trusted by 100+ Leaders
+              Trusted by 100+ Academia and Industry
             </h2>
             <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-8 text-justify`}>
               At Medini Technologies, we thrive through strong alliances with technology partners, strategic collaborators, and leading institutes. Together, we drive digital transformation in construction—optimizing operations, enhancing customer experiences, and accelerating innovation.
@@ -239,7 +239,7 @@ function PartnersSection() {
           
           {/* Right side: Four columns of vertically scrolling logos in opposite directions */}
           <div className="md:w-1/2">
-            <div className="flex gap-[0.5cm]">
+            <div className="flex gap-2">
               {/* Column 1 - Moving Up Continuously */}
               <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}

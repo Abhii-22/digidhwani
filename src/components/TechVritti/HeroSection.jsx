@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Layout, Smartphone, Database, Code } from "lucide-react"
-import backgroundImage from "@/assets/IMAGES/ilya-sonin-IsX2ZkbSk1Y-unsplash.jpg"
+import backgroundImage from "@/assets/IMAGES/techvritti-1.jpg"
 
 
 const HeroSection = ({ isDarkMode = false, servicesData }) => {

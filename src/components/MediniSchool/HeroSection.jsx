@@ -405,10 +405,10 @@ function HeroSection() {
               <div className="p-6">
                 <div className="grid grid-cols-1 gap-4">
                   {[
-                    { name: 'Java Full Stack', path: '/medinischoolofdesign/courses/java-fullstack' },
-                    { name: 'Python Full Stack', path: '/medinischoolofdesign/courses/python-fullstack' },
-                    { name: 'MERN Stack', path: '/medinischoolofdesign/courses/mern-stack' },
-                    { name: 'Cloud Application Development', path: '/medinischoolofdesign/courses/cloud-development' }
+                    { name: 'Java Full Stack', path: '/mediniedutech/courses/java-fullstack' },
+                    { name: 'Python Full Stack', path: '/mediniedutech/courses/python-fullstack' },
+                    { name: 'MERN Stack', path: '/mediniedutech/courses/mern-stack' },
+                    { name: 'Cloud Application Development', path: '/mediniedutech/courses/cloud-app-dev' }
                   ].map((option, index) => (
                     <Link 
                       key={index} 
@@ -462,14 +462,14 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {[
-                      { name: 'AutoCAD', path: '/medinischoolofdesign/courses/autocad' },
-                      { name: 'AutoCAD Electrical', path: '/medinischoolofdesign/courses/autocad-electrical' },
-                      { name: 'Revit Architecture', path: '/medinischoolofdesign/courses/revit-architecture' },
-                      { name: 'Revit MEP', path: '/medinischoolofdesign/courses/revit-mep' },
-                      { name: 'Revit Structure', path: '/medinischoolofdesign/courses/revit-structure' },
-                      { name: 'Civil 3D', path: '/medinischoolofdesign/courses/civil-3d' },
-                      { name: 'Navisworks', path: '/medinischoolofdesign/courses/navisworks' },
-                      { name: 'InfraWorks', path: '/medinischoolofdesign/courses/infraworks' }
+                      { name: 'AutoCAD', path: '/mediniedutech/courses/autocad' },
+                      { name: 'AutoCAD Electrical', path: '/mediniedutech/courses/autocad-electrical' },
+                      { name: 'Revit Architecture', path: '/mediniedutech/courses/revit-architecture' },
+                      { name: 'Revit MEP', path: '/mediniedutech/courses/revit-mep' },
+                      { name: 'Revit Structure', path: '/mediniedutech/courses/revit-structure' },
+                      { name: 'Civil 3D', path: '/mediniedutech/courses/civil-3d' },
+                      { name: 'Navisworks', path: '/mediniedutech/courses/navisworks' },
+                      { name: 'InfraWorks', path: '/mediniedutech/courses/infrawork' }
                     ].map((option, index) => (
                       <Link 
                         key={`autodesk-${index}`} 
@@ -491,11 +491,11 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {[
-                      { name: 'OpenRoads Designer', path: '/medinischoolofdesign/courses/openroads-designer' },
-                      { name: 'OpenFlows WaterGEMS', path: '/medinischoolofdesign/courses/openflows-watergems' },
-                      { name: 'OpenFlows SewerGEMS', path: '/medinischoolofdesign/courses/openflows-sewergems' },
-                      { name: 'STAAD Pro', path: '/medinischoolofdesign/courses/staad-pro' },
-                      { name: 'MicroStation', path: '/medinischoolofdesign/courses/microstation' }
+                      { name: 'OpenRoads Designer', path: '/mediniedutech/courses/openroads-designer' },
+                      { name: 'OpenFlows WaterGEMS', path: '/mediniedutech/courses/openflows-watergems' },
+                      { name: 'OpenFlows SewerGEMS', path: '/mediniedutech/courses/openflows-sewergems' },
+                      { name: 'STAAD Pro', path: '/mediniedutech/courses/staad-pro' },
+                      { name: 'MicroStation', path: '/mediniedutech/courses/microstation' }
                     ].map((option, index) => (
                       <Link 
                         key={`bentley-${index}`} 
@@ -517,19 +517,18 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                     {[
-                      { name: 'SketchUp', path: '/medinischoolofdesign/courses/sketchup' },
-                      { name: 'Lumion', path: '/medinischoolofdesign/courses/lumion' },
-                      { name: 'V-Ray', path: '/medinischoolofdesign/courses/v-ray' },
-                      { name: 'Enscape', path: '/medinischoolofdesign/courses/enscape' },
-                      { name: 'Chaos', path: '/medinischoolofdesign/courses/chaos' },
-                      { name: 'Rhino', path: '/medinischoolofdesign/courses/rhino' },
-                      { name: 'Grasshopper', path: '/medinischoolofdesign/courses/grasshopper' },
-                      { name: 'ETABS', path: '/medinischoolofdesign/courses/etabs' },
-                      { name: 'MS Project', path: '/medinischoolofdesign/courses/ms-project' },
-                      { name: 'QGIS', path: '/medinischoolofdesign/courses/qgis' },
-                      { name: 'Adobe Animate', path: '/medinischoolofdesign/courses/adobe-animate' },
-                      { name: 'Photoshop', path: '/medinischoolofdesign/courses/photoshop' },
-                      { name: 'Illustrator', path: '/medinischoolofdesign/courses/illustrator' }
+                      { name: 'SketchUp', path: '/mediniedutech/courses/sketchup' },
+                      { name: 'Lumion', path: '/mediniedutech/courses/lumion' },
+                      { name: 'V-Ray', path: '/mediniedutech/courses/v-ray' },
+                      { name: 'Enscape', path: '/mediniedutech/courses/enscape' },
+                      { name: 'Rhino', path: '/mediniedutech/courses/rhino' },
+                      { name: 'Grasshopper', path: '/mediniedutech/courses/grasshopper' },
+                      { name: 'ETABS', path: '/mediniedutech/courses/etabs' },
+                      { name: 'MS Project', path: '/mediniedutech/courses/ms-project' },
+                      { name: 'QGIS', path: '/mediniedutech/courses/qgis' },
+                      { name: 'Adobe Animate', path: '/mediniedutech/courses/adobe-animate' },
+                      { name: 'Photoshop', path: '/mediniedutech/courses/photoshop' },
+                      { name: 'Illustrator', path: '/mediniedutech/courses/illustrator' }
                     ].map((option, index) => (
                       <Link 
                         key={`others-${index}`} 
@@ -584,10 +583,10 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
-                      { name: 'Fusion 360', path: '/medinischoolofdesign/courses/fusion-360' },
-                      { name: 'AutoCAD (Mechanical)', path: '/medinischoolofdesign/courses/autocad-mechanical' },
-                      { name: 'Maya', path: '/medinischoolofdesign/courses/maya' },
-                      { name: '3DS Max', path: '/medinischoolofdesign/courses/3ds-max' }
+                      { name: 'Fusion 360', path: '/mediniedutech/courses/fusion' },
+                      { name: 'AutoCAD (Mechanical)', path: '/mediniedutech/courses/autocad' },
+                      { name: 'Maya', path: '/mediniedutech/courses/maya' },
+                      { name: '3DS Max', path: '/mediniedutech/courses/3ds-max' }
                     ].map((option, index) => (
                       <Link 
                         key={`autodesk-pdm-${index}`} 
@@ -609,7 +608,7 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
-                      { name: 'SolidWorks', path: '/medinischoolofdesign/courses/solidworks' }
+                      { name: 'SolidWorks', path: '/mediniedutech/courses/solidworks' }
                     ].map((option, index) => (
                       <Link 
                         key={`dassault-${index}`} 
@@ -631,9 +630,9 @@ function HeroSection() {
                   </h4>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {[
-                      { name: 'CREO – PTC', path: '/medinischoolofdesign/courses/creo-ptc' },
-                      { name: 'ANSYS', path: '/medinischoolofdesign/courses/ansys' },
-                      { name: 'Adobe Animate', path: '/medinischoolofdesign/courses/adobe-animate-product' }
+                      { name: 'CREO – PTC', path: '/mediniedutech/courses/creo-ptc' },
+                      { name: 'ANSYS', path: '/mediniedutech/courses/ansys' },
+                      { name: 'Adobe Animate', path: '/mediniedutech/courses/adobe-animate' }
                     ].map((option, index) => (
                       <Link 
                         key={`others-pdm-${index}`} 

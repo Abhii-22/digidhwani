@@ -7,6 +7,9 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { motion, AnimatePresence } from "framer-motion"
 import logo from "@/assets/Logos/Medini_logo.png"
+import bimLogo from "@/assets/NAVBAR/BIM Construct.png"
+import eduphygitalLogo from "@/assets/NAVBAR/Eduphygital White.png"
+import buildspaceLogo from "@/assets/NAVBAR/Builddspace Whte.png"
 import ThemeToggle from "./ThemeToggle"
 import coursesData from '@/components/MediniSchool/courses.json';
 
@@ -90,6 +93,8 @@ const Header = () => {
   const isHome = location.pathname.includes("/");
   const isTeaMech = location.pathname.includes("teamech");
   const isTechVritti = location.pathname.includes("techvritti");
+  const isEduphygital = location.pathname.includes("eduphygital");
+  const isBuildspace = location.pathname.includes("builddspace");
 
   const phoneNumber = "919686311005";
   const handleClick = (e) => {
@@ -117,6 +122,36 @@ const Header = () => {
               alt="Medini"
               className="h-14 mr-2"
             />
+            {isBimConstruct && (
+              <>
+                <div className="h-8 w-px bg-white mx-2"></div>
+                <img
+                  src={bimLogo}
+                  alt="BIM Construct"
+                  className="h-6 ml-1"
+                />
+              </>
+            )}
+            {isEduphygital && (
+              <>
+                <div className="h-8 w-px bg-white mx-2"></div>
+                <img
+                  src={eduphygitalLogo}
+                  alt="Eduphygital"
+                  className="h-8 ml-1"
+                />
+              </>
+            )}
+            {isBuildspace && (
+              <>
+                <div className="h-8 w-px bg-white mx-2"></div>
+                <img
+                  src={buildspaceLogo}
+                  alt="Buildspace"
+                  className="h-8 ml-1"
+                />
+              </>
+            )}
             {isTechVritti && (
               <p className="font-playfair">TechVritti</p>
             )}

@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, BookOpen, Monitor, Users, Lightbulb, Compass
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
-// Import placeholder images - replace with actual images later
-import bg_image from "@/assets/IMAGES/getty-images-OB7KJ7WtHOs-unsplash.jpg"
+// Import images
+import bg_image from "@/assets/IMAGES/thisisengineering-AvGIBmvdcac-unsplash.jpg"
 import digitalLearningImage from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg"
 import hybridClassroomImage from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg"
 import teacherTrainingImage from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"

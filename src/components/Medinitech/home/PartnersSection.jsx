@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useTheme } from "../../ThemeProvider";
+import { useLocation } from "react-router-dom";
 
 // Import actual partner logos
 import autodeskLogo from "@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png";
@@ -22,18 +23,36 @@ import rv2Logo from "@/assets/Logos/rv2.jpg";
 
 function PartnersSection() {
   const { theme } = useTheme();
+  const location = useLocation();
   const [scrollPosition1, setScrollPosition1] = useState(0);
   const [scrollPosition2, setScrollPosition2] = useState(0);
   const [scrollPosition3, setScrollPosition3] = useState(0);
   const [scrollPosition4, setScrollPosition4] = useState(0);
+  
+  // Check if an Autodesk course is currently opened
+  const isAutodeskCourseOpen = () => {
+    const path = location.pathname.toLowerCase();
+    return path.includes('/mediniedutech/courses/') && 
+           (path.includes('autocad') || 
+            path.includes('revit') || 
+            path.includes('fusion') || 
+            path.includes('maya') || 
+            path.includes('3ds-max') || 
+            path.includes('civil-3d') || 
+            path.includes('navisworks') || 
+            path.includes('infrawork'));
+  };
 
   // Partner data for column 1 (moving up) - Company logos
   const partnersColumn1 = [
-    {
-      id: 1,
-      name: "Autodesk",
-      logo: autodeskLogo,
-    },
+    // Only include Autodesk if an Autodesk course is open
+    ...(isAutodeskCourseOpen() ? [
+      {
+        id: 1,
+        name: "Autodesk",
+        logo: autodeskLogo,
+      }
+    ] : []),
     {
       id: 2,
       name: "Bentley Systems",
@@ -55,11 +74,13 @@ function PartnersSection() {
       logo: ptcLogo,
     },
     // Duplicate to create a continuous scroll effect
-    {
-      id: 6,
-      name: "Autodesk",
-      logo: autodeskLogo,
-    },
+    ...(isAutodeskCourseOpen() ? [
+      {
+        id: 6,
+        name: "Autodesk",
+        logo: autodeskLogo,
+      }
+    ] : []),
     {
       id: 7,
       name: "Bentley Systems",
@@ -107,7 +128,7 @@ function PartnersSection() {
     }
   ];
   
-  // Partner data for column 3 (moving up) - College partners (3 logos)
+  // Partner data for column 3 (moving up) - College partners (2 logos)
   const partnersColumn3 = [
     {
       id: 15,
@@ -119,26 +140,16 @@ function PartnersSection() {
       name: "JD School of Design",
       logo: jdschoolLogo,
     },
-    {
-      id: 17,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
-    },
     // Duplicate to create a continuous scroll effect
     {
-      id: 18,
+      id: 17,
       name: "BMS College of Engineering",
       logo: bmsLogo,
     },
     {
-      id: 19,
+      id: 18,
       name: "JD School of Design",
       logo: jdschoolLogo,
-    },
-    {
-      id: 20,
-      name: "Ramaiah Institute of Technology",
-      logo: ramaiaLogo,
     }
   ];
 
@@ -230,7 +241,7 @@ function PartnersSection() {
           {/* Left side: Title and description */}
           <div className="md:w-1/2 text-left">
             <h2 className={`text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'} mb-6`}>
-              Trusted by 100+ Leaders
+              Trusted by 100+ Academia and Industry
             </h2>
             <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-8 text-justify`}>
               At Medini Technologies, we thrive through strong alliances with technology partners, strategic collaborators, and leading institutes. Together, we drive digital transformation in construction—optimizing operations, enhancing customer experiences, and accelerating innovation.
@@ -239,7 +250,7 @@ function PartnersSection() {
           
           {/* Right side: Four columns of vertically scrolling logos in opposite directions */}
           <div className="md:w-1/2">
-            <div className="flex gap-[0.5cm]">
+            <div className="flex gap-2">
               {/* Column 1 - Moving Up Continuously */}
               <div className={`w-1/4 overflow-hidden relative h-[400px] ${theme === 'dark' ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' : 'bg-gradient-to-b from-white via-gray-50 to-white'}`}>
                 {/* First set of logos */}

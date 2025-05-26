@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, Building, Layers, Home, Ruler, Pencil } from
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
-// Import placeholder images - replace with actual images later
-import bg_image from "@/assets/IMAGES/getty-images-OB7KJ7WtHOs-unsplash.jpg"
+// Import images
+import bg_image from "@/assets/IMAGES/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg"
 import architectureImage from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg"
 import interiorDesignImage from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg"
 import constructionImage from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"

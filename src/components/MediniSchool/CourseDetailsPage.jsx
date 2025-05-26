@@ -150,15 +150,8 @@ const CourseDetailsPage = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-24 pb-12 px-4">
       <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
-        {/* Provider Logo */}
-        <div className="bg-white py-4 px-6 flex justify-between items-center border-b">
-          {providerLogo && (
-            <img 
-              src={providerLogo} 
-              alt="Provider Logo" 
-              className="h-12 object-contain"
-            />
-          )}
+        {/* Course Navigation */}
+        <div className="bg-white py-4 px-6 flex justify-end items-center border-b">
           <Link 
             to="/mediniedutech"
             className="text-blue-600 hover:text-blue-800 text-sm font-medium"

@@ -10,6 +10,11 @@ import logo from "@/assets/Logos/Medini_logo.png"
 import bimLogo from "@/assets/NAVBAR/BIM Construct.png"
 import eduphygitalLogo from "@/assets/NAVBAR/Eduphygital White.png"
 import buildspaceLogo from "@/assets/NAVBAR/Builddspace Whte.png"
+import digidhvaniLogo from "@/assets/NAVBAR/Digidhvani.jpeg"
+import autodeskLogo from "@/assets/NAVBAR/Autodesk ALP White.png"
+import solidworksLogo from "@/assets/NAVBAR/Solidworks White.png"
+import bentleyLogo from "@/assets/NAVBAR/Bentley White.png"
+import sketchupLogo from "@/assets/NAVBAR/Sketch White.png"
 import ThemeToggle from "./ThemeToggle"
 import coursesData from '@/components/MediniSchool/courses.json';
 
@@ -95,6 +100,40 @@ const Header = () => {
   const isTechVritti = location.pathname.includes("techvritti");
   const isEduphygital = location.pathname.includes("eduphygital");
   const isBuildspace = location.pathname.includes("builddspace");
+  const isDigiDhvani = location.pathname.includes("digidhvani");
+  const isCourse = location.pathname.includes("/courses/");
+  
+  // Function to determine which course provider logo to show based on the URL
+  const getCourseProviderLogo = () => {
+    const path = location.pathname.toLowerCase();
+    
+    // Autodesk courses
+    if (path.includes('autocad') || path.includes('revit') || path.includes('fusion') || 
+        path.includes('maya') || path.includes('3ds-max') || path.includes('civil-3d') || 
+        path.includes('navisworks') || path.includes('infrawork')) {
+      return autodeskLogo;
+    }
+    
+    // SolidWorks courses
+    if (path.includes('solidworks') || path.includes('solid-works')) {
+      return solidworksLogo;
+    }
+    
+    // Bentley courses
+    if (path.includes('bentley') || path.includes('microstation') || 
+        path.includes('openroads') || path.includes('openflows') || 
+        path.includes('staad-pro')) {
+      return bentleyLogo;
+    }
+    
+    // SketchUp courses
+    if (path.includes('sketchup') || path.includes('sketch-up')) {
+      return sketchupLogo;
+    }
+    
+    // Default to Autodesk logo if no specific match
+    return autodeskLogo;
+  };
 
   const phoneNumber = "919686311005";
   const handleClick = (e) => {
@@ -122,6 +161,18 @@ const Header = () => {
               alt="Medini"
               className="h-14 mr-2"
             />
+            
+            {isCourse && (
+              <>
+                <div className="h-8 w-px bg-white mx-2"></div>
+                <img
+                  src={getCourseProviderLogo()}
+                  alt="Course Provider"
+                  className="h-8 ml-1"
+                />
+              </>
+            )}
+
             {isBimConstruct && (
               <>
                 <div className="h-8 w-px bg-white mx-2"></div>
@@ -148,6 +199,16 @@ const Header = () => {
                 <img
                   src={buildspaceLogo}
                   alt="Buildspace"
+                  className="h-8 ml-1"
+                />
+              </>
+            )}
+            {isDigiDhvani && (
+              <>
+                <div className="h-8 w-px bg-white mx-2"></div>
+                <img
+                  src={digidhvaniLogo}
+                  alt="DigiDhvani"
                   className="h-8 ml-1"
                 />
               </>

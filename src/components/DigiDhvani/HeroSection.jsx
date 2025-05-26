@@ -3,8 +3,8 @@ import { ChevronLeft, ChevronRight, Search, BarChart, Globe, TrendingUp } from "
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 
-// Import placeholder images - replace with actual images later
-import bg_image from "@/assets/IMAGES/getty-images-OB7KJ7WtHOs-unsplash.jpg"
+// Import images
+import bg_image from "@/assets/IMAGES/getty-images-Z2eLWZwOcW4-unsplash.jpg"
 import seoImage from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg"
 import socialMediaImage from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg"
 import contentMarketingImage from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg"
@@ -145,7 +145,7 @@ function HeroSection() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Amplify Your Digital Presence
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300">
+              <p className="text-xl md:text-2xl text-gray-300 text-justify">
                 Strategic digital marketing solutions to help your business thrive in the online world
               </p>
               
@@ -241,7 +241,7 @@ function HeroSection() {
                         </div>
                         <div className="p-6">
                           <h3 className="font-semibold text-white text-xl mb-2">{service.name}</h3>
-                          <p className="text-gray-300 text-sm">{service.description}</p>
+                          <p className="text-gray-300 text-sm text-justify">{service.description}</p>
                           <div className="mt-4 flex items-center text-sm font-medium text-amber-400">
                             Learn more
                             <svg className="ml-1 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

@@ -7,7 +7,7 @@ const DynamicTypingHeadline = () => {
       subtitle: "Support With the Right Technology"
     },
     {
-        title: "MEDINI EduTech",
+        title: "MEDINI EDUTECH",
         subtitle: "FORGING THE FUTURE"
     },
     {

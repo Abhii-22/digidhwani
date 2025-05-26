@@ -75,7 +75,7 @@ const CourseCard = ({ course }) => {
         </div>
 
         {/* CTA Button */}
-        <Link to={`/medinischoolofdesign/courses/${id}`} className="block">
+        <Link to={`/mediniedutech/courses/${id}`} className="block">
           <button 
             className="w-full flex items-center justify-center py-2.5 rounded text-white text-sm font-medium transition-colors duration-300 hover:opacity-90"
             style={{ backgroundColor: mainColor }}

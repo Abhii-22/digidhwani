@@ -233,7 +233,7 @@ function PartnersSection() {
               Trusted by 100+ Leaders
             </h2>
             <p className={`text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'} mb-8 text-justify`}>
-              At Medini Technologies, we thrive through strong alliances with technology partners, strategic collaborators, and leading institutes. Together, we drive digital transformation in construction—optimizing operations, enhancing customer experiences, and accelerating innovation.
+            At Medini Technologies, we thrive through strong alliances with technology partners, strategic collaborators, industry leaders, and academic institutions. Together, we drive digital transformation in construction—optimizing operations, enhancing customer experiences, and accelerating innovation.
             </p>
           </div>
           

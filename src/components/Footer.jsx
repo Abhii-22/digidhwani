@@ -43,42 +43,32 @@ function Footer() {
           {/* Services List Section */}
           <div className="space-y-6">
             <h3 className="text-xl font-semibold text-gray-800 dark:text-white">
-              {isTechVritti ? "TechVritti Services" : "Our Services"}
+              DigiDhvani Services
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/medinischoolofdesign" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  Medini School of Design
+                <Link to="/digidhvani/seo" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Search Engine Optimization
                 </Link>
               </li>
               <li>
-                <Link to="/bim_construct" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  BIM Construct
+                <Link to="/digidhvani/social-media-marketing" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Social Media Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/techvritti" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  TechVritti
+                <Link to="/digidhvani/content-marketing" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Content Marketing
                 </Link>
               </li>
               <li>
-                <Link to="/teamech" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  Mechsetu
+                <Link to="/digidhvani/ppc" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Pay Per Click Advertising
                 </Link>
               </li>
               <li>
-                <Link to="/eduphygital" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  EDUPHYGITAL
-                </Link>
-              </li>
-              <li>
-                <Link to="/digidhvani" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  DigiDhvani
-                </Link>
-              </li>
-              <li>
-                <Link to="/builddspace" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
-                  BuilddSpace
+                <Link to="/digidhvani/analytics" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 transition-colors duration-300 text-sm">
+                  Analytics and Reporting
                 </Link>
               </li>
             </ul>

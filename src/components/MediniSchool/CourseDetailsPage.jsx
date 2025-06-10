@@ -1,269 +1,331 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronRight, Clock, Target, Book, User, DollarSign } from 'lucide-react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Badge } from "@/components/ui/badge"
+import { CheckCircle, Clock, Users, BookOpen, Award, Briefcase, ChevronRight, ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import coursesData from './courses.json';
 
-// Import course data directly
-import courseData from './courses.json';
-
-// Import logos
-import autodeskLogo from '@/assets/Logos/autodesk-learning-partner-logo-rgb-black.png';
-import bentleyLogo from '@/assets/Logos/Bentley-Training-Partner-Logo.jpg';
-
-// Define a placeholder image
-const placeholderImage = "/placeholder.svg";
-
-// Map provider IDs to their logos
-const providerLogos = {
-  'AUTODESK': autodeskLogo,
-  'BENTLEY': bentleyLogo,
-  'DASSAULT': autodeskLogo, // Fallback to autodesk logo
-  'BIM_CONSTRUCTION': autodeskLogo, // Fallback to autodesk logo
-  'IT': autodeskLogo, // Fallback to autodesk logo
-  'OTHER': autodeskLogo // Fallback to autodesk logo
-};
-
-const CourseDetailsPage = () => {
+export default function CourseDetailsPage() {
   const { courseName } = useParams();
   const [course, setCourse] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [providerLogo, setProviderLogo] = useState(null);
-  
-  // Main theme color
-  const mainColor = "rgb(25,65,75)";
   
   useEffect(() => {
-    console.log('CourseDetailsPage mounted, courseName:', courseName);
-    
-    // Create a mapping for special cases
-    const specialMappings = {
-      'fusion-360': 'fusion',
-      'autocad-mechanical': 'autocad',
-      '3ds-max': '3ds-max'
-    };
-    
-    // Find the course by ID
+    // Find the course in the courses data
     const findCourse = () => {
-      try {
-        // Get all courses from all providers and categories
-        const allCourses = [];
-        
-        courseData.courseProviders.forEach(provider => {
-          provider.categories.forEach(category => {
-            category.courses.forEach(course => {
-              allCourses.push({...course, provider: provider.id, category: category.name});
-            });
-          });
-        });
-        
-        console.log('All courses:', allCourses.length);
-        console.log('Available course IDs:', allCourses.map(c => c.id));
-        console.log('Looking for course ID:', courseName);
-        
-        // Check for special mappings first
-        let found = null;
-        if (specialMappings[courseName]) {
-          const mappedId = specialMappings[courseName];
-          console.log(`Special mapping found: ${courseName} -> ${mappedId}`);
-          found = allCourses.find(c => c.id === mappedId);
-        }
-        
-        // If no special mapping or not found with mapping, try exact match
-        if (!found) {
-          found = allCourses.find(c => c.id === courseName);
-        }
-        
-        // If still not found, try different matching strategies
-        if (!found) {
-          console.log('Course not found by exact match, trying alternatives...');
-          
-          // Try without hyphens
-          const simplifiedId = courseName.replace(/-/g, '');
-          found = allCourses.find(c => c.id.replace(/-/g, '') === simplifiedId);
-          
-          // Try partial match
-          if (!found) {
-            found = allCourses.find(c => 
-              courseName.includes(c.id) || c.id.includes(courseName)
-            );
-          }
-          
-          // If still not found, use the first course (for testing)
-          if (!found && allCourses.length > 0) {
-            console.log('Using first course as fallback');
-            found = allCourses[0];
+      for (const provider of coursesData.courseProviders) {
+        for (const category of provider.categories) {
+          const foundCourse = category.courses.find(c => c.id === courseName);
+          if (foundCourse) {
+            return { ...foundCourse, provider: provider.name, category: category.name };
           }
         }
-        
-        if (found) {
-          console.log('Found course:', found);
-          setCourse(found);
-          
-          // Find the provider for this course
-          const provider = courseData.courseProviders.find(p => 
-            p.categories.some(cat => 
-              cat.courses.some(c => c.id === found.id)
-            )
-          );
-          
-          if (provider) {
-            console.log('Course provider:', provider.id);
-            setProviderLogo(providerLogos[provider.id] || providerLogos['OTHER']);
-          } else {
-            setProviderLogo(providerLogos['OTHER']);
-          }
-        } else {
-          console.error('No courses found at all');
-        }
-      } catch (error) {
-        console.error('Error finding course:', error);
-      } finally {
-        setLoading(false);
       }
+      return null;
     };
-    
-    findCourse();
+
+    const courseData = findCourse();
+    setCourse(courseData);
   }, [courseName]);
-  
-  if (loading) {
-    return (
-      <div className="min-h-screen flex justify-center items-center">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"></div>
-      </div>
-    );
-  }
-  
+
   if (!course) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center p-4">
-        <h2 className="text-3xl font-bold text-red-500 mb-4">Course Not Found</h2>
-        <p className="text-lg mb-8">We couldn't find the course you're looking for.</p>
-        <Link 
-          to="/mediniedutech" 
-          className="px-6 py-3 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-        >
-          Back to Courses
-        </Link>
+      <div className="container mx-auto py-10 px-4">
+        <div className="text-center py-20">
+          <h2 className="text-2xl font-bold">Course not found</h2>
+          <p className="mt-4">The course you're looking for doesn't exist or has been removed.</p>
+          <Button asChild className="mt-6">
+            <Link to="/mediniedutech">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to Courses
+            </Link>
+          </Button>
+        </div>
       </div>
     );
   }
-  
+
   return (
-    <div className="min-h-screen bg-gray-50 pt-24 pb-12 px-4">
-      <div className="max-w-5xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
-        {/* Course Navigation */}
-        <div className="bg-white py-4 px-6 flex justify-end items-center border-b">
-          <Link 
-            to="/mediniedutech"
-            className="text-blue-600 hover:text-blue-800 text-sm font-medium"
-          >
-            Back to Courses
-          </Link>
-        </div>
-        
-        {/* Course Header */}
-        <div className="relative h-80 bg-gradient-to-r from-blue-600 to-indigo-700">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center text-white p-8 max-w-3xl">
-              <h1 className="text-4xl font-bold mb-4">{course.title}</h1>
-              <p className="text-xl">{course.description}</p>
+    <div className="container mx-auto py-10 px-4">
+      <Button variant="ghost" asChild className="mb-6">
+        <Link to="/mediniedutech" className="flex items-center">
+          <ArrowLeft className="mr-2 h-4 w-4" /> Back to Courses
+        </Link>
+      </Button>
+
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="lg:col-span-2 space-y-6">
+          <div>
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground mb-2">
+              <span>{course.provider}</span>
+              <ChevronRight className="h-4 w-4" />
+              <span>{course.category}</span>
             </div>
-          </div>
-        </div>
-        
-        {/* Course Info Section */}
-        <div className="p-8">
-          <div className="flex flex-wrap gap-4 mb-8 justify-center">
-            <div className="flex items-center bg-blue-50 px-4 py-2 rounded-full">
-              <Clock className="text-blue-600 mr-2" size={20} />
-              <span className="font-medium">{course.duration}</span>
-            </div>
-            <div className="flex items-center bg-green-50 px-4 py-2 rounded-full">
-              <Target className="text-green-600 mr-2" size={20} />
-              <span className="font-medium">{course.difficulty}</span>
-            </div>
-            <div className="flex items-center bg-amber-50 px-4 py-2 rounded-full">
-              <User className="text-amber-600 mr-2" size={20} />
-              <span className="font-medium">{course.instructor}</span>
-            </div>
-            <div className="flex items-center bg-purple-50 px-4 py-2 rounded-full">
-              <DollarSign className="text-purple-600 mr-2" size={20} />
-              <span className="font-medium">₹{course.price}</span>
-            </div>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Curriculum */}
-            <div>
-              <h2 className="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">
-                Curriculum
-              </h2>
-              <ul className="space-y-3">
-                {course.curriculum && course.curriculum.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <ChevronRight className="text-blue-600 mt-1 flex-shrink-0" size={18} />
-                    <span className="ml-2">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <h1 className="text-3xl font-bold tracking-tight">{course.name}</h1>
+            <p className="mt-2 text-muted-foreground">{course.description}</p>
             
-            {/* Learning Outcomes */}
-            <div>
-              <h2 className="text-2xl font-semibold mb-6 pb-2 border-b border-gray-200">
-                What You'll Learn
-              </h2>
-              <ul className="space-y-3">
-                {course.learningOutcomes && course.learningOutcomes.map((outcome, index) => (
-                  <li key={index} className="flex items-start">
-                    <div className="bg-green-100 p-1 rounded-full mt-1 flex-shrink-0">
-                      <Book className="text-green-600" size={16} />
-                    </div>
-                    <span className="ml-3">{outcome}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {course.tags?.map((tag, index) => (
+                <Badge key={index} variant="secondary">
+                  {tag}
+                </Badge>
+              ))}
             </div>
           </div>
+
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
+              <TabsTrigger value="instructors">Instructors</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="overview" className="space-y-6">
+              <div className="prose max-w-none">
+                <h3>About This Course</h3>
+                <p>{course.longDescription || 'No detailed description available for this course.'}</p>
+                
+                <h3>What You'll Learn</h3>
+                <ul className="space-y-2">
+                  {course.learningOutcomes?.map((outcome, index) => (
+                    <li key={index} className="flex items-start">
+                      <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <span>{outcome}</span>
+                    </li>
+                  )) || <li>No learning outcomes specified.</li>}
+                </ul>
+                
+                <h3>Prerequisites</h3>
+                <ul className="list-disc pl-5">
+                  {course.prerequisites?.length > 0 ? (
+                    course.prerequisites.map((prereq, index) => (
+                      <li key={index}>{prereq}</li>
+                    ))
+                  ) : (
+                    <li>No prerequisites required.</li>
+                  )}
+                </ul>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="curriculum" className="space-y-4">
+              {course.curriculum?.length > 0 ? (
+                <div className="space-y-4">
+                  {course.curriculum.map((module, moduleIndex) => (
+                    <Card key={moduleIndex}>
+                      <CardHeader className="bg-muted/50">
+                        <CardTitle className="text-lg">
+                          Module {moduleIndex + 1}: {module.name}
+                        </CardTitle>
+                        <CardDescription>{module.description}</CardDescription>
+                      </CardHeader>
+                      <CardContent className="p-0">
+                        <div className="divide-y">
+                          {module.lessons?.map((lesson, lessonIndex) => (
+                            <div key={lessonIndex} className="p-4 hover:bg-muted/50 transition-colors flex items-center">
+                              <div className="flex-1">
+                                <h4 className="font-medium">{lesson.title}</h4>
+                                <p className="text-sm text-muted-foreground">
+                                  {lesson.duration} • {lesson.type}
+                                </p>
+                              </div>
+                              {lesson.completed && (
+                                <CheckCircle className="h-5 w-5 text-green-500" />
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <p>No curriculum details available for this course.</p>
+              )}
+            </TabsContent>
+            
+            <TabsContent value="instructors">
+              {course.instructors?.length > 0 ? (
+                <div className="grid gap-6 md:grid-cols-2">
+                  {course.instructors.map((instructor, index) => (
+                    <Card key={index}>
+                      <CardContent className="pt-6">
+                        <div className="flex items-start space-x-4">
+                          <div className="h-16 w-16 rounded-full bg-muted flex items-center justify-center">
+                            <span className="text-2xl">{instructor.name.charAt(0)}</span>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="font-semibold">{instructor.name}</h4>
+                            <p className="text-sm text-muted-foreground">{instructor.title}</p>
+                            <p className="mt-2 text-sm">{instructor.bio}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                <p>No instructor information available.</p>
+              )}
+            </TabsContent>
+          </Tabs>
         </div>
         
-        {/* Prerequisites Section */}
-        <div className="bg-gray-50 p-8">
-          <h2 className="text-2xl font-semibold mb-6">Prerequisites</h2>
-          <ul className="grid md:grid-cols-2 gap-4">
-            {course.prerequisites && course.prerequisites.map((prereq, index) => (
-              <li key={index} className="flex items-center bg-white p-4 rounded-lg shadow-sm">
-                <ChevronRight className="text-red-500 mr-2" size={18} />
-                <span>{prereq}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        {/* Target Audience */}
-        {course.targetAudience && (
-          <div className="p-8">
-            <h2 className="text-2xl font-semibold mb-4">Who This Course is For</h2>
-            <div className="bg-blue-50 p-4 rounded-lg">
-              <p>{course.targetAudience}</p>
-            </div>
-          </div>
-        )}
-        
-        {/* CTA Section */}
-        <div className="text-center py-10 bg-gradient-to-r from-blue-600 to-indigo-700">
-          <h2 className="text-2xl font-bold text-white mb-4">Ready to Enhance Your Skills?</h2>
-          <p className="text-white text-opacity-90 mb-6 max-w-2xl mx-auto">
-            Join our course and take your career to the next level with industry-relevant skills.
-          </p>
-          <button 
-            className="bg-white text-blue-600 px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-50 transition-colors"
-          >
-            Enroll Now
-          </button>
+        <div className="space-y-6">
+          <Card>
+            <CardHeader>
+              <CardTitle>Course Details</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center">
+                <Clock className="h-5 w-5 text-muted-foreground mr-2" />
+                <div>
+                  <p className="text-sm font-medium">Duration</p>
+                  <p className="text-sm text-muted-foreground">{course.duration || 'Not specified'}</p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Users className="h-5 w-5 text-muted-foreground mr-2" />
+                <div>
+                  <p className="text-sm font-medium">Enrolled Students</p>
+                  <p className="text-sm text-muted-foreground">
+                    {course.enrolledStudents ? `${course.enrolledStudents}+ students` : 'No data'}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <BookOpen className="h-5 w-5 text-muted-foreground mr-2" />
+                <div>
+                  <p className="text-sm font-medium">Lessons</p>
+                  <p className="text-sm text-muted-foreground">
+                    {course.lessonsCount ? `${course.lessonsCount} lessons` : 'No data'}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Award className="h-5 w-5 text-muted-foreground mr-2" />
+                <div>
+                  <p className="text-sm font-medium">Certificate</p>
+                  <p className="text-sm text-muted-foreground">
+                    {course.certificateIncluded ? 'Included' : 'Not included'}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-center">
+                <Briefcase className="h-5 w-5 text-muted-foreground mr-2" />
+                <div>
+                  <p className="text-sm font-medium">Skill Level</p>
+                  <p className="text-sm text-muted-foreground">{course.level || 'All levels'}</p>
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="flex flex-col space-y-4">
+              <div className="w-full">
+                <p className="text-2xl font-bold">
+                  {course.price ? `$${course.price}` : 'Free'}
+                </p>
+                {course.originalPrice && (
+                  <p className="text-sm text-muted-foreground line-through">
+                    ${course.originalPrice}
+                  </p>
+                )}
+              </div>
+              <Button className="w-full" size="lg">
+                Enroll Now
+              </Button>
+              <p className="text-xs text-muted-foreground text-center">
+                30-Day Money-Back Guarantee
+              </p>
+            </CardFooter>
+          </Card>
+          
+          <Card>
+            <CardHeader>
+              <CardTitle>Share this course</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex space-x-4">
+                <Button variant="outline" size="icon">
+                  <span className="sr-only">Share on Facebook</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </Button>
+                <Button variant="outline" size="icon">
+                  <span className="sr-only">Share on Twitter</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                  </svg>
+                </Button>
+                <Button variant="outline" size="icon">
+                  <span className="sr-only">Share on LinkedIn</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                    <rect width="4" height="12" x="2" y="9" />
+                    <circle cx="4" cy="4" r="2" />
+                  </svg>
+                </Button>
+                <Button variant="outline" size="icon" className="ml-auto">
+                  <span className="sr-only">Copy link</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-4 w-4"
+                  >
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                  </svg>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </div>
   );
-};
-
-export default CourseDetailsPage;
+}

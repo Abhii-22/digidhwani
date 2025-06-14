@@ -331,7 +331,7 @@ const Header = () => {
           >
             <div className="container mx-auto overflow-x-auto hide-scrollbar">
 
-              {!isMediniSchool && !isBimConstruct && !isTeaMech && !isTechVritti && (
+              {/* {!isMediniSchool && !isBimConstruct && !isTeaMech && !isTechVritti && (
                 <div className="flex items-center gap-6 py-3 px-4 min-w-max">
                 <div className="nav-item ">
                   <Link to="/">Home</Link>
@@ -349,7 +349,7 @@ const Header = () => {
                   <Link to="/contact">Contact</Link>
                 </div>
               </div>
-              )}
+              )} */}
 
               {/* medini school navbar */}
               {isMediniSchool && (

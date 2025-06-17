@@ -4,116 +4,116 @@ import { Search, BarChart, Globe, TrendingUp, Mail, Target, Smartphone, Code } f
 
 const ServicesComponent = () => {
   const services = [
-    {
-      icon: <Search className="w-12 h-12 text-amber-500" />,
-      title: "Search Engine Optimization",
-      description:
-        "Improve your website's visibility in search engine results with our comprehensive SEO strategies. We optimize your site structure, content, and backlink profile to drive organic traffic and increase rankings.",
-      features: [
-        "Keyword Research & Strategy",
-        "On-Page SEO Optimization",
-        "Technical SEO Audits",
-        "Link Building & Authority Development",
-        "Local SEO for Business"
-      ]
-    },
-    {
-      icon: <Globe className="w-12 h-12 text-blue-500" />,
-      title: "Social Media Marketing",
-      description:
-        "Build your brand presence and engage with your audience through strategic social media marketing. We create and manage campaigns that drive engagement, increase followers, and generate leads.",
-      features: [
-        "Platform Strategy & Selection",
-        "Content Creation & Curation",
-        "Community Management",
-        "Paid Social Advertising",
-        "Performance Analytics"
-      ]
-    },
-    {
-      icon: <TrendingUp className="w-12 h-12 text-green-500" />,
-      title: "Content Marketing",
-      description:
-        "Attract and convert your target audience with valuable, relevant content. Our content marketing strategies help establish your brand as an industry authority while driving traffic and conversions.",
-      features: [
-        "Content Strategy Development",
-        "Blog & Article Creation",
-        "Infographics & Visual Content",
-        "eBooks & Whitepapers",
-        "Content Distribution"
-      ]
-    },
-    {
-      icon: <Target className="w-12 h-12 text-purple-500" />,
-      title: "Pay-Per-Click Advertising",
-      description:
-        "Drive immediate traffic and conversions with targeted PPC campaigns. We create and manage ads that reach your ideal customers at the right time, maximizing your ROI.",
-      features: [
-        "Google Ads Management",
-        "Bing Ads Campaigns",
-        "Display & Remarketing",
-        "Shopping Campaigns",
-        "Conversion Tracking & Optimization"
-      ]
-    },
-    {
-      icon: <BarChart className="w-12 h-12 text-indigo-500" />,
-      title: "Analytics & Reporting",
-      description:
-        "Gain valuable insights into your digital marketing performance with comprehensive analytics and reporting. We track key metrics and provide actionable recommendations for improvement.",
-      features: [
-        "Custom Dashboard Setup",
-        "Performance Tracking",
-        "Conversion Analysis",
-        "Competitor Benchmarking",
-        "Monthly Performance Reports"
-      ]
-    },
-    {
-      icon: <Mail className="w-12 h-12 text-red-500" />,
-      title: "Email Marketing",
-      description:
-        "Nurture leads and drive conversions with targeted email campaigns. We design, create, and optimize email marketing strategies that engage your audience and drive results.",
-      features: [
-        "Email Strategy Development",
-        "Newsletter Creation",
-        "Automated Email Sequences",
-        "A/B Testing",
-        "Performance Optimization"
-      ]
-    },
-    {
-      icon: <Smartphone className="w-12 h-12 text-yellow-500" />,
-      title: "Mobile Marketing",
-      description:
-        "Reach customers on their mobile devices with targeted marketing strategies. We help you connect with your audience through SMS, apps, and mobile-optimized content.",
-      features: [
-        "Mobile SEO",
-        "App Store Optimization",
-        "SMS Marketing",
-        "Mobile Ad Campaigns",
-        "Location-Based Marketing"
-      ]
-    },
-    {
-      icon: <Code className="w-12 h-12 text-cyan-500" />,
-      title: "Web Development & Design",
-      description:
-        "Create a stunning, conversion-focused website that represents your brand. Our web development and design services ensure your site is visually appealing, user-friendly, and optimized for performance.",
-      features: [
-        "Responsive Website Design",
-        "UX/UI Optimization",
-        "Landing Page Creation",
-        "Website Speed Optimization",
-        "Conversion Rate Optimization"
-      ]
-    }
+    // {
+    //   icon: <Search className="w-12 h-12 text-amber-500" />,
+    //   title: "Search Engine Optimization",
+    //   description:
+    //     "Improve your website's visibility in search engine results with our comprehensive SEO strategies. We optimize your site structure, content, and backlink profile to drive organic traffic and increase rankings.",
+    //   features: [
+    //     "Keyword Research & Strategy",
+    //     "On-Page SEO Optimization",
+    //     "Technical SEO Audits",
+    //     "Link Building & Authority Development",
+    //     "Local SEO for Business"
+    //   ]
+    // },
+    // {
+    //   icon: <Globe className="w-12 h-12 text-blue-500" />,
+    //   title: "Social Media Marketing",
+    //   description:
+    //     "Build your brand presence and engage with your audience through strategic social media marketing. We create and manage campaigns that drive engagement, increase followers, and generate leads.",
+    //   features: [
+    //     "Platform Strategy & Selection",
+    //     "Content Creation & Curation",
+    //     "Community Management",
+    //     "Paid Social Advertising",
+    //     "Performance Analytics"
+    //   ]
+    // },
+    // {
+    //   icon: <TrendingUp className="w-12 h-12 text-green-500" />,
+    //   title: "Content Marketing",
+    //   description:
+    //     "Attract and convert your target audience with valuable, relevant content. Our content marketing strategies help establish your brand as an industry authority while driving traffic and conversions.",
+    //   features: [
+    //     "Content Strategy Development",
+    //     "Blog & Article Creation",
+    //     "Infographics & Visual Content",
+    //     "eBooks & Whitepapers",
+    //     "Content Distribution"
+    //   ]
+    // },
+    // {
+    //   icon: <Target className="w-12 h-12 text-purple-500" />,
+    //   title: "Pay-Per-Click Advertising",
+    //   description:
+    //     "Drive immediate traffic and conversions with targeted PPC campaigns. We create and manage ads that reach your ideal customers at the right time, maximizing your ROI.",
+    //   features: [
+    //     "Google Ads Management",
+    //     "Bing Ads Campaigns",
+    //     "Display & Remarketing",
+    //     "Shopping Campaigns",
+    //     "Conversion Tracking & Optimization"
+    //   ]
+    // },
+    // {
+    //   icon: <BarChart className="w-12 h-12 text-indigo-500" />,
+    //   title: "Analytics & Reporting",
+    //   description:
+    //     "Gain valuable insights into your digital marketing performance with comprehensive analytics and reporting. We track key metrics and provide actionable recommendations for improvement.",
+    //   features: [
+    //     "Custom Dashboard Setup",
+    //     "Performance Tracking",
+    //     "Conversion Analysis",
+    //     "Competitor Benchmarking",
+    //     "Monthly Performance Reports"
+    //   ]
+    // },
+    // {
+    //   icon: <Mail className="w-12 h-12 text-red-500" />,
+    //   title: "Email Marketing",
+    //   description:
+    //     "Nurture leads and drive conversions with targeted email campaigns. We design, create, and optimize email marketing strategies that engage your audience and drive results.",
+    //   features: [
+    //     "Email Strategy Development",
+    //     "Newsletter Creation",
+    //     "Automated Email Sequences",
+    //     "A/B Testing",
+    //     "Performance Optimization"
+    //   ]
+    // },
+    // {
+    //   icon: <Smartphone className="w-12 h-12 text-yellow-500" />,
+    //   title: "Mobile Marketing",
+    //   description:
+    //     "Reach customers on their mobile devices with targeted marketing strategies. We help you connect with your audience through SMS, apps, and mobile-optimized content.",
+    //   features: [
+    //     "Mobile SEO",
+    //     "App Store Optimization",
+    //     "SMS Marketing",
+    //     "Mobile Ad Campaigns",
+    //     "Location-Based Marketing"
+    //   ]
+    // },
+    // {
+    //   icon: <Code className="w-12 h-12 text-cyan-500" />,
+    //   title: "Web Development & Design",
+    //   description:
+    //     "Create a stunning, conversion-focused website that represents your brand. Our web development and design services ensure your site is visually appealing, user-friendly, and optimized for performance.",
+    //   features: [
+    //     "Responsive Website Design",
+    //     "UX/UI Optimization",
+    //     "Landing Page Creation",
+    //     "Website Speed Optimization",
+    //     "Conversion Rate Optimization"
+    //   ]
+    // }
   ];
 
   return (
     <div className="bg-gradient-to-b from-gray-900 to-gray-800 py-20">
       <div className="container mx-auto px-4">
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -124,7 +124,7 @@ const ServicesComponent = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Comprehensive digital marketing solutions to help your business grow online and reach your target audience effectively.
           </p>
-        </motion.div>
+        </motion.div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (

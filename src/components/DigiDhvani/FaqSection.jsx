@@ -35,25 +35,25 @@ export const FaqSection = () => {
       answer:
         "Not necessarily. While having a modern, mobile-friendly website is important for digital marketing success, we can often work with your existing website and recommend improvements over time. We'll evaluate your current website's performance and suggest updates that will enhance user experience and conversion rates while implementing other digital marketing strategies."
     },
-    {
-      question: "How do you measure the success of digital marketing campaigns?",
-      answer:
-        "We measure success through various metrics aligned with your business goals, including website traffic, conversion rates, engagement metrics, lead generation, and ultimately, ROI. We use advanced analytics tools to track performance and provide regular reports with actionable insights. Our approach focuses on data-driven decision making to continuously optimize your campaigns."
-    },
-    {
-      question: "What makes DigiDhvani different from other digital marketing agencies?",
-      answer:
-        "DigiDhvani stands out through our personalized approach, transparent reporting, and focus on measurable results. We don't believe in one-size-fits-all solutions; instead, we develop customized strategies based on your unique business needs and goals. Our team stays current with the latest digital marketing trends and technologies to ensure your business maintains a competitive edge."
-    },
-    {
-      question: "Can digital marketing work for my small business?",
-      answer:
-        "Absolutely! Digital marketing is particularly valuable for small businesses because it provides cost-effective ways to reach targeted audiences. Unlike traditional marketing, digital strategies can be scaled according to your budget and allow you to compete with larger companies. We specialize in helping small businesses develop effective digital marketing strategies that maximize their resources."
-    }
+    // {
+    //   question: "How do you measure the success of digital marketing campaigns?",
+    //   answer:
+    //     "We measure success through various metrics aligned with your business goals, including website traffic, conversion rates, engagement metrics, lead generation, and ultimately, ROI. We use advanced analytics tools to track performance and provide regular reports with actionable insights. Our approach focuses on data-driven decision making to continuously optimize your campaigns."
+    // },
+    // {
+    //   question: "What makes DigiDhvani different from other digital marketing agencies?",
+    //   answer:
+    //     "DigiDhvani stands out through our personalized approach, transparent reporting, and focus on measurable results. We don't believe in one-size-fits-all solutions; instead, we develop customized strategies based on your unique business needs and goals. Our team stays current with the latest digital marketing trends and technologies to ensure your business maintains a competitive edge."
+    // },
+    // {
+    //   question: "Can digital marketing work for my small business?",
+    //   answer:
+    //     "Absolutely! Digital marketing is particularly valuable for small businesses because it provides cost-effective ways to reach targeted audiences. Unlike traditional marketing, digital strategies can be scaled according to your budget and allow you to compete with larger companies. We specialize in helping small businesses develop effective digital marketing strategies that maximize their resources."
+    // }
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-800 to-gray-900 py-20">
+    <div className="bg-white py-20"> {/* Changed background color to white */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,9 +61,9 @@ export const FaqSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Find answers to common questions about our digital marketing services and how we can help your business grow online.
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ export const FaqSection = () => {
                 className={`w-full flex justify-between items-center p-6 rounded-lg text-left transition-all duration-300 ${
                   activeIndex === index
                     ? "bg-amber-500 text-white"
-                    : "bg-gray-800/50 text-white hover:bg-gray-700/50"
+                    : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                 }`}
               >
                 <span className="text-lg font-semibold">{faq.question}</span>
@@ -93,8 +93,8 @@ export const FaqSection = () => {
                 )}
               </button>
               {activeIndex === index && (
-                <div className="bg-gray-800/30 border border-gray-700 p-6 rounded-b-lg mt-1">
-                  <p className="text-gray-300">{faq.answer}</p>
+                <div className="bg-gray-100 border border-gray-300 p-6 rounded-b-lg mt-1">
+                  <p className="text-gray-700">{faq.answer}</p>
                 </div>
               )}
             </motion.div>
@@ -107,7 +107,7 @@ export const FaqSection = () => {
           transition={{ duration: 0.5, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-xl text-gray-300 mb-8">
+          <p className="text-xl text-gray-700 mb-8">
             Still have questions? We're here to help!
           </p>
           <a

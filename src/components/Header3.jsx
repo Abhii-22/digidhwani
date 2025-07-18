@@ -143,40 +143,35 @@ const Header = () => {
       >
         <div className="container mx-auto flex items-center justify-between p-4 px-4">
           {/* Logo and optionally course provider logos */}
-          <NavLink to="/" className="flex items-center">
-            <img src={logo} alt="Medini" className="h-14 mr-2" />
-            {isCourse && (
-              <>
-                <div className="h-8 w-px bg-white mx-2"></div>
-                <img src={getCourseProviderLogo()} alt="Course Provider" className="h-8 ml-1" />
-              </>
-            )}
-            {isBimConstruct && (
-              <>
-                <div className="h-8 w-px bg-white mx-2"></div>
-                <img src={bimLogo} alt="BIM Construct" className="h-6 ml-1" />
-              </>
-            )}
-            {isEduphygital && (
-              <>
-                <div className="h-8 w-px bg-white mx-2"></div>
-                <img src={eduphygitalLogo} alt="Eduphygital" className="h-8 ml-1" />
-              </>
-            )}
-            {isBuildspace && (
-              <>
-                <div className="h-8 w-px bg-white mx-2"></div>
-                <img src={buildspaceLogo} alt="Buildspace" className="h-8 ml-1" />
-              </>
-            )}
-            {isDigiDhvani && (
-              <>
-                <div className="h-8 w-px bg-white mx-2"></div>
-                <img src={digidhvaniLogo} alt="DigiDhvani" className="h-8 ml-1" />
-              </>
-            )}
-            {isTechVritti && <p className="font-playfair">TechVritti</p>}
-          </NavLink>
+         <NavLink to="/" className="flex items-center">
+  <img src={logo} alt="Medini" className="h-14 mr-2" />
+  {isCourse && (
+    <>
+      <div className="h-8 w-px bg-white mx-2"></div>
+      <img src={getCourseProviderLogo()} alt="Course Provider" className="h-8 ml-1" />
+    </>
+  )}
+  {isBimConstruct && (
+    <>
+      <div className="h-8 w-px bg-white mx-2"></div>
+      <img src={bimLogo} alt="BIM Construct" className="h-6 ml-1" />
+    </>
+  )}
+  {isEduphygital && (
+    <>
+      <div className="h-8 w-px bg-white mx-2"></div>
+      <img src={eduphygitalLogo} alt="Eduphygital" className="h-8 ml-1" />
+    </>
+  )}
+  {isBuildspace && (
+    <>
+      <div className="h-8 w-px bg-white mx-2"></div>
+      <img src={buildspaceLogo} alt="Buildspace" className="h-8 ml-1" />
+    </>
+  )}
+  {isTechVritti && <p className="font-playfair">TechVritti</p>}
+</NavLink>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">

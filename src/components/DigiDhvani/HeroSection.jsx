@@ -1,18 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
-import {
-  ChevronLeft,
-  ChevronRight,
-  Search,
-  BarChart,
-  Globe,
-  TrendingUp,
-  X,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react"; // Only keep the necessary imports
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import images (adjust paths as needed)
-import bg_image from "@/assets/IMAGES/getty-images-Z2eLWZwOcW4-unsplash.jpg";
+import bg_image from "@/assets/IMAGES/getty-images-aU0EVGuyUUA-unsplash.jpg";
 import seoImage from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg";
 import socialMediaImage from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg";
 import contentMarketingImage from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg";
@@ -139,7 +131,6 @@ function HeroSection() {
   const services = [
     {
       id: 1,
-      icon: <Search className="w-8 h-8 text-amber-500" />,
       image: `${seoImage}?height=200&width=300`,
       name: "Search Engine Optimization",
       description:
@@ -155,7 +146,6 @@ function HeroSection() {
     },
     {
       id: 2,
-      icon: <Globe className="w-8 h-8 text-blue-500" />,
       image: `${socialMediaImage}?height=200&width=300`,
       name: "Social Media Marketing",
       description:
@@ -171,7 +161,6 @@ function HeroSection() {
     },
     {
       id: 3,
-      icon: <TrendingUp className="w-8 h-8 text-green-500" />,
       image: `${contentMarketingImage}?height=200&width=300`,
       name: "Content Marketing",
       description:
@@ -187,7 +176,6 @@ function HeroSection() {
     },
     {
       id: 4,
-      icon: <BarChart className="w-8 h-8 text-purple-500" />,
       image: `${ppcImage}?height=200&width=300`,
       name: "Pay-Per-Click Advertising",
       description:
@@ -203,7 +191,6 @@ function HeroSection() {
     },
     {
       id: 5,
-      icon: <BarChart className="w-8 h-8 text-indigo-500" />,
       image: `${analyticsImage}?height=200&width=300`,
       name: "Analytics & Reporting",
       description:
@@ -267,7 +254,7 @@ function HeroSection() {
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0 transition-opacity duration-700"
           style={{ backgroundImage: `url(${bg_image})`, backgroundSize: "cover" }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-75"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-25"></div>
         </div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/30 to-black/30"></div>
 
@@ -287,18 +274,12 @@ function HeroSection() {
                 in the online world
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
-                <Link
-                  to="/digidhvani/contact"
-                  className="px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                </Link>
-                <Link
+                {/* <Link
                   to="/digidhvani/services"
                   className="px-8 py-3 bg-transparent border border-white/30 text-white hover:bg-white/10 font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
                 >
                   Explore Services
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className="lg:w-1/2"></div>
@@ -376,9 +357,6 @@ function HeroSection() {
                           className="w-full h-48 object-cover transition-transform duration-700 hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute top-4 left-4 p-2 bg-gray-100 rounded-full">
-                          {service.icon}
-                        </div>
                       </div>
                       <div className="p-6">
                         <h3 className="font-semibold text-gray-900 text-xl mb-2">{service.name}</h3>
@@ -460,33 +438,24 @@ function HeroSection() {
                 <X className="w-6 h-6 text-white" />
               </button>
 
-              {!showRegistrationForm && (
-                <>
-                  <h3 className="text-3xl font-bold text-amber-400 mb-4">{selectedService.name}</h3>
-                  <p className="text-gray-300 mb-6">{selectedService.description}</p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 mb-6">
-                    {selectedService.details.map((detail, idx) => (
-                      <li key={idx}>{detail}</li>
-                    ))}
-                  </ul>
+              {/* Service details */}
+              <h3 className="text-3xl font-bold text-amber-400 mb-4">{selectedService.name}</h3>
+              <p className="text-gray-300 mb-6">{selectedService.description}</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-300 mb-6">
+                {selectedService.details.map((detail, idx) => (
+                  <li key={idx}>{detail}</li>
+                ))}
+              </ul>
 
-                  <div className="mt-6">
-                    <button
-                      onClick={() => setShowRegistrationForm(true)}
-                      className="inline-flex items-center px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
-                    >
-                      Register Now
-                    </button>
-                  </div>
-                </>
-              )}
-
-              {showRegistrationForm && (
-                <RegistrationForm
-                  selectedService={selectedService}
-                  onBack={() => setShowRegistrationForm(false)}
-                />
-              )}
+              {/* Register Now button */}
+              <div className="mt-6">
+                <button
+                  onClick={() => setShowRegistrationForm(true)}
+                  className="inline-flex items-center px-6 py-3 bg-amber-500 hover:bg-amber-600 text-white font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  Register Now
+                </button>
+              </div>
             </motion.div>
           </motion.div>
         )}

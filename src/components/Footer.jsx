@@ -4,6 +4,17 @@ import logo from "@/assets/Logos/Medini_logo.png";
 function Footer() {
   const location = useLocation();
   const isTechVritti = location.pathname === "/techvritti";
+
+  const scrollToServices = (e) => {
+    e.preventDefault()
+    const servicesSection = document.getElementById('services')
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
   
   // Define social media links based on the current path
   const socialLinks = isTechVritti 
@@ -47,29 +58,29 @@ function Footer() {
             </h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/digidhvani/seo" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                <button onClick={scrollToServices} className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
                   Search Engine Optimization
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/digidhvani/social-media-marketing" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                <button onClick={scrollToServices} className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
                   Social Media Marketing
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/digidhvani/content-marketing" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                <button onClick={scrollToServices} className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
                   Content Marketing
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/digidhvani/ppc" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                <button onClick={scrollToServices} className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
                   Pay Per Click Advertising
-                </Link>
+                </button>
               </li>
               <li>
-                <Link to="/digidhvani/analytics" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
+                <button onClick={scrollToServices} className="text-gray-600 hover:text-blue-600 transition-colors duration-300 text-sm">
                   Analytics and Reporting
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

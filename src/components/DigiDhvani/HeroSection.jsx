@@ -4,12 +4,13 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Import images (adjust paths as needed)
-import bg_image from "@/assets/IMAGES/getty-images-aU0EVGuyUUA-unsplash.jpg";
-import seoImage from "@/assets/IMAGES/getty-images-qk02f4TFFC4-unsplash.jpg";
-import socialMediaImage from "@/assets/IMAGES/getty-images-GWy4HmlGraI-unsplash.jpg";
-import contentMarketingImage from "@/assets/IMAGES/osman-talha-dikyar-PomM7aa5m18-unsplash.jpg";
-import ppcImage from "@/assets/IMAGES/getty-images-X-lDEMCZBz0-unsplash.jpg";
-import analyticsImage from "@/assets/IMAGES/getty-images-KD_fT_T4D24-unsplash.jpg";
+import bg_image from "@/assets/IMAGES/DigiDhwani3.png";
+import seoImage from "@/assets/IMAGES/SEO.png";
+import socialMediaImage from "@/assets/IMAGES/Social Media Marketing.png";
+import contentMarketingImage from "@/assets/IMAGES/Content Marketing.png";
+import ppcImage from "@/assets/IMAGES/PPC.png";
+import analyticsImage from "@/assets/IMAGES/Analytics and Reporting.png";
+import digidhwaniImage from "@/assets/IMAGES/DIGIDHWANI.png";
 
 // Registration Form component
 const RegistrationForm = ({ onBack, selectedService }) => {
@@ -246,7 +247,7 @@ function HeroSection() {
     <>
       {/* Hero Section */}
       <section
-        className="relative overflow-hidden h-[70vh] flex items-center"
+        className="relative overflow-hidden h-[100vh] flex items-center"
         ref={heroRef}
       >
         {/* Background with overlay */}
@@ -254,7 +255,7 @@ function HeroSection() {
           className="absolute inset-0 w-full h-full bg-cover bg-center z-0 transition-opacity duration-700"
           style={{ backgroundImage: `url(${bg_image})`, backgroundSize: "cover" }}
         >
-          <div className="absolute inset-0 bg-black bg-opacity-25"></div>
+          <div className="absolute inset-0 bg-black bg-opacity-30"></div>
         </div>
         <div className="absolute inset-0 z-0 bg-gradient-to-b from-black/20 via-black/30 to-black/30"></div>
 
@@ -273,14 +274,9 @@ function HeroSection() {
                 Strategic digital marketing solutions to help your business thrive
                 in the online world
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
-                {/* <Link
-                  to="/digidhvani/services"
-                  className="px-8 py-3 bg-transparent border border-white/30 text-white hover:bg-white/10 font-medium rounded-lg transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Services
-                </Link> */}
-              </div>
+                             <div className="mt-10 flex flex-wrap gap-4">
+                 {/* Get Started button moved to header */}
+               </div>
             </div>
             <div className="lg:w-1/2"></div>
           </motion.div>
@@ -288,7 +284,7 @@ function HeroSection() {
       </section>
 
       {/* Our Digital Marketing Services Section with white background */}
-      <section className="bg-white py-20">
+      <section id="services" className="bg-white py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -297,7 +293,7 @@ function HeroSection() {
             className="mb-12"
           >
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Digital Marketing Services</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 text-center w-full">Our Digital Marketing Services</h2>
               <div className="flex space-x-2">
                 <button
                   onClick={slideLeft}
@@ -405,7 +401,229 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* Modal */}
+                           {/* About Section */}
+                <section id="about" className="bg-white py-0">
+         <div className="container mx-auto px-4">
+           <div className="flex flex-col lg:flex-row items-center gap-12">
+             {/* Left Content */}
+             <div className="lg:w-1/2">
+               <motion.div
+                 initial={{ opacity: 0, x: -20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.8 }}
+               >
+                 {/* Vision Button */}
+                 <div className="mb-6">
+                   <span className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-lg text-sm font-medium">
+                     About Us
+                   </span>
+                 </div>
+
+                 {/* Main Heading */}
+                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                  Voice for Your Brand
+                 </h2>
+
+                 {/* Description */}
+                 <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                 At DigiDhwani, we blend Bharat’s timeless wisdom with cutting-edge digital strategies to help businesses thrive in the modern world. Born from a passion for innovation and a deep understanding of India’s diverse market, we are your trusted digital growth partners, committed to making your brand resonate across the digital cosmos.
+                 </p>
+
+                 {/* Mission and Values Card */}
+                 <div className="bg-white rounded-lg p-6">
+                   {/* Mission */}
+                   <div className="mb-6">
+                     <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Vision</h3>
+                     <p className="text-gray-600">
+                     To become India’s most trusted digital marketing ally, helping brands achieve "Digital Swaraj" (self-reliance) through innovation, transparency, and measurable results.
+                     </p>
+                   </div>
+
+                   
+
+                   {/* Values */}
+                   <div>
+                     <h3 className="text-xl font-semibold text-gray-900 mb-3">Our Mission</h3>
+                     <p className="text-gray-600">
+
+                     To empower Indian businesses, startups, and MSMEs with affordable, performance-driven digital solutions that bridge the gap between ambition and success.
+                     </p>
+                     
+                     
+                   </div>
+                 </div>
+               </motion.div>
+             </div>
+
+             {/* Right Image */}
+             <div className="lg:w-1/2">
+               <motion.div
+                 initial={{ opacity: 0, x: 20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.8, delay: 0.2 }}
+                 className="relative"
+               >
+                                   <img 
+                    src={digidhwaniImage} 
+                    alt="DigiDhwani" 
+                    className="w-full h-96 object-cover rounded-lg shadow-lg"
+                  />
+               </motion.div>
+             </div>
+           </div>
+         </div>
+               </section>
+
+       {/* Contact Section */}
+       <section id="contact" className="bg-white py-20">
+         <div className="container mx-auto px-4">
+           <div className="flex flex-col lg:flex-row items-center gap-12">
+             {/* Left Content - Contact Information */}
+             <div className="lg:w-1/2">
+               <motion.div
+                 initial={{ opacity: 0, x: -20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.8 }}
+               >
+                 {/* Contact Button */}
+                 <div className="mb-6">
+                   <span className="inline-block px-4 py-2 bg-amber-100 text-amber-600 rounded-lg text-sm font-medium">
+                     Get In Touch
+                   </span>
+                 </div>
+
+                 {/* Main Heading */}
+                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                   Contact Information
+                 </h2>
+
+                 {/* Contact Methods */}
+                 <div className="space-y-6">
+                   {/* Email */}
+                   <div className="flex items-center space-x-4">
+                     <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
+                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                       </svg>
+                     </div>
+                     <div>
+                       <h3 className="font-semibold text-gray-900">Email Us</h3>
+                       <p className="text-gray-600">connect@medini.in</p>
+                     </div>
+                   </div>
+
+                   {/* Phone */}
+                   <div className="flex items-center space-x-4">
+                     <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
+                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                       </svg>
+                     </div>
+                     <div>
+                       <h3 className="font-semibold text-gray-900">Call Us</h3>
+                       <p className="text-gray-600">+91 9900081006</p>
+                     </div>
+                   </div>
+
+                   {/* Address */}
+                   <div className="flex items-start space-x-4">
+                     <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mt-1">
+                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                       </svg>
+                     </div>
+                     <div>
+                       <h3 className="font-semibold text-gray-900">Visit Our Company</h3>
+                       <p className="text-gray-600">No. 2943/E,3rd Floor, 40, Service Rd, opposite Shri Maruthi Mandira, Hosahalli Extension, Vijayanagar, Bengaluru, Karnataka 560040</p>
+                     </div>
+                   </div>
+
+                   {/* Studio Hours */}
+                   <div className="bg-amber-50 rounded-lg p-4">
+                     <div className="flex items-center space-x-3 mb-2">
+                       <svg className="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                       </svg>
+                       <span className="font-semibold text-amber-600">Studio Hours</span>
+                     </div>
+                     <div className="flex justify-between text-sm text-gray-600">
+                       <span>Monday - Saturday</span>
+                       <span>9:00 AM - 8:30 PM</span>
+                     </div>
+                   </div>
+                 </div>
+               </motion.div>
+             </div>
+
+             {/* Right Content - Contact Form */}
+             <div className="lg:w-1/2">
+               <motion.div
+                 initial={{ opacity: 0, x: 20 }}
+                 animate={{ opacity: 1, x: 0 }}
+                 transition={{ duration: 0.8, delay: 0.2 }}
+                 className="bg-white rounded-lg shadow-lg p-8"
+               >
+                 <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h3>
+                 <form className="space-y-4">
+                   <div>
+                     <input
+                       type="text"
+                       placeholder="Enter your name"
+                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       type="email"
+                       placeholder="Enter your email"
+                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                     />
+                   </div>
+                   <div>
+                     <input
+                       type="tel"
+                       placeholder="+1234567890"
+                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                     />
+                   </div>
+                   <div>
+                     <select className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+                       <option value="">Select Project Type</option>
+                       <option value="seo">SEO</option>
+                       <option value="social-media">Social Media Marketing</option>
+                       <option value="content">Content Marketing</option>
+                       <option value="ppc">PPC Advertising</option>
+                       <option value="analytics">Analytics & Reporting</option>
+                     </select>
+                   </div>
+                   <div>
+                     <textarea
+                       rows="4"
+                       placeholder="Tell us about your project, goals, timeline, and budget..."
+                       className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none"
+                     ></textarea>
+                   </div>
+                   <button
+                     type="submit"
+                     className="w-full bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+                   >
+                     <span>Send Message</span>
+                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                     </svg>
+                   </button>
+                   <p className="text-sm text-gray-600 text-center">
+                     Prefer a quick chat? Call us at +91 9900081006
+                   </p>
+                 </form>
+               </motion.div>
+             </div>
+           </div>
+         </div>
+       </section>
+
+       {/* Modal */}
       <AnimatePresence>
         {selectedService && (
           <motion.div
@@ -421,27 +639,27 @@ function HeroSection() {
             role="dialog"
           >
             <motion.div
-              className="bg-gray-900 rounded-2xl shadow-xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-auto"
+              className="bg-white rounded-2xl shadow-xl max-w-3xl w-full p-8 relative max-h-[90vh] overflow-auto"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-700 transition-colors"
+                className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-200 transition-colors"
                 onClick={() => {
                   setSelectedService(null);
                   setShowRegistrationForm(false);
                 }}
                 aria-label="Close modal"
               >
-                <X className="w-6 h-6 text-white" />
+                <X className="w-6 h-6 text-gray-900" />
               </button>
 
               {/* Service details */}
-              <h3 className="text-3xl font-bold text-amber-400 mb-4">{selectedService.name}</h3>
-              <p className="text-gray-300 mb-6">{selectedService.description}</p>
-              <ul className="list-disc list-inside space-y-2 text-gray-300 mb-6">
+              <h3 className="text-3xl font-bold text-amber-500 mb-4">{selectedService.name}</h3>
+              <p className="text-gray-700 mb-6">{selectedService.description}</p>
+              <ul className="list-disc list-inside space-y-2 text-gray-700 mb-6">
                 {selectedService.details.map((detail, idx) => (
                   <li key={idx}>{detail}</li>
                 ))}

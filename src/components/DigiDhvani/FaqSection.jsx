@@ -299,7 +299,7 @@ export const FaqSection = () => {
   ];
 
   return (
-    <div className="bg-white py-20"> {/* Set background color to white */}
+    <div className="bg-white py-10"> {/* Set background color to white */}
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

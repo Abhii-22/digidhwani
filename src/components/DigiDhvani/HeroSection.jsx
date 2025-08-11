@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react"; // Only keep the necessary imports
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Contact } from "./Contact"; // Import Contact component
 
 // Import images (adjust paths as needed)
 import bg_image from "@/assets/IMAGES/DigiDhwani3.png";
@@ -475,14 +476,8 @@ function HeroSection() {
                </section>
 
        {/* Contact Section */}
-       <section id="contact" className="bg-white py-20">
-         <div className="container mx-auto px-4">
-           <div className="flex flex-col lg:flex-row items-center gap-12">
-             {/* Left Content - Contact Information removed as requested */}
-
-             {/* Right Content - Contact Form removed as requested */}
-           </div>
-         </div>
+       <section id="contact" className="py-20">
+         <Contact />
        </section>
 
        {/* Modal */}
